@@ -14,16 +14,32 @@ class Army{
 		int def;  
         int heal;
         int skillatk;
+        bool changeturn;
     public:
-    void status();
+    void createchar(string); //เรื่มต้นค่า status
+    void newturn(); //เปลี่ยนตา
 };
-void statusstarter(){
-Army Tank = {"Tank",300,50+(rand()%11),50,0};
-Army Soilder[3] ;
-Soilder[0] = {"Soilder1",100,25+(rand()%11),10,0,50+rand()%151};
-Soilder[1] = {"Soilder2",100,25+(rand()%11),10,0,50+rand()%151};
-Soilder[2] = {"Soilder3",100,25+(rand()%11),10,0,50+rand()%151};
-Soilder[3] = {"Soilder4",100,25+(rand()%11),10,0,50+rand()%151};
-Army Artillery = {"Artillery",60,20+(rand()%81),5,0};
-Army Commander = {"Commander",200,20+(rand()%11),0,50};
+
+
+void Army::createchar(string type){ 
+	if(type == "Tank"){
+		hpmax = 300;
+		atk = 50+(rand()%11);
+		def = 50;
+	}else if(type == "Artillery"){
+		hpmax = 60;
+		atk = 20+(rand()%81);
+		def = 5;
+	}else if(type == "Commander"){
+		hpmax = 200;
+		atk = 20+(rand()%11);
+		def = 0;
+    }else if(type == "Soilder"){
+		hpmax = 100;
+		atk = 25+(rand()%11);
+		def = 10;
+        skillatk = 50+rand()%151;
+    }
+	hp = hpmax;
+    changeturn = false;
 }
