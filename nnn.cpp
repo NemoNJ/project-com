@@ -1,119 +1,120 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
-class Character {
-public:
-    int health;
-    int defense;
-
-    Character() {
-        health = 100;
-        defense = 0;
-    }
+struct Player {
+    int health = 100;
+    int defense = 0;
 };
 
+// Function to generate random card values
 int randomCardValue(int min, int max) {
     return min + rand() % (max - min + 1);
+}
+
+// Function to distribute cards to players
+void distributeCards(vector<int> &deck, vector<int> &hand, int numCards) {
+    random_shuffle(deck.begin(), deck.end());
+    for (int i = 0; i < numCards; ++i) {
+        hand.push_back(deck.back());
+        deck.pop_back();
+    }
+}
+
+// Function to play a round
+void playRound(vector<int> &deck, vector<int> &playerHand, vector<int> &botHand, Player &player, Player &bot) {
+    cout << "\nPlayer's turn:" << endl;
+    cout << "Player's hand: ";
+    for (int card : playerHand) {
+        cout << card << " ";
+    }
+    cout << endl;
+
+    cout << "Bot's hand: ";
+    for (int card : botHand) {
+        cout << card << " ";
+    }
+    cout << endl;
+
+    // Player's turn
+    for (int i = 0; i < 2; ++i) {
+        cout << "Choose a card to play (1-" << playerHand.size() << "): ";
+        int choice;
+        cin >> choice;
+        int playerCard = playerHand[choice - 1];
+        playerHand.erase(playerHand.begin() + choice - 1);
+
+        cout << "Player plays card with value: " << playerCard << endl;
+
+        if (playerCard >= 10 && playerCard <= 30) {
+            player.defense += playerCard;
+        } else {
+            bot.health -= playerCard;
+        }
+    }
+
+    // Bot's turn
+    for (int i = 0; i < 2; ++i) {
+        int botChoice = rand() % botHand.size();
+        int botCard = botHand[botChoice];
+        botHand.erase(botHand.begin() + botChoice);
+
+        cout << "Bot plays card with value: " << botCard << endl;
+
+        if (botCard >= 10 && botCard <= 30) {
+            bot.defense += botCard;
+        } else {
+            player.health -= botCard;
+        }
+    }
+
+    // Replace played cards with new random cards
+    distributeCards(deck, playerHand, 2);
+    distributeCards(deck, botHand, 2);
 }
 
 int main() {
     srand(time(0));
 
-    Character player;
-    Character bot;
-
-    int attackCards[20];
-    int defenseCards[20];
-    int healCards[10];
-    int playerCards[5];
-    int botCards[5];
-    int playerChoice;
-    int botChoice = rand() % 5 + 1;
-
-    //สุ่มค่าไพ่
+    // Initialize deck
+    vector<int> deck;
     for (int i = 0; i < 20; ++i) {
-        attackCards[i] = randomCardValue(20, 50);
-        defenseCards[i] = randomCardValue(10, 30);
+        deck.push_back(randomCardValue(20, 50)); // Attack cards
+        deck.push_back(randomCardValue(10, 30)); // Defense cards
     }
     for (int i = 0; i < 10; ++i) {
-        healCards[i] = randomCardValue(5, 30);
+        deck.push_back(randomCardValue(5, 30)); // Heal cards
     }
 
-    //ไพ่ผู้เล่น (แสดงผล)
-    cout << "Your cards:" << endl;
-    for (int i = 0; i < 5; ++i) {
-        playerCards[i] = randomCardValue(1, 3);
-        cout << "Card " << i + 1 << ": " << playerCards[i] << endl;
-    }   cout << "1. ATK card   2. DEF card   3. HEAL card" << endl;
+    // Initialize player's and bot's hand
+    vector<int> playerHand;
+    vector<int> botHand;
+    distributeCards(deck, playerHand, 5); // Distribute 5 cards to player
+    distributeCards(deck, botHand, 5);    // Distribute 5 cards to bot
 
-    //ไพ่บอท (ไม่แสดงผล)
-    for (int i = 0; i < 5; ++i) {
-        botCards[i] = randomCardValue(1, 3);
-    }
+    // Initialize player's and bot's attributes
+    Player player;
+    Player bot;
 
-    for (int round = 1; round <= 3; ++round) {
-        cout << "\nRound " << round << endl;
-        
-        cout << "Your turn - Choose a card to play (1-5): ";
-        cin >> playerChoice;
+    // Main game loop
+    while (true) {
+        cout << "\nPlayer's Health: " << player.health << endl;
+        cout << "Bot's Health: " << bot.health << endl;
 
-        // ตรวจสอบว่าผู้เล่นเลือกไพ่โจมตีหรือป้องกันหรือรักษา
-        if (playerCards[playerChoice - 1] == 1) { // ไพ่โจมตี
-            // ลดเลือดของบอท
-            bot.health -= attackCards[rand() % 20];
-            cout << "Player attacked Bot!" << endl;
-        } else if (playerCards[playerChoice - 1] == 2) { // ไพ่ป้องกัน
-            // เพิ่มพลังป้องกันของผู้เล่น
-            player.defense += defenseCards[rand() % 20];
-            cout << "Player defended!" << endl;
-        } else if (playerCards[playerChoice - 1] == 3) { // ไพ่รักษา
-            // เพิ่มเลือดของผู้เล่น
-            player.health += healCards[rand() % 10];
-            cout << "Player healed!" << endl;
+        if (player.health <= 0) {
+            cout << "Bot wins!" << endl;
+            break;
+        } else if (bot.health <= 0) {
+            cout << "Player wins!" << endl;
+            break;
         }
 
-        // ตรวจสอบว่าบอทเลือกไพ่โจมตีหรือป้องกันหรือรักษา
-        if (botCards[botChoice - 1] == 1) {
-            // ลดเลือดของผู้เล่น
-            player.health -= attackCards[rand() % 20];
-            cout << "Bot attacked Player!" << endl;
-        } else if (botCards[botChoice - 1] == 2) {
-            // เพิ่มพลังป้องกันของบอท
-            bot.defense += defenseCards[rand() % 20];
-            cout << "Bot defended!" << endl;
-        } else if (botCards[botChoice - 1] == 3) {
-            // เพิ่มเลือดของบอท
-            bot.health += healCards[rand() % 10];
-            cout << "Bot healed!" << endl;
-        }
-
-        // ลบไพ่ที่เล่นออกจากมือของผู้เล่นและบอท
-        playerCards[playerChoice - 1] = 0;
-        botCards[botChoice - 1] = 0;
-
-        // สุ่มไพ่ใหม่เพื่อแทนที่ไพ่ที่เล่นแล้ว
-        int newPlayerCard = randomCardValue(1, 3);
-        int newBotCard = randomCardValue(1, 3);
-        for (int i = 0; i < 5; ++i) {
-            if (playerCards[i] == 0) {
-                playerCards[i] = newPlayerCard;
-                break;
-            }
-        }
-        for (int i = 0; i < 5; ++i) {
-            if (botCards[i] == 0) {
-                botCards[i] = newBotCard;
-                break;
-            }
-        }
-
-        cout << "Your new card: " << newPlayerCard << endl;
-        cout << "Your HP: " << player.health << "  Bot's HP: " << bot.health << endl;
+        playRound(deck, playerHand, botHand, player, bot);
     }
 
     return 0;
 }
- 

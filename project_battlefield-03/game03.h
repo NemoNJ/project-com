@@ -12,6 +12,8 @@ class Unit{
         int grenade;
         int super_atk;
         bool changeturn;
+        bool havegun;
+        bool haverifle;
     public:
     void createchar(string); //เรื่มต้นค่า status
     void newturn(); //เปลี่ยนตา
@@ -24,12 +26,20 @@ class Unit{
     void buy_item(int);
     int beSuperAttacked(int);
     int superattack(Unit &);
-    void inputsaveprogress();
-    void outputsaveprogress();
+    void inputsaveprogress(int);
+    void outputsaveprogress(int);
+    int usegrenade();
+    void drawScene(int );
+    void drawcase1()
+    void drawcase2()
+    void drawcase3()
+    void drawcase4()
+    void drawcase5()
+    void drawcase6()
 };
 
 
-void Unit::createchar(string type){ 
+void Unit::createchar(string type){ //กำหนดค่า status เริ่มต้น
 	if(type == "Soilder"){
 		hpmax = 100;
 		atk = 5+(rand()%16);
@@ -53,6 +63,8 @@ void Unit::createchar(string type){
     }
 	hp = hpmax;
     changeturn = false;
+    havegun = false;
+    haverifle = false;
 }
 void Unit::newturn(){
 	changeturn = false;
@@ -61,7 +73,7 @@ bool Unit::isDead(){
 if(hp > 0) return false;
 else return true;
 }
-int Unit::heal(){
+int Unit::heal(){//ใช้ medkit
 if(medkit > 0){
   int healing;
      healing = (25+rand()%16);
@@ -90,7 +102,10 @@ int Unit::beSuperAttacked(int oppatk){
 int Unit::superattack(Unit &type){
 	return type.beSuperAttacked(atk);
 }
-
+int Unit::usegrenade(){
+   return type.beAttacked(200);
+   grenade -= 1;// ใช้ระเบิดแล้ว
+}
 void Unit::showstatus(){
 	if(type == "Hero"){
 		cout << "---------------------------------------\n"; 
@@ -146,6 +161,7 @@ void Unit::buy_item(int money){
         if(money > 0){
           atk += (15+rand()%21);
           money -= 150;
+          havegun = true;
         }
         else{
             cout << "You can't afford it";
@@ -153,7 +169,7 @@ void Unit::buy_item(int money){
     }
     if(click == '2'){//armor
        if(money > 300){
-          def += 50;
+          def += 10;
           money -= 300;
        }
        else{
@@ -163,7 +179,7 @@ void Unit::buy_item(int money){
     if(click == '3'){//med kit
        if(money > 50){
           medkit += 1;
-          money -= 50;
+          money -= 100;
        }
        else{
             cout << "You can't afford it";
@@ -173,7 +189,11 @@ void Unit::buy_item(int money){
        if(money > 1000){
           atk += (50+rand()%51);
           money -= 1000;
+          haverifle = true;
        }
+       else{
+            cout << "You can't afford it";
+        }
     }
     if(click == '5'){//grenade
        if(money > 150){
@@ -189,8 +209,7 @@ void Unit::buy_item(int money){
     }
     }
  }
-void Unit::inputsaveprogress(){
-        string textline;
+void Unit::inputsaveprogress(int money){
         ofstream dest;
         dest.open("status.txt");
         string myhp = to_string(hp);
@@ -198,17 +217,69 @@ void Unit::inputsaveprogress(){
         string mydef = to_string(def);
         string mygrenade = to_string(grenade);
         string mymedkit = to_string(medkit);
+        string mymoney = to_string(money);
         dest << myhp;
         dest << myatk;
         dest << mydef;
         dest << mygrenade;
         dest << mymedkit;
+        dest << mymoney;
+        dest.close();
 }
-void Unit::outputsaveprogress(){
+void Unit::outputsaveprogress(int money){
+        ifstream source;
+        source.open("status.txt");
         string textline;
-        ofstream dest;
-        dest.open("status.txt");
-        while()
+        getline(source,textline);
+        hp = atoi(textline.c_str());
+        getline(source,textline);
+        atk = atoi(textline.c_str());
+        getline(source,textline);
+        def = atoi(textline.c_str());
+        getline(source,textline);
+        grenade = atoi(textline.c_str());
+        getline(source,textline);
+        medkit = atoi(textline.c_str());
+        getline(source,textline);
+        money = atoi(textline.c_str());
+        source.close();
+}
+//วาด position ที่จะเกิด
+void Unit::drawScene(int i){
+   if(i == 1){
         
+   } 
+   if(i == 2 && havegun = false){
     
+   }
+   if(i == 2 && havegun = true){
+    
+   }
+   if(i == 3 && haverifle = false){
+    
+   }
+   if(i == 3 && haverifle = true){
+    
+   }
+   if(i == 4 && haverifle = true){
+    
+   }
+}
+void drawcase1(){
+
+}
+void drawcase2(){
+
+}
+void drawcase3(){
+
+}
+void drawcase4(){
+
+}
+void drawcase5(){
+
+}
+void drawcase6(){
+
 }
