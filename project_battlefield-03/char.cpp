@@ -74,6 +74,22 @@ printf("              --------\n");
 printf("              |       |\n");
 
 
+printf("               /------\n");
+printf("            __|-------|__ \n");
+printf("              | U  U | \n");
+printf("      |_:     |   ^  |\n");
+printf("==-'======'    '-----'\n");
+printf("   [|   '[]==-/  |_| ||\n");
+printf("    [|    ------     ||\n");
+printf("     [|       |      ||\n");
+printf("              |[][][]||\n");
+printf("              | | | |||\n");
+printf("              ===[]====\n");
+printf("              |       |\n");
+printf("\n");
+  
+
+
 //Pistol
 printf("          _______________==\n");
 printf("         q|[[[[ [__]   ___|\n");
