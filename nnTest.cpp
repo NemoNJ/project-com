@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <conio.h>
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -19,6 +18,7 @@ int ArryRand(int min, int max) {
     return min + rand()%max;
 }
 
+string CheckCondition(vector<string>, int , int [], int , health, string []);
     
 int main(){
     srand(time(0));
@@ -48,36 +48,35 @@ int main(){
     }
     health Player; 
     health Bot;
+    int playerChoice;    
     int i = 0;
-    int playerChoice = getch();    
-    string CheckCondition(vector<string>, int , int [], int , health);
     do{
         cout << "\nRound " << i + 1 << endl;
         cout << "Your turn - Choose a card to play (1-5): ";
-        printf("%d", playerChoice);
+        cin >> playerChoice;
         i++;
         switch (playerChoice)
         {//CardType = " Fury Strike ", " Damage Absolver", " Healing"};
          // 1 = strike card , 2 = deffense card , 3 = heal card;
         case 1:
-            cout << CheckCondition(AllCardType, 1, attackCards, playerChoice, Bot) << endl;
+            cout << CheckCondition(AllCardType, 1, attackCards, playerChoice, Bot, CardType) << endl;
             break;
         case 2:
-            cout << CheckCondition(AllCardType, 2, defenseCards, playerChoice, Player) << endl;
+            cout << CheckCondition(AllCardType, 2, defenseCards, playerChoice, Player, CardType) << endl;
             break;
         case 3:
-            cout << CheckCondition(AllCardType, 3, healCards, playerChoice, Player) << endl;
+            cout << CheckCondition(AllCardType, 3, healCards, playerChoice, Player, CardType) << endl;
             break;
         }
     }
-    while(getch()); 
-
-
+    while(Bot.HP > 0); 
+    
+    return 0;
 }
-string CheckCondition(vector<string> C, int &Type, int card[], int N, health PB){
+string CheckCondition(vector<string> C, int Type, int card[], int N, health PB, string CType[]){
     // 1 = strike card , 2 = deffense card , 3 = heal card;
     string response;
-        if (find (C.begin(), C.end(), Type) != C.end()){
+        if (find (C.begin(), C.end(), CType[Type - 1]) != C.end()){
             switch (Type)
             {
             case 1: //strike
@@ -99,5 +98,6 @@ string CheckCondition(vector<string> C, int &Type, int card[], int N, health PB)
                 return response;
                 break;
             }
+        return "";
     }
 }
