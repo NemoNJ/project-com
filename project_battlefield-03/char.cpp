@@ -115,9 +115,17 @@ printf(" |     |_|     | |\n");
 printf(" |  first aid  | |\n");
 printf(" |_____________|/\n");
 printf(" \n");
-printf(" \n");
 
+printf("      __\n");
+printf("    /=||=-o\n");
+printf("   / [  ]\n");
+printf("  / [    ]\n");
+printf(" | [______]\n");
+printf("   [      ]\n");
+printf("    [    ]\n");
+printf("     [__]\n");
 
+  
 printf(" \n");
 
 
