@@ -10,6 +10,7 @@ class Unit{
 		int def;  
         int medkit;
         int grenade;
+        int super_atk;
         bool changeturn;
     public:
     void createchar(string); //เรื่มต้นค่า status
@@ -21,6 +22,10 @@ class Unit{
 	void guard();
 	bool isDead();
     void buy_item(int);
+    int beSuperAttacked(int);
+    int superattack(Unit &);
+    void inputsaveprogress();
+    void outputsaveprogress();
 };
 
 
@@ -57,8 +62,9 @@ if(hp > 0) return false;
 else return true;
 }
 int Unit::heal(){
-int healing;
-     healing = (rand()%21 + 10);
+if(medkit > 0){
+  int healing;
+     healing = (25+rand()%16);
     if(healing+hp >= hpmax){
         healing = hpmax-hp ;
         hp = hpmax ;
@@ -66,6 +72,8 @@ int healing;
     }
      hp += healing;
      return healing;
+     medkit -= 1; //เอากล่องที่ใช้แล้วออก
+    }
 }
 int Unit::beAttacked(int oppatk){
    hp = hp - oppatk - def;
@@ -74,7 +82,14 @@ int Unit::beAttacked(int oppatk){
 int Unit::attack(Unit &type){
 	return type.beAttacked(atk);
 }
-
+int Unit::beSuperAttacked(int oppatk){
+   int super_oppatk =  3*oppatk;
+   hp = hp - super_oppatk - def;
+   return super_oppatk - def;
+}
+int Unit::superattack(Unit &type){
+	return type.beSuperAttacked(atk);
+}
 
 void Unit::showstatus(){
 	if(type == "Hero"){
@@ -174,3 +189,26 @@ void Unit::buy_item(int money){
     }
     }
  }
+void Unit::inputsaveprogress(){
+        string textline;
+        ofstream dest;
+        dest.open("status.txt");
+        string myhp = to_string(hp);
+        string myatk = to_string(atk);
+        string mydef = to_string(def);
+        string mygrenade = to_string(grenade);
+        string mymedkit = to_string(medkit);
+        dest << myhp;
+        dest << myatk;
+        dest << mydef;
+        dest << mygrenade;
+        dest << mymedkit;
+}
+void Unit::outputsaveprogress(){
+        string textline;
+        ofstream dest;
+        dest.open("status.txt");
+        while()
+        
+    
+}
