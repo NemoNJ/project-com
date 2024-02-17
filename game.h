@@ -1,8 +1,4 @@
-#include<iostream>
-#include<string>
-#include<ctime>
-#include<cstdlib>
-#include<iomanip>
+#include "library.h"
 
 using namespace std;
 
