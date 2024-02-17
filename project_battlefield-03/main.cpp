@@ -5,16 +5,25 @@
 using namespace std;
 
 void condition(){
-    textcolor(AQUA ,AQUA );
-     printf("Press button A to ATTACK")
+    textcolor(RED,RED);
+     printf("Press button A to ATTACK\n");
      resetcolor();
-      textcolor(DARKRED,DARKRED);
-     printf("Press button H to HEAL")
+    textcolor(GREEN,GREEN);
+     printf("Press button Q to USE MEDKIT\n");
      resetcolor();
-      textcolor(DARKVOILET ,DARKVOILET );
-     printf("Press button 3 to BUY ITEMS")
      resetcolor();
-     break;
+      textcolor(YELLOW ,YELLOW);
+     printf("Press button G to USE GRENADE\n");
+     resetcolor();
+     textcolor( BLUE,BLUE);
+     printf("Press button S to SAVE GAME\n");
+     resetcolor();
+     textcolor(VIOLET,VIOLET );
+     printf("Press button L to BLOAD GAME\n");
+     resetcolor();
+     textcolor(WHITE,WHITE);
+     printf("Press button E to EXIT GAME\n");
+     resetcolor();
 }
 
 
@@ -55,25 +64,4 @@ char atkboss(char monster_action){//เช็ค monster action
         if(ranAtkboss <= 8) monster_action == 'a';
         if(ranAtkboss > 8) monster_action == 'b';
     return monster_action;
-}
-
-int main(){
- cout << "     ------"<< "\n" ;
- cout << "    /      '"<< "\n" ;
- cout << "   /--------|"<< "\n" ;
- cout << "   |/   I I |"<< "\n" ;
- cout << "   ||    -  /  "<< "\n" ;
- cout << "     '------'       ===='"<< "\n" ;
- cout << "    /  ------------[]' "<< "\n" ;
- cout << "   /  |      |----/"<< "\n" ;
- cout << "   |  |      |"<< "\n" ;
- cout << "   |==|      |"<< "\n" ;
- cout << "   |==|      |"<< "\n" ;
- cout << "   '=====[]=='"<< "\n" ;
- cout << "   |         |"<< "\n" ;
-
-
-
-
-
 }
