@@ -33,8 +33,6 @@ void terminal(){
     printf( "---------------------------------------------------------------------------------------------------\n");
     printf("|                                                                                                   |\n");
     printf("|                                                                                                   |\n");
-    printf("|                                                                                                   |\n");
-    printf("|                                                                                                   |\n");
     printf("|                                    WELCOME TO BATTLE BOSS GAME 03                                 |\n"); 
     printf("|                                                                                                   |\n");
     printf("|                                          [1] PLAY GAME                                            |\n");
@@ -42,6 +40,7 @@ void terminal(){
     printf("|                                          [2] HOW TO PLAY                                          |\n");
     printf("|                                                                                                   |\n");
     printf("|                                          [E] EXIT                                                 |\n");
+    printf("|                                                                                                   |\n");
     printf("|                                                                                                   |\n");
     printf( "---------------------------------------------------------------------------------------------------");
     resetcolor();
