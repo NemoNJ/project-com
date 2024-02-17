@@ -18,6 +18,7 @@ class Army{
     public:
     void createchar(string); //เรื่มต้นค่า status
     void newturn(); //เปลี่ยนตา
+	void showstatus();
 };
 
 
