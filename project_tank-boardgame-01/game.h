@@ -42,5 +42,4 @@ void Army::createchar(string type){
     }
 	hp = hpmax;
     changeturn = false;
-	cout<<"Hello";
 }
