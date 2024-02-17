@@ -70,7 +70,7 @@ int main(){
             break;
         }
     }
-    while(getch());
+    while(getch()); 
 
 
 }
