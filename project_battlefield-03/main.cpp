@@ -104,8 +104,8 @@ printf("|               |        __  |_]--|--|=======-----------|               
 printf("|               |      _/  |_|     |  |                                    [    ]                                                                                       |\n");
 printf("|               |_____/    ==       |__|                                    [__]                                                                                        |\n");
 printf("|             Rifile  Press[4]                                         Grenade  Press[5]                                                                                |\n");
-printf("|             PRICE : 1000  $                                          PRICE : 150  $ ( 1 used )                                                                        |\n");
-printf("|             ATK   : 50 - 100 damage                                  ATK   : 200 damage                                                                               |\n");
+printf("|             PRICE : 1000  $                                          PRICE : 200  $ ( 1 used )                                                                        |\n");
+printf("|             ATK   : 50 - 100 damage                                  ATK   : 120 damage                                                                               |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -136,8 +136,8 @@ int main(){
    while(i < 4){ //ต้องเจอ monster ตัวถัดไป
     showmap(soilder101);//show stage
     if(i > 1){//รอบ 2 ให้ซื้อของ
-       soilder101.buy_item(money);
        showshop();
+       soilder101.buy_item(money);
    }
     string boss_id = choose_mon(turn_count);
 	soilder101.createchar("Soilder");
@@ -155,13 +155,13 @@ int main(){
         // หมดแล้วหมดเลย
         if(player_action == 'q'){
             if(i > 1 && soilder101.medkit > 0) p = soilder101.heal();
-            else if(i > 1 && soilder101.medkit < 0) cout << "Emtry";
-            else cout << "Your level is too low";
+            else if(i > 1 && soilder101.medkit < 0) cout << "Emtry\n";
+            else cout << "Your level is too low\n";
         } 
         if(player_action == 'g'){
             if(i > 1 && soilder101.grenade > 0) p = soilder101.usegrenade(boss_id);
-            else if(i > 1 && soilder101.grenade < 0) cout << "Emtry";
-            else cout << "Your level is too low";
+            else if(i > 1 && soilder101.grenade < 0) cout << "Emtry\n";
+            else cout << "Your level is too low\n";
         }
         
         if(player_action == 's') soilder101.inputsaveprogress(money);
@@ -190,6 +190,7 @@ int main(){
             soilder101.level_up();
 			playerWin();
             getmoney(boss_id,money);
+            boss.resetboss();
         }
     }
     i++;
