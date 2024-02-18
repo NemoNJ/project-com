@@ -227,7 +227,7 @@ printf("|-----------------------------------------------------------------------
 printf("|                                                                                                                                                                       |\n");
 printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                    [A] Attack [G] USE_Grenade [Q] USE_MedKit [S] Save_game [L] Load_game [E] Exit                                                     |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -262,7 +262,7 @@ printf("|-----------------------------------------------------------------------
 printf("|                                                                                                                                                                       |\n");
 printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                    [A] Attack [G] USE_Grenade [Q] USE_MedKit [S] Save_game [L] Load_game [E] Exit                                                     |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -298,7 +298,7 @@ printf("|-----------------------------------------------------------------------
 printf("|                                                                                                                                                                       |\n");
 printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                    [A] Attack [G] USE_Grenade [Q] USE_MedKit [S] Save_game [L] Load_game [E] Exit                                                     |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -334,7 +334,7 @@ printf("|-----------------------------------------------------------------------
 printf("|                                                                                                                                                                       |\n");
 printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                    [A] Attack [G] USE_Grenade [Q] USE_MedKit [S] Save_game [L] Load_game [E] Exit                                                     |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -342,6 +342,42 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 
-}
 
+//storade
+
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                         [  SHOP  ]                                                                                    |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|      I          _______________==                                 I    ___     ___                                                                                                                                  |\n");
+printf("|                q|[[[[ [__]   ___|                                      [ ]_____[ ]]                                                                                |\n");
+printf("|                /_____________/_ |                                     |    VEST   ||                                                                             |\n");
+printf("|                |    [|_]'                                             |           ||                                                                         |\n");
+printf("|                | ## |                                                 |___ ___ ___||                                                                            |\n");
+printf("|                | ## |                                                 |[__][__][__]|                                                                          |\n");
+printf("|                |_##_|                                                 |   |   |   ||                                                                               |\n");
+printf("|                                                                       |___|___|___|/                                                                      |\n");
+printf("|             Pistol Press[1]                                           Armor1 Press[2]                                                                               |\n");
+printf("|             PRICE : 150  $                                            PRICE : 300  $                                                               |\n");
+printf("|             ATK   : 15 - 35 damage                                    DEF   : 10 def                                                                           |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|     YOUR MONEY : %d                                                                                                                                                          |\n");
+printf("|                                                                                                                                                                    |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+
+}
 
