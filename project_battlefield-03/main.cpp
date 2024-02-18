@@ -123,19 +123,15 @@ void starterbotton(int money,char player_action){
 
 int main(){
     Unit soilder101,boss;
-    int turn_count = 1;
     int money;
     char player_action = '\0',BOSS_action = '\0'; //กำหนดค่าเริ่มต้น monster action
     terminal();
     starterbotton(money,player_action);
     getname(hero_name);//รับชื่อ
     srand(time(0));
-
-   //ซื้อของเมื่อเข้ารอบ 2
    int i = 1;
-   while(i <= 4){ //ต้องเจอ monster ตัวถัดไป
     showmap(soilder101);//show stage
-    string boss_id = choose_mon(turn_count);
+    string boss_id = choose_mon(i);
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
 	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
@@ -187,11 +183,176 @@ int main(){
 			playerWin();
             getmoney(boss_id,money);
             showshop();
-             soilder101.buy_item(money);
+             soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
         }
     }
-    i++;
-    turn_count++;
-	}
+    i = 2;
+        showmap(soilder101);//show stage
+    string boss_id = choose_mon(i);
+	soilder101.createchar("Soilder");
+	boss.createchar(boss_id);
+	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
+	while(true){
+		boss.newturn();	
+		soilder101.newturn();			
+		drawScene(soilder101,boss,hero_name);		
+        //player
+        button(player_action,BOSS_action);
+        if(player_action == 'a') p = soilder101.attack(boss,"Soilder"); 
+        
+        // level 2 ขึ้นไปใช้ระเบิดกับกล่องพยาบาลได้
+        // หมดแล้วหมดเลย
+        if(player_action == 'q'){
+            if(i > 1 && soilder101.medkit > 0) p = soilder101.heal();
+            else if(i > 1 && soilder101.medkit < 0) cout << "Emtry\n";
+            else cout << "Your level is too low\n";
+        } 
+        if(player_action == 'g'){
+            if(i > 1 && soilder101.grenade > 0) p = soilder101.usegrenade(boss_id);
+            else if(i > 1 && soilder101.grenade < 0) cout << "Emtry\n";
+            else cout << "Your level is too low\n";
+        }
+        
+        if(player_action == 's') soilder101.inputsaveprogress(money);
+        if(player_action == 'l') soilder101.outputsaveprogress(money);
+        if(player_action == 'e') break;
+        //mons
+		if(i > 0){
+        if(i == 4){
+              BOSS_action = atkboss(BOSS_action);
+        }
+        else{
+              BOSS_action = 'a';
+        }
+        }
+        if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
+        if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
+        
+		if(soilder101.isDead()){
+			drawScene(soilder101,boss,hero_name);
+			playerLose();
+			break; 
+		}
+		
+		if(boss.isDead()){
+			drawScene(soilder101,boss,hero_name);//อาจแก้เป็นฉากตาย
+            soilder101.level_up();
+			playerWin();
+            getmoney(boss_id,money);
+            showshop();
+             soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
+        }
+    }
+    i = 3;
+        showmap(soilder101);//show stage
+    string boss_id = choose_mon(i);
+	soilder101.createchar("Soilder");
+	boss.createchar(boss_id);
+	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
+	while(true){
+		boss.newturn();	
+		soilder101.newturn();			
+		drawScene(soilder101,boss,hero_name);		
+        //player
+        button(player_action,BOSS_action);
+        if(player_action == 'a') p = soilder101.attack(boss,"Soilder"); 
+        
+        // level 2 ขึ้นไปใช้ระเบิดกับกล่องพยาบาลได้
+        // หมดแล้วหมดเลย
+        if(player_action == 'q'){
+            if(i > 1 && soilder101.medkit > 0) p = soilder101.heal();
+            else if(i > 1 && soilder101.medkit < 0) cout << "Emtry\n";
+            else cout << "Your level is too low\n";
+        } 
+        if(player_action == 'g'){
+            if(i > 1 && soilder101.grenade > 0) p = soilder101.usegrenade(boss_id);
+            else if(i > 1 && soilder101.grenade < 0) cout << "Emtry\n";
+            else cout << "Your level is too low\n";
+        }
+        
+        if(player_action == 's') soilder101.inputsaveprogress(money);
+        if(player_action == 'l') soilder101.outputsaveprogress(money);
+        if(player_action == 'e') break;
+        //mons
+		if(i > 0){
+        if(i == 4){
+              BOSS_action = atkboss(BOSS_action);
+        }
+        else{
+              BOSS_action = 'a';
+        }
+        }
+        if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
+        if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
+        
+		if(soilder101.isDead()){
+			drawScene(soilder101,boss,hero_name);
+			playerLose();
+			break; 
+		}
+		
+		if(boss.isDead()){
+			drawScene(soilder101,boss,hero_name);//อาจแก้เป็นฉากตาย
+            soilder101.level_up();
+			playerWin();
+            getmoney(boss_id,money);
+            showshop();
+             soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
+        }
+    }
+        i = 4;
+        showmap(soilder101);//show stage
+    string boss_id = choose_mon(i);
+	soilder101.createchar("Soilder");
+	boss.createchar(boss_id);
+	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
+	while(true){
+		boss.newturn();	
+		soilder101.newturn();			
+		drawScene(soilder101,boss,hero_name);		
+        //player
+        button(player_action,BOSS_action);
+        if(player_action == 'a') p = soilder101.attack(boss,"Soilder"); 
+        
+        // level 2 ขึ้นไปใช้ระเบิดกับกล่องพยาบาลได้
+        // หมดแล้วหมดเลย
+        if(player_action == 'q'){
+            if(i > 1 && soilder101.medkit > 0) p = soilder101.heal();
+            else if(i > 1 && soilder101.medkit < 0) cout << "Emtry\n";
+            else cout << "Your level is too low\n";
+        } 
+        if(player_action == 'g'){
+            if(i > 1 && soilder101.grenade > 0) p = soilder101.usegrenade(boss_id);
+            else if(i > 1 && soilder101.grenade < 0) cout << "Emtry\n";
+            else cout << "Your level is too low\n";
+        }
+        
+        if(player_action == 's') soilder101.inputsaveprogress(money);
+        if(player_action == 'l') soilder101.outputsaveprogress(money);
+        if(player_action == 'e') break;
+        //mons
+		if(i > 0){
+        if(i == 4){
+              BOSS_action = atkboss(BOSS_action);
+        }
+        else{
+              BOSS_action = 'a';
+        }
+        }
+        if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
+        if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
+        
+		if(soilder101.isDead()){
+			drawScene(soilder101,boss,hero_name);
+			playerLose();
+			break; 
+		}
+		
+		if(boss.isDead()){
+			drawScene(soilder101,boss,hero_name);//อาจแก้เป็นฉากตาย
+            soilder101.level_up();
+			playerWin();
+        }
+    }
 	return 0;
 }
