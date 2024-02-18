@@ -386,29 +386,29 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                            _____                                                                     |\n");
-printf("|                                                                          _____________O   (     )  ( Stage 4 Final Boss)                                             |\n");
-printf("|                                                                         /                ( () () )                                                                   |\n");
-printf("|                                                                        /                  (  ^  )                                                                     |\n");
-printf("|                                                                       /                    |||||                                                                     |\n");
-printf("|                                                                      /                                                                                                |\n");
-printf("|                                                                     /                                                                                                 |\n");
-printf("|                                                                    /                                                                                                  |\n");
-printf("|                                                                   /                                                                                                   |\n");
-printf("|                                                                  /                                                                                                    |\n");
-printf("|                                                   ______________O ( Stage 3 )                                                                                          |\n");
-printf("|                                                  /                                                                                                                    |\n");
-printf("|                                                 /                                                                                                                     |\n");
-printf("|                                                /                                                                                                                      |\n");
-printf("|                                               /                                                                                                                       |\n");
-printf("|                                              /                                                                                                                        |\n");
-printf("|                                 ____________O ( Stage 2 )                                                                                                             |\n");
-printf("|                                /                                                                                                                                      |\n");
-printf("|                               /                                                                                                                                       |\n");
-printf("|                              /                                                                                                                                        |\n");
-printf("|                             /                                                                                                                                         |\n");
-printf("|                            O ( Stage 1 )                                                                                                                              |\n");
-printf("|                     [ You Are Here ]                                                                                                                                  |\n");
+printf("|                                                                                                 _____                                                                 |\n");
+printf("|                                                                               _____________O   (     )  ( Stage 4 Final Boss)                                         |\n");
+printf("|                                                                              /                ( () () )                                                               |\n");
+printf("|                                                                             /                  (  ^  )                                                                |\n");
+printf("|                                                                            /                    |||||                                                                 |\n");
+printf("|                                                                           /                                                                                           |\n");
+printf("|                                                                          /                                                                                            |\n");
+printf("|                                                                         /                                                                                             |\n");
+printf("|                                                                        /                                                                                              |\n");
+printf("|                                                                       /                                                                                               |\n");
+printf("|                                                        ______________O ( Stage 3 )                                                                                    |\n");
+printf("|                                                       /                                                                                                               |\n");
+printf("|                                                      /                                                                                                                |\n");
+printf("|                                                     /                                                                                                                 |\n");
+printf("|                                                    /                                                                                                                  |\n");
+printf("|                                                   /                                                                                                                   |\n");
+printf("|                                      ____________O ( Stage 2 )                                                                                                        |\n");
+printf("|                                     /                                                                                                                                 |\n");
+printf("|                                    /                                                                                                                                  |\n");
+printf("|                                   /                                                                                                                                   |\n");
+printf("|                                  /                                                                                                                                    |\n");
+printf("|                                 O ( Stage 1 )                                                                                                                         |\n");
+printf("|                          [ You Are Here ]                                                                                                                             |\n");
 printf("|       PRESS [T] To continue                                                                                                                                           |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
@@ -421,28 +421,99 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                            _____                                                                      |\n");
-printf("|                                                                          _____________O   (     )  ( Stage 4 Final Boss)                                              |\n");
-printf("|                                                                         /                ( () () )                                                                    |\n");
-printf("|                                                                        /                  (  ^  )                                                                     |\n");
-printf("|                                                                       /                    |||||                                                                      |\n");
-printf("|                                                                      /                                                                                                |\n");
-printf("|                                                                     /                                                                                                 |\n");
-printf("|                                                                    /                                                                                                  |\n");
-printf("|                                                                   /                                                                                                   |\n");
-printf("|                                                                  /                                                                                                    |\n");
-printf("|                                                   ______________O ( Stage 3 )                                                                                         |\n");
-printf("|                                                  /                                                                                                                    |\n");
-printf("|                                                 /                                                                                                                     |\n");
-printf("|                                                /                                                                                                                      |\n");
-printf("|                                               /                                                                                                                       |\n");
-printf("|                                              /                                                                                                                        |\n");
-printf("|                                 ____________O ( Stage 2 )                                                                                                             |\n");
-printf("|                                /            [ You Are Here ]                                                                                                          |\n");
-printf("|                               /                                                                                                                                       |\n");
-printf("|                              /                                                                                                                                        |\n");
-printf("|                             /                                                                                                                                         |\n");
-printf("|                            O ( Stage 1 complete)                                                                                                                      |\n");
+printf("|                                                                                                 _____                                                                 |\n");
+printf("|                                                                               _____________O   (     )  ( Stage 4 Final Boss)                                         |\n");
+printf("|                                                                              /                ( () () )                                                               |\n");
+printf("|                                                                             /                  (  ^  )                                                                |\n");
+printf("|                                                                            /                    |||||                                                                 |\n");
+printf("|                                                                           /                                                                                           |\n");
+printf("|                                                                          /                                                                                            |\n");
+printf("|                                                                         /                                                                                             |\n");
+printf("|                                                                        /                                                                                              |\n");
+printf("|                                                                       /                                                                                               |\n");
+printf("|                                                        ______________O ( Stage 3 )                                                                                    |\n");
+printf("|                                                       /                                                                                                               |\n");
+printf("|                                                      /                                                                                                                |\n");
+printf("|                                                     /                                                                                                                 |\n");
+printf("|                                                    /                                                                                                                  |\n");
+printf("|                                                   /                                                                                                                   |\n");
+printf("|                                      ____________O ( Stage 2 )                                                                                                        |\n");
+printf("|                                     /            [ You Are Here ]                                                                                                     |\n");
+printf("|                                    /                                                                                                                                  |\n");
+printf("|                                   /                                                                                                                                   |\n");
+printf("|                                  /                                                                                                                                    |\n");
+printf("|                                 O ( Stage 1 complete)                                                                                                                 |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|       PRESS [T] To continue                                                                                                                                           |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+
+//map in game stage 3
+
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                             [ MAP ]                                                                                   |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                 _____                                                                 |\n");
+printf("|                                                                               _____________O   (     )  ( Stage 4 Final Boss)                                         |\n");
+printf("|                                                                              /                ( () () )                                                               |\n");
+printf("|                                                                             /                  (  ^  )                                                                |\n");
+printf("|                                                                            /                    |||||                                                                 |\n");
+printf("|                                                                           /                                                                                           |\n");
+printf("|                                                                          /                                                                                            |\n");
+printf("|                                                                         /                                                                                             |\n");
+printf("|                                                                        /                                                                                              |\n");
+printf("|                                                                       /                                                                                               |\n");
+printf("|                                                        ______________O ( Stage 3 )                                                                                    |\n");
+printf("|                                                       /               [ You Are Here ]                                                                                |\n");
+printf("|                                                      /                                                                                                                |\n");
+printf("|                                                     /                                                                                                                 |\n");
+printf("|                                                    /                                                                                                                  |\n");
+printf("|                                                   /                                                                                                                   |\n");
+printf("|                                      ____________O ( Stage 2 complete )                                                                                               |\n");
+printf("|                                     /                                                                                                                                 |\n");
+printf("|                                    /                                                                                                                                  |\n");
+printf("|                                   /                                                                                                                                   |\n");
+printf("|                                  /                                                                                                                                    |\n");
+printf("|                                 O ( Stage 1 complete)                                                                                                                 |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|       PRESS [T] To continue                                                                                                                                           |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+
+//map in game stage 4
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                             [ MAP ]                                                                                   |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                 _____                                                                 |\n");
+printf("|                                                                               _____________O   (     )  ( Stage 4 Final Boss)                                         |\n");
+printf("|                                                                              /                ( () () )    [ You Are Here ]                                           |\n");
+printf("|                                                                             /                  (  ^  )                                                                |\n");
+printf("|                                                                            /                    |||||                                                                 |\n");
+printf("|                                                                           /                                                                                           |\n");
+printf("|                                                                          /                                                                                            |\n");
+printf("|                                                                         /                                                                                             |\n");
+printf("|                                                                        /                                                                                              |\n");
+printf("|                                                                       /                                                                                               |\n");
+printf("|                                                        ______________O ( Stage 3 complete )                                                                           |\n");
+printf("|                                                       /                                                                                                               |\n");
+printf("|                                                      /                                                                                                                |\n");
+printf("|                                                     /                                                                                                                 |\n");
+printf("|                                                    /                                                                                                                  |\n");
+printf("|                                                   /                                                                                                                   |\n");
+printf("|                                      ____________O ( Stage 2 complete )                                                                                               |\n");
+printf("|                                     /                                                                                                                                 |\n");
+printf("|                                    /                                                                                                                                  |\n");
+printf("|                                   /                                                                                                                                   |\n");
+printf("|                                  /                                                                                                                                    |\n");
+printf("|                                 O ( Stage 1 complete)                                                                                                                 |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|       PRESS [T] To continue                                                                                                                                           |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -452,8 +523,11 @@ printf("|-----------------------------------------------------------------------
 
 
 
-
 }
+
+
+
+
 
 
 
