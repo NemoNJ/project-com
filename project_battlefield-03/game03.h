@@ -44,7 +44,12 @@ class Unit{
     int level = 1;
     bool havegun;
     bool haverifle;
+    void resetboss();
 };
+void Unit::resetboss(){
+     hpmax = 0;
+     hp = 0;
+}
 void Unit::createchar(string type){ //กำหนดค่า status เริ่มต้น
 	if(type == "Soilder"){
 		hpmax = 100;
@@ -59,11 +64,11 @@ void Unit::createchar(string type){ //กำหนดค่า status เริ�
 		atk = 10;
 		def = 10;
     }else if(type == "BOSS03"){
-		hpmax = 300;
+		hpmax = 500;
 		atk = 20;
 		def = 20;
     }else if(type == "BOSS04"){
-		hpmax = 500;
+		hpmax = 900;
 		atk = 30;
 		def = 50;
     }
@@ -206,7 +211,7 @@ void Unit::buy_item(int money){
           havegun = true;
         }
         else{
-            cout << "You can't afford it";
+            cout << "You can't afford it\n";
         }
     }
     if(click == '2'){//armor
@@ -215,7 +220,7 @@ void Unit::buy_item(int money){
           money -= 300;
        }
        else{
-            cout << "You can't afford it";
+            cout << "You can't afford it\n";
         }
     }
     if(click == '3'){//med kit
@@ -224,7 +229,7 @@ void Unit::buy_item(int money){
           money -= 100;
        }
        else{
-            cout << "You can't afford it";
+            cout << "You can't afford it\n";
         }
     }
     if(click == '4'){//rifle
@@ -234,7 +239,7 @@ void Unit::buy_item(int money){
           haverifle = true;
        }
        else{
-            cout << "You can't afford it";
+            cout << "You can't afford it\n";
         }
     }
     if(click == '5'){//grenade
@@ -243,7 +248,7 @@ void Unit::buy_item(int money){
           money -= 200;
        }
        else{
-            cout << "You can't afford it";
+            cout << "You can't afford it\n";
         }
     }
     if(click == 'e'){//exit shop
