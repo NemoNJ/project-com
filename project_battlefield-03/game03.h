@@ -1,9 +1,20 @@
-#include "library.h"
+#include<iostream>
+#include<string>
+#include<ctime>
+#include<cstdlib>
+#include<iomanip>
+#include<vector>
+#include <cmath>
+#include <algorithm>
+#include <conio.h>
+#include <stdio.h>
+#include <fstream>
 
 using namespace std;
 
 class Unit{
        int hpmax; 
+       int level = 1;
         string type;		
 		int hp;
 		int atk;
@@ -29,13 +40,14 @@ class Unit{
     void inputsaveprogress(int);
     void outputsaveprogress(int);
     int usegrenade();
-    void drawScene(int );
-    void drawcase1()
-    void drawcase2()
-    void drawcase3()
-    void drawcase4()
-    void drawcase5()
-    void drawcase6()
+    void drawScene();
+    void level_up();
+    void drawcase1();
+    void drawcase2();
+    void drawcase3();
+    void drawcase4();
+    void drawcase5();
+    void drawcase6();
 };
 
 
@@ -44,19 +56,19 @@ void Unit::createchar(string type){ //กำหนดค่า status เริ�
 		hpmax = 100;
 		atk = 5+(rand()%16);
 		def = 5;
-	}else if(type == "Monster01"){
+	}else if(type == "BOSS01"){
 		hpmax = 80;
 		atk = 5+(rand()%16);
 		def = 0;
-	}else if(type == "Monster02"){
+	}else if(type == "BOSS02"){
 		hpmax = 150;
 		atk = 10+(rand()%11);
 		def = 10;
-    }else if(type == "Monster03"){
+    }else if(type == "BOSS03"){
 		hpmax = 300;
 		atk = 20+(rand()%21);
 		def = 20;
-    }else if(type == "Monster04"){
+    }else if(type == "BOSS04"){
 		hpmax = 500;
 		atk = 30+(rand()%51);
 		def = 50;
@@ -103,17 +115,17 @@ int Unit::superattack(Unit &type){
 	return type.beSuperAttacked(atk);
 }
 int Unit::usegrenade(){
-   return type.beAttacked(200);
+   return this->beAttacked(200);
    grenade -= 1;// ใช้ระเบิดแล้ว
 }
 void Unit::showstatus(){
-	if(type == "Hero"){
+	if(type == "Soilder"){
 		cout << "---------------------------------------\n"; 
 		cout << type << "\n"; 
 		cout << "HP: " << hp << "/" << hpmax << "\tATK: "<< atk << "\t\tDEF: "<< def;		
 		cout << "\n---------------------------------------\n";
 	}	
-	else if(type == "Monster"){
+	else if(type == "BOSS"){
 		cout << "\t\t\t\t---------------------------------------\n"; 
 		cout << "\t\t\t\t" << type << "\n"; 
 		cout << "\t\t\t\tHP: " << hp << "\t\tATK: "<< atk << "\t\tDEF: "<< def;
@@ -138,17 +150,17 @@ void playerLose(){
 	cout << "*******************************************************\n";
 };
 
-void getmoney(string type,int money){//ชนิดของ mons และ update money
-    if(type == "Monster01"){
+void getmoney(string type,int money){//ชนิดของ boss และ update money
+    if(type == "BOSS01"){
           money += 300; 
     }
-    else if(type == "Monster02"){
+    else if(type == "BOSS02"){
            money += 700;
     }
-    else if(type == "Monster03"){
+    else if(type == "BOSS03"){
            money += 1000;
     }
-    else if(type == "Monster04"){
+    else if(type == "BOSS04"){
            money += 1500;
     }
 };
@@ -244,42 +256,244 @@ void Unit::outputsaveprogress(int money){
         money = atoi(textline.c_str());
         source.close();
 }
+void Unit::level_up(){//เพิ่ม level เมื่อผ่านด่าน
+    level += 1;
+}
 //วาด position ที่จะเกิด
-void Unit::drawScene(int i){
-   if(i == 1){
-        
-   } 
-   if(i == 2 && havegun = false){
-    
+void Unit::drawScene() {
+   if (level == 1 && havegun == false) {
+      drawcase1();
    }
-   if(i == 2 && havegun = true){
-    
+   if (level == 2 && havegun == false) {
+      drawcase2();
    }
-   if(i == 3 && haverifle = false){
-    
+   if (level == 2 && havegun == true) {
+      drawcase3();
    }
-   if(i == 3 && haverifle = true){
-    
+   if (level == 3 && haverifle == false) {
+      drawcase4();
    }
-   if(i == 4 && haverifle = true){
-    
+   if (level == 3 && haverifle == true) {
+      drawcase5();
+   }
+   if (level == 4 && haverifle == true) {
+      drawcase6();
    }
 }
-void drawcase1(){
-
+void Unit::drawcase1(){
+//battle sence1
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                           STAGE 1     |\n");
+printf("|                         NAME                                                                         The Stick Man LV1                                                |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        DAMAGE                                                                              DAMAGE                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        ------                                                                                                                                         |\n");
+printf("|                       /      '               ATK: 00                                                       ------        ATK: 00                                      |\n");
+printf("|                      /--------|      /|      HP:  00                                                #     / -  - |       HP:  00                                      |\n");
+printf("|                      |/   I I |      ||      DEF: 00                                                #     | o  o |       DEF: 00                                      |\n");
+printf("|                      ||    -  /      ||                                                             #     |  -   |                                                    |\n");
+printf("|                        '------'      +++                                                            #     '-----'                                                     |\n");
+printf("|                       /  ------------[]                                                             []----        |                                                   |\n");
+printf("|                      /  |      |----/                                                               []------      |                                                   |\n");
+printf("|                      |  |      |                                                                    #     |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      '=====[]=='                                                                          --------                                                    |\n");
+printf("|                      |         |                                                                          |       |                                                   |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 }
-void drawcase2(){
-
+void Unit::drawcase2(){
+//battle sence1
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                           STAGE 1     |\n");
+printf("|                         NAME                                                                         The Stick Man LV1                                                |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        DAMAGE                                                                              DAMAGE                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        ------                                                                                                                                         |\n");
+printf("|                       /      '               ATK: 00                                                       ------        ATK: 00                                      |\n");
+printf("|                      /--------|      /|      HP:  00                                                #     / -  - |       HP:  00                                      |\n");
+printf("|                      |/   I I |      ||      DEF: 00                                                #     | o  o |       DEF: 00                                      |\n");
+printf("|                      ||    -  /      ||                                                             #     |  -   |                                                    |\n");
+printf("|                        '------'      +++                                                            #     '-----'                                                     |\n");
+printf("|                       /  ------------[]                                                             []----        |                                                   |\n");
+printf("|                      /  |      |----/                                                               []------      |                                                   |\n");
+printf("|                      |  |      |                                                                    #     |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      '=====[]=='                                                                          --------                                                    |\n");
+printf("|                      |         |                                                                          |       |                                                   |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 }
-void drawcase3(){
 
+void Unit::drawcase3(){
+//battle sence1
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                           STAGE 1     |\n");
+printf("|                         NAME                                                                         The Stick Man LV1                                                |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        DAMAGE                                                                              DAMAGE                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        ------                                                                                                                                         |\n");
+printf("|                       /      '               ATK: 00                                                       ------        ATK: 00                                      |\n");
+printf("|                      /--------|      /|      HP:  00                                                #     / -  - |       HP:  00                                      |\n");
+printf("|                      |/   I I |      ||      DEF: 00                                                #     | o  o |       DEF: 00                                      |\n");
+printf("|                      ||    -  /      ||                                                             #     |  -   |                                                    |\n");
+printf("|                        '------'      +++                                                            #     '-----'                                                     |\n");
+printf("|                       /  ------------[]                                                             []----        |                                                   |\n");
+printf("|                      /  |      |----/                                                               []------      |                                                   |\n");
+printf("|                      |  |      |                                                                    #     |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      '=====[]=='                                                                          --------                                                    |\n");
+printf("|                      |         |                                                                          |       |                                                   |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 }
-void drawcase4(){
-
+void Unit::drawcase4(){
+//battle sence1
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                           STAGE 1     |\n");
+printf("|                         NAME                                                                         The Stick Man LV1                                                |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        DAMAGE                                                                              DAMAGE                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        ------                                                                                                                                         |\n");
+printf("|                       /      '               ATK: 00                                                       ------        ATK: 00                                      |\n");
+printf("|                      /--------|      /|      HP:  00                                                #     / -  - |       HP:  00                                      |\n");
+printf("|                      |/   I I |      ||      DEF: 00                                                #     | o  o |       DEF: 00                                      |\n");
+printf("|                      ||    -  /      ||                                                             #     |  -   |                                                    |\n");
+printf("|                        '------'      +++                                                            #     '-----'                                                     |\n");
+printf("|                       /  ------------[]                                                             []----        |                                                   |\n");
+printf("|                      /  |      |----/                                                               []------      |                                                   |\n");
+printf("|                      |  |      |                                                                    #     |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      '=====[]=='                                                                          --------                                                    |\n");
+printf("|                      |         |                                                                          |       |                                                   |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 }
-void drawcase5(){
-
+void Unit::drawcase5(){
+//battle sence1
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                           STAGE 1     |\n");
+printf("|                         NAME                                                                         The Stick Man LV1                                                |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        DAMAGE                                                                              DAMAGE                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        ------                                                                                                                                         |\n");
+printf("|                       /      '               ATK: 00                                                       ------        ATK: 00                                      |\n");
+printf("|                      /--------|      /|      HP:  00                                                #     / -  - |       HP:  00                                      |\n");
+printf("|                      |/   I I |      ||      DEF: 00                                                #     | o  o |       DEF: 00                                      |\n");
+printf("|                      ||    -  /      ||                                                             #     |  -   |                                                    |\n");
+printf("|                        '------'      +++                                                            #     '-----'                                                     |\n");
+printf("|                       /  ------------[]                                                             []----        |                                                   |\n");
+printf("|                      /  |      |----/                                                               []------      |                                                   |\n");
+printf("|                      |  |      |                                                                    #     |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      '=====[]=='                                                                          --------                                                    |\n");
+printf("|                      |         |                                                                          |       |                                                   |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 }
-void drawcase6(){
-
+void Unit::drawcase6(){
+//battle sence1
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                           STAGE 1     |\n");
+printf("|                         NAME                                                                         The Stick Man LV1                                                |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        DAMAGE                                                                              DAMAGE                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        ------                                                                                                                                         |\n");
+printf("|                       /      '               ATK: 00                                                       ------        ATK: 00                                      |\n");
+printf("|                      /--------|      /|      HP:  00                                                #     / -  - |       HP:  00                                      |\n");
+printf("|                      |/   I I |      ||      DEF: 00                                                #     | o  o |       DEF: 00                                      |\n");
+printf("|                      ||    -  /      ||                                                             #     |  -   |                                                    |\n");
+printf("|                        '------'      +++                                                            #     '-----'                                                     |\n");
+printf("|                       /  ------------[]                                                             []----        |                                                   |\n");
+printf("|                      /  |      |----/                                                               []------      |                                                   |\n");
+printf("|                      |  |      |                                                                    #     |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      '=====[]=='                                                                          --------                                                    |\n");
+printf("|                      |         |                                                                          |       |                                                   |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|    CHOOSE YOUR ACTION :                                                                                                                                               |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                     ATK [1]             DEF [2]          ITEM [3]                                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 }
