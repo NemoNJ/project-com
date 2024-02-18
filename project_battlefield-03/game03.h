@@ -280,6 +280,23 @@ void Unit::drawScene() {
       drawcase6();
    }
 }
+void starterbotton(int money,char player_action){
+     char click = getch();
+     printf("%c\n",click);
+     if(click == '1') money = 0;
+     else if(click == '2') condition();
+     else if(click == 'e') player_action = 'e';
+};
+void button(char player_action){
+    char click = getch();
+    printf("%c\n",click);
+    if(click == 'a') player_action = 'a';
+    else if(click == 'q') player_action = 'q';
+    else if(click == 'g') player_action = 'g';
+    else if(click == 's') player_action = 's';
+    else if(click == 'l') player_action = 'l';
+    else if(click == 'e') player_action = 'e';
+};
 void Unit::drawcase1(){
 //battle sence1
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
