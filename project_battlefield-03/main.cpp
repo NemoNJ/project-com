@@ -176,6 +176,7 @@ int main(){
         if(player_action == 'l') soilder101.outputsaveprogress(money);
         if(player_action == 'e') break;
         //mons
+        if(player_action == 'a'){
 		if(i > 0){
         if(i == 4){
               BOSS_action = atkboss(BOSS_action);
@@ -186,7 +187,7 @@ int main(){
         }
         if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
         if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
-		
+        }
 		if(soilder101.isDead()){
 			drawScene(soilder101,boss);
 			playerLose();
