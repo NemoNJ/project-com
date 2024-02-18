@@ -26,17 +26,17 @@ class Unit{
     void createchar(string); //เรื่มต้นค่า status
     void newturn(); //เปลี่ยนตา
     void showstatus();
-	int attack(Unit &);
-	int beAttacked(int);
+	int attack(Unit &,string);
+    int superattack(Unit &,string);
+	int beAttacked(int,string);
+    int beSuperAttacked(int,string);
 	int heal();	
 	void guard();
 	bool isDead();
     void buy_item(int);
-    int beSuperAttacked(int);
-    int superattack(Unit &);
     void inputsaveprogress(int);
     void outputsaveprogress(int);
-    int usegrenade();
+    int usegrenade(string);
     void level_up();
     int HeroATK();
     int HeroDEF();
@@ -48,23 +48,23 @@ class Unit{
 void Unit::createchar(string type){ //กำหนดค่า status เริ่มต้น
 	if(type == "Soilder"){
 		hpmax = 100;
-		atk = 5+(rand()%16);
+		atk = 5;
 		def = 5;
 	}else if(type == "BOSS01"){
 		hpmax = 80;
-		atk = 5+(rand()%6);
+		atk = 5;
 		def = 0;
 	}else if(type == "BOSS02"){
 		hpmax = 150;
-		atk = 10+(rand()%11);
+		atk = 10;
 		def = 10;
     }else if(type == "BOSS03"){
 		hpmax = 300;
-		atk = 20+(rand()%21);
+		atk = 20;
 		def = 20;
     }else if(type == "BOSS04"){
 		hpmax = 500;
-		atk = 30+(rand()%51);
+		atk = 30;
 		def = 50;
     }
 	hp = hpmax;
@@ -93,23 +93,59 @@ if(medkit > 0){
      medkit -= 1; //เอากล่องที่ใช้แล้วออก
     }
 }
-int Unit::beAttacked(int oppatk){
-   hp = hp - (oppatk - def);
-   return oppatk - def;
+int Unit::beAttacked(int oppatk, string type){//ต้องสุ่ม damage ทุกครั้งที่ attack
+    if (type == "Soilder") {
+        oppatk += (rand() % 16);
+        hp = hp - (oppatk - def);
+        return oppatk - def;
+    } else if (type == "BOSS01") {
+        oppatk += (rand() % 6);
+        hp = hp - (oppatk - def);
+        return oppatk - def;
+    } else if (type == "BOSS02") {
+        oppatk += (rand() % 11);
+        hp = hp - (oppatk - def);
+        return oppatk - def;
+    } else if (type == "BOSS03") {
+        oppatk += (rand() % 21);
+        hp = hp - (oppatk - def);
+        return oppatk - def;
+    } else if (type == "BOSS04") {
+        oppatk += (rand() % 51);
+        hp = hp - (oppatk - def);
+        return oppatk - def;
+    }
+    return 0; // Default case
 }
-int Unit::attack(Unit &type){
-	return type.beAttacked(atk);
+int Unit::attack(Unit &type,string name){
+	return type.beAttacked(atk,name);
 }
-int Unit::beSuperAttacked(int oppatk){
-   int super_oppatk =  3*oppatk;
-   hp = hp - (super_oppatk - def);
-   return super_oppatk - def;
+int Unit::beSuperAttacked(int oppatk, string type) {//ต้องสุ่ม damage ทุกครั้งที่ attack
+    int super_oppatk = 3 * oppatk;
+    if (type == "BOSS01") {
+        super_oppatk += (rand() % 6);
+        hp = hp - (super_oppatk - def);
+        return super_oppatk - def;
+    } else if (type == "BOSS02") {
+        super_oppatk += (rand() % 11);
+        hp = hp - (super_oppatk - def);
+        return super_oppatk - def;
+    } else if (type == "BOSS03") {
+        super_oppatk += (rand() % 21);
+        hp = hp - (super_oppatk - def);
+        return super_oppatk - def;
+    } else if (type == "BOSS04") {
+        super_oppatk += (rand() % 51);
+        hp = hp - (super_oppatk - def);
+        return super_oppatk - def;
+    }
+    return 0; // Default case
 }
-int Unit::superattack(Unit &type){
-	return type.beSuperAttacked(atk);
+int Unit::superattack(Unit &type,string name){
+	return type.beSuperAttacked(atk,name);
 }
-int Unit::usegrenade(){
-   return this->beAttacked(200);
+int Unit::usegrenade(string type){
+   return this->beAttacked(200,type);
    grenade -= 1;// ใช้ระเบิดแล้ว
 }
 void Unit::showstatus(){
