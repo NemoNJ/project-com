@@ -183,11 +183,10 @@ int main(){
         if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
         if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
         }
-        //ใช้กล่องพยาบาล
+        //medkit
         if(player_action == 'q'){ 
             p = soilder101.heal(); 
-            //boss action start เมื่อ player ตี
-		if(i > 0){
+        if(i > 0){
         if(i == 4){
               BOSS_action = atkboss(BOSS_action);
         }
@@ -198,12 +197,10 @@ int main(){
         if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
         if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
         }
-        }
-        //ใช้ระเบิด
-        if(player_action == 'g'){
-             p = soilder101.usegrenade("Soilder");
-             //boss action start เมื่อ player ตี
-		if(i > 0){
+        //grenade
+        if(player_action == 'g'){ 
+            p = soilder101.usegrenade("Soilder");
+            if(i > 0){
         if(i == 4){
               BOSS_action = atkboss(BOSS_action);
         }
@@ -214,7 +211,6 @@ int main(){
         if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
         if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
         }
-             }
         if(player_action == 's') soilder101.inputsaveprogress(money);
         if(player_action == 'l') soilder101.outputsaveprogress(money);
         if(player_action == 'e') break;
