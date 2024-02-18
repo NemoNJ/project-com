@@ -191,7 +191,6 @@ int main(){
     string boss_id = choose_mon(i);
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
-	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
 	while(true){
 		boss.newturn();	
 		soilder101.newturn();			
@@ -248,7 +247,6 @@ int main(){
     string boss_id = choose_mon(i);
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
-	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
 	while(true){
 		boss.newturn();	
 		soilder101.newturn();			
@@ -305,7 +303,6 @@ int main(){
     string boss_id = choose_mon(i);
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
-	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
 	while(true){
 		boss.newturn();	
 		soilder101.newturn();			
