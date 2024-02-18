@@ -62,6 +62,24 @@ void Coutframe(int a, int b, int sw){
 
 
 int main(){
+    cout << endl;  
+    cout << "                ------------------------------------============== * * * * |   Welcome to the game   | * * * * ==============------------------------------------" << endl;
+    cout << endl;
+    cout << "                This game is played by using cards from all 50 cards that were shuffled to your hand for 5 cards." << endl;
+    cout << "                If you have played all of your cards,  don't worry, cards will shuffle to your hand again." << endl; 
+    cout << "                All most forgot,  you have to play against Bot and both of you have 100 hp.  Hope you enjoy!!" << endl;
+
+    cout << "-----Press Enter to continue------" ;
+    cin.get();
+    cout << endl;
+    cout << "There are 3 type of cards. As follows: " << endl;
+    cout << endl;
+    CoutATK();
+    CoutShield();
+    CoutHeal();
+    ClearTerminal(33);
+    TerminalDefault();
+
     srand(time(0));
     int PlayerHP = 100;
     int BotHP = 100; 
