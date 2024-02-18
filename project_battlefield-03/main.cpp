@@ -188,7 +188,7 @@ int main(){
     }
     i = 2;
         showmap(soilder101);//show stage
-    string boss_id = choose_mon(i);
+    boss_id = choose_mon(i);
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
 	while(true){
@@ -244,7 +244,7 @@ int main(){
     }
     i = 3;
         showmap(soilder101);//show stage
-    string boss_id = choose_mon(i);
+    boss_id = choose_mon(i);
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
 	while(true){
@@ -300,7 +300,7 @@ int main(){
     }
         i = 4;
         showmap(soilder101);//show stage
-    string boss_id = choose_mon(i);
+    boss_id = choose_mon(i);
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
 	while(true){
