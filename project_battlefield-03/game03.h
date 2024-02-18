@@ -145,7 +145,7 @@ int Unit::superattack(Unit &type,string name){
 	return type.beSuperAttacked(atk,name);
 }
 int Unit::usegrenade(string name){
-   return this->beAttacked(200,name);
+   return this->beAttacked(120,name);
    grenade -= 1;// ใช้ระเบิดแล้ว
 }
 void Unit::showstatus(){
@@ -238,9 +238,9 @@ void Unit::buy_item(int money){
         }
     }
     if(click == '5'){//grenade
-       if(money > 150){
+       if(money > 200){
           grenade += 1;
-          money -= 150;
+          money -= 200;
        }
        else{
             cout << "You can't afford it";
@@ -322,6 +322,8 @@ int Unit::HeroHP(){
 }
 //วาด position ที่จะเกิด
 void drawScene(Unit soilder101,Unit boss,string heroname){
+    char heroes[50];
+    sscanf (heroname.c_str(),"%s",heroes);
    if (soilder101.level == 1 && soilder101.havegun == false) {
           int heroatk = soilder101.HeroATK();
           int herodef = soilder101.HeroDEF();
@@ -333,7 +335,7 @@ void drawScene(Unit soilder101,Unit boss,string heroname){
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                           STAGE 1     |\n");
-printf("|                         %s                                                                            The Stick Man LV 1                                              |\n",hero_name);
+printf("|                         %s                                                                            The Stick Man LV 1                                              |\n",heroes);
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -376,7 +378,7 @@ printf("|-----------------------------------------------------------------------
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                           STAGE 2     |\n");
-printf("|                         %s                                                                           The 9mm  LV 10                                                   |\n",hero_name);
+printf("|                         %s                                                                           The 9mm  LV 10                                                   |\n",heroes);
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -418,7 +420,7 @@ printf("|-----------------------------------------------------------------------
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                           STAGE 2     |\n");
-printf("|                         %s                                                                              The 9mm  LV 10                                                |\n",hero_name);
+printf("|                         %s                                                                              The 9mm  LV 10                                                |\n",heroes);
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -461,7 +463,7 @@ printf("|-----------------------------------------------------------------------
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                           STAGE 3     |\n");
-printf("|                         %s                                                                             Toxic Timmy LV 25                                              |\n",hero_name);
+printf("|                         %s                                                                             Toxic Timmy LV 25                                              |\n",heroes);
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -503,7 +505,7 @@ printf("|-----------------------------------------------------------------------
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                           STAGE 3     |\n");
-printf("|                         %s                                                                             Toxic Timmy LV25                                               |\n",hero_name);
+printf("|                         %s                                                                             Toxic Timmy LV25                                               |\n",heroes);
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -545,7 +547,7 @@ printf("|-----------------------------------------------------------------------
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                           STAGE 4     |\n");
-printf("|                         %s                                                                            Just_a_teen LV50                                                |\n",hero_name);
+printf("|                         %s                                                                            Just_a_teen LV50                                                |\n",heroes);
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -589,7 +591,7 @@ printf("|-----------------------------------------------------------------------
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                           STAGE 4     |\n");
-printf("|                         %s                                                                            Just_a_teen LV50                                                |\n",hero_name);
+printf("|                         %s                                                                            Just_a_teen LV50                                                |\n",heroes);
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
