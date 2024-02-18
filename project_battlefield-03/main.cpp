@@ -169,9 +169,13 @@ int main(){
 		drawScene(soilder101,boss);		
         //player
         button(player_action);
-        if(player_action == 'a'){
-        p = soilder101.attack(boss,"Soilder"); 
-        //boss action start เมื่อ player ตี
+        if(player_action == 'a') p = soilder101.attack(boss,"Soilder"); 
+        if(player_action == 'q') p = soilder101.heal(); 
+        if(player_action == 'g') p = soilder101.usegrenade("Soilder");
+        if(player_action == 's') soilder101.inputsaveprogress(money);
+        if(player_action == 'l') soilder101.outputsaveprogress(money);
+        if(player_action == 'e') break;
+        //mons
 		if(i > 0){
         if(i == 4){
               BOSS_action = atkboss(BOSS_action);
@@ -182,44 +186,13 @@ int main(){
         }
         if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
         if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
-        }
-        //medkit
-        if(player_action == 'q'){ 
-            p = soilder101.heal(); 
-        if(i > 0){
-        if(i == 4){
-              BOSS_action = atkboss(BOSS_action);
-        }
-        else{
-              BOSS_action = 'a';
-        }
-        }
-        if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
-        if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
-        }
-        //grenade
-        if(player_action == 'g'){ 
-            p = soilder101.usegrenade("Soilder");
-            if(i > 0){
-        if(i == 4){
-              BOSS_action = atkboss(BOSS_action);
-        }
-        else{
-              BOSS_action = 'a';
-        }
-        }
-        if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
-        if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
-        }
-        if(player_action == 's') soilder101.inputsaveprogress(money);
-        if(player_action == 'l') soilder101.outputsaveprogress(money);
-        if(player_action == 'e') break;
         
 		if(soilder101.isDead()){
 			drawScene(soilder101,boss);
 			playerLose();
 			break; 
 		}
+		
 		if(boss.isDead()){
 			drawScene(soilder101,boss);//อาจแก้เป็นฉากตาย
             soilder101.level_up();
