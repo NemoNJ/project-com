@@ -133,12 +133,8 @@ int main(){
 
    //ซื้อของเมื่อเข้ารอบ 2
    int i = 1;
-   while(i < 4){ //ต้องเจอ monster ตัวถัดไป
+   while(i <= 4){ //ต้องเจอ monster ตัวถัดไป
     showmap(soilder101);//show stage
-    if(i > 1){//รอบ 2 ให้ซื้อของ
-       showshop();
-       soilder101.buy_item(money);
-   }
     string boss_id = choose_mon(turn_count);
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
@@ -190,7 +186,8 @@ int main(){
             soilder101.level_up();
 			playerWin();
             getmoney(boss_id,money);
-            boss.resetboss();
+            showshop();
+             soilder101.buy_item(money);
         }
     }
     i++;
