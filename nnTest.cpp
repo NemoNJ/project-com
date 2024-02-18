@@ -12,15 +12,40 @@ int randomCardValue(int min, int max) {
 int ArryRand(int min, int max) {
     return min + rand()%max;
 }
+void ShuffleCards(string Deck[] , string Type[]){
+        for(int i = 0; i < 5; i++){
+            Deck[i] = Type[ArryRand(0, 3)];
+        }
+}
+bool ReturnUsedcard(string arry[]){
+    string usedCheck = " used           ";
+    int boolsum = 0;
+        for(int i = 0; i < 5; i++){
+            if (arry[i] == usedCheck) boolsum += 1;
+        }
+    if(boolsum == 5) return 1;
+    else return 0;
+}
 
 string CheckCondition(string [], int , int [], int , int &, string []);
 int DMGConfig(int , int , int &);
 int HpConfig(int , int &);
 
 string usedCard(string card[], int arr){
-    return card[arr] = "used";
+    return card[arr] = " used           ";
 }
-    
+string BotDoing(string [], int &, int &, int &, int [], int [], int [], int);
+string BotAction(int , int &, int[] );
+
+
+
+void Coutframe(){
+    for(int i = 0; i < 8; i++) cout << "===";
+    for(int i = 0; i < 8; i++) cout << "------";
+    cout << endl;
+}
+
+
 int main(){
     srand(time(0));
     int PlayerHP = 100;
@@ -39,24 +64,22 @@ int main(){
     }
 
     string AllCardPlayer[5];
-    string BC   [5];
-    string CardType[] = {" Fury Strike", " Damage Absolver", " Healing"};
-    for(int i = 0; i < 5; i++){
-        AllCardPlayer[i] = (CardType[ArryRand(0, 3)]);
-        BC  [i] = (CardType[ArryRand(0, 3)]);
-    }
-    for(int i = 0; i < 8; i++) cout << "---";
-    cout << endl;
-    cout << "Cards in your hand (5 of 50):" << endl;
+    string AllCardBot[5];
+    string CardType[] = {" Fury Strike    ", " Damage Absolver", " Healing        "};
+    ShuffleCards(AllCardPlayer, CardType);
+    ShuffleCards(AllCardBot, CardType);
+
+    Coutframe();
+    printf ("Player's cards(5 of 50):\n");
     for (int i = 0; i < 5; ++i) {
         cout << "Card " << i + 1 << ": " << AllCardPlayer[i] << endl;
     }
-    for(int i = 0; i < 8; i++) cout << "---";
-    cout << endl;
+    Coutframe();
     int playerChoice;    
     int i = 0;
     do{
         int Atk = 0, heal = 0, shield = 0;
+        int BAtk = 0, Bheal = 0, Bshield = 0;
         cout << "\nRound " << i + 1 << endl;
         cout << "Your turn - Choose a card to play (1-5): ";
         cin >> playerChoice;
@@ -64,7 +87,7 @@ int main(){
         //CardType = " Fury Strike ", " Damage Absolver", " Healing"};
          // 1 = strike card , 2 = deffense card , 3 = heal card;
         if (playerChoice == 1){
-            if (AllCardPlayer[playerChoice - 1] == " Fury Strike"){
+            if (AllCardPlayer[playerChoice - 1] == " Fury Strike    "){
                 cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Atk, CardType) << endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
@@ -72,13 +95,13 @@ int main(){
                 cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, shield, CardType) << endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
-            if (AllCardPlayer[playerChoice - 1] == " Healing"){
+            if (AllCardPlayer[playerChoice - 1] == " Healing        "){
                 cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, heal, CardType) << endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
             }
         else if (playerChoice == 2){
-            if (AllCardPlayer[playerChoice - 1] == " Fury Strike"){
+            if (AllCardPlayer[playerChoice - 1] == " Fury Strike    "){
                 cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Atk, CardType) << endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
             }
@@ -86,13 +109,13 @@ int main(){
                 cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, shield, CardType) << endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
             }
-            if (AllCardPlayer[playerChoice - 1] == " Healing"){
+            if (AllCardPlayer[playerChoice - 1] == " Healing        "){
                 cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, heal, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
             }
         else if (playerChoice == 3){
-            if (AllCardPlayer[playerChoice - 1] == " Fury Strike"){
+            if (AllCardPlayer[playerChoice - 1] == " Fury Strike    "){
                 cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Atk, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
@@ -100,13 +123,13 @@ int main(){
                 cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, shield, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
-            if (AllCardPlayer[playerChoice - 1] == " Healing"){
+            if (AllCardPlayer[playerChoice - 1] == " Healing        "){
                 cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, heal, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }       
             }
         else if (playerChoice == 4){
-            if (AllCardPlayer[playerChoice - 1] == " Fury Strike"){
+            if (AllCardPlayer[playerChoice - 1] == " Fury Strike    "){
                 cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Atk, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }   
@@ -114,13 +137,13 @@ int main(){
                 cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, shield, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
-            if (AllCardPlayer[playerChoice - 1] == " Healing"){
+            if (AllCardPlayer[playerChoice - 1] == " Healing        "){
                 cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, heal, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }           
             }
         else if (playerChoice == 5){
-            if (AllCardPlayer[playerChoice - 1] == " Fury Strike"){
+            if (AllCardPlayer[playerChoice - 1] == " Fury Strike    "){
                 cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Atk, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
@@ -128,28 +151,30 @@ int main(){
                 cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, shield, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
-            if (AllCardPlayer[playerChoice - 1] == " Healing"){
+            if (AllCardPlayer[playerChoice - 1] == " Healing        "){
                 cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, heal, CardType)<< endl;
                 usedCard(AllCardPlayer, playerChoice - 1);
                 }
             }
-        else cout << "------Try Again------" << endl;
-
-        for(int i = 0; i < 8; i++) cout << "---";
-        cout << endl;
-        cout << "Your cards left:" << endl;
+        else cout << "------Nothing happened------" << endl;
+        int BotChoice = rand()%5 + 1;
+        cout << BotDoing(AllCardBot, BAtk, Bshield, Bheal, attackCards, defenseCards, healCards, BotChoice) << endl;
+        Coutframe();
+        if(ReturnUsedcard(AllCardPlayer)) ShuffleCards(AllCardPlayer, CardType);
+        printf ("Player's cards(5 of 50):\n");
         for (int i = 0; i < 5; ++i) {
             cout << "Card " << i + 1 << ": " << AllCardPlayer[i] << endl;
             }
-        for(int i = 0; i < 8; i++) cout << "---";
-        cout << endl;
+        Coutframe();
+        
 
-        DMGConfig(Atk, shield, PlayerHP);
-        DMGConfig(Atk, shield, BotHP);
+        DMGConfig(BAtk, shield, PlayerHP);
+        DMGConfig(Atk, Bshield, BotHP);
+        
 
         if (BotHP < 0) BotHP = 0;
         if (PlayerHP < 0) PlayerHP = 0;
-        HpConfig(heal, BotHP);
+        HpConfig(Bheal, BotHP);
         HpConfig(heal, PlayerHP);
         cout << "Bot's HP: " << BotHP << endl;
         cout << "Player's HP: " << PlayerHP << endl;
@@ -161,7 +186,8 @@ int main(){
             cout << "You lost!" << endl;
             GameOver = true;    
             }
-        }
+        
+    }
     while(!GameOver); 
 }
 
@@ -194,96 +220,77 @@ int DMGConfig(int Dmg, int Def, int &Hp){
     Hp -= Dmg - Def;
     return Hp;
 }
-
-string BotAction(string BC[], int BType, int Bcard[], int B, int &Baction, string BCType[]){
-    if()
+// BC == AllCardBot , BCType == CardType for bot;
+string BotDoing(string BC[], int &ATK, int &DEF, int &HEAL, int ATKcard[], int DEFcard[], int HEALcard[], int BotDoing){
     
-    int botChoice = rand()%5 +1;
-    for(int i = 0; i < 5; i++){
-        if (BC[i] == BCType[BType - 1]){
-            if(BType == 1){ //strike
-                Baction = Bcard[rand() % 20];
-                return "     Fierce Attack!!! (O.O)";
+    if (BotDoing == 1){
+            if (BC[BotDoing - 1] == " Fury Strike    "){
+                return BotAction(1, ATK, ATKcard);
+                }
+            if (BC[BotDoing - 1] == " Damage Absolver"){
+                return BotAction(2, DEF, DEFcard);
+                }
+            if (BC[BotDoing - 1] == " Healing        "){
+                return BotAction(3, HEAL, HEALcard);
+                }
             }
-            if(BType == 2){// deffense
-                Baction = Bcard[rand() % 20];
-                return "     Guard Up!!";
+        else if (BotDoing == 2){
+            if (BC[BotDoing - 1] == " Fury Strike    "){
+                return BotAction(1, ATK, ATKcard);
+                }
+            if (BC[BotDoing - 1] == " Damage Absolver"){
+                return BotAction(2, DEF, DEFcard);
+                }
+            if (BC[BotDoing - 1] == " Healing        "){
+                return BotAction(3, HEAL, HEALcard);
+                }
             }
-            if(BType == 3){// Healing
-                Baction = Bcard[rand() % 10];
-                return "     Healing~~ (^-^)";
+        else if (BotDoing == 3){
+            if (BC[BotDoing - 1] == " Fury Strike    "){
+                return BotAction(1, ATK, ATKcard);
+                }
+            if (BC[BotDoing - 1] == " Damage Absolver"){
+                return BotAction(2, DEF, DEFcard);
+                }
+            if (BC[BotDoing - 1] == " Healing        "){
+                return BotAction(3, HEAL, HEALcard);
+                }      
             }
+        else if (BotDoing == 4){
+            if (BC[BotDoing - 1] == " Fury Strike    "){
+                return BotAction(1, ATK, ATKcard);
+                }
+            if (BC[BotDoing - 1] == " Damage Absolver"){
+                return BotAction(2, DEF, DEFcard);
+                }
+            if (BC[BotDoing - 1] == " Healing        "){
+                return BotAction(3, HEAL, HEALcard);
+                }          
+            }
+        else if (BotDoing == 5){
+            if (BC[BotDoing - 1] == " Fury Strike    "){
+                return BotAction(1, ATK, ATKcard);
+                }
+            if (BC[BotDoing - 1] == " Damage Absolver"){
+                return BotAction(2, DEF, DEFcard);
+                }
+            if (BC[BotDoing - 1] == " Healing        "){
+                return BotAction(3, HEAL, HEALcard);
+                }
+            }   
+}
+//type = 1,2,3 , actype == atk/def/heal , Cardrand == atk/def/heal card 1-20
+string BotAction( int type, int &ActType, int Cardrand[]){
+    if (type == 1){//Attack
+        ActType = Cardrand[rand() % 20];
+        return "     Fierce Attack!!! (O.O)";
         }
-    }
-    if (botChoice == 1){
-            if (BC[botChoice - 1] == " Fury Strike"){
-                cout << CheckCondition(BC, 1, attackCards, playerChoice, Atk, CardType) << endl;
-                usedCard(BC, botChoice - 1);
-                }
-            if (BC[botChoice - 1] == " Damage Absolver"){
-                cout << CheckCondition(BC, 2, defenseCards, playerChoice, shield, CardType) << endl;
-                usedCard(BC, botChoice - 1);
-                }
-            if (BC[botChoice - 1] == " Healing"){
-                cout << CheckCondition(BC   , 3, healCards, playerChoice, heal, CardType) << endl;
-                usedCard(BC , botChoice - 1);
-                }
-            }
-        else if (botChoice == 2){
-            if (BC  [botChoice - 1] == " Fury Strike"){
-                cout << CheckCondition(BC   , 1, attackCards, playerChoice, Atk, CardType) << endl;
-                usedCard(BC , botChoice - 1);
-            }
-            if (AllCardPAllCardBotlayer[botChoice - 1] == " Damage Absolver"){
-                cout << CheckCondition(BC   , 2, defenseCards, playerChoice, shield, CardType) << endl;
-                usedCard(BC , botChoice - 1);
-            }
-            if (BC  [botChoice - 1] == " Healing"){
-                cout << CheckCondition(BC   , 3, healCards, playerChoice, heal, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }
-            }
-        else if (botChoice == 3){
-            if (BC  [botChoice - 1] == " Fury Strike"){
-                cout << CheckCondition(BC   , 1, attackCards, playerChoice, Atk, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }
-            if (BC  [botChoice - 1] == " Damage Absolver"){
-                cout << CheckCondition(BC   , 2, defenseCards, playerChoice, shield, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }
-            if (BC  [botChoice - 1] == " Healing"){
-                cout << CheckCondition(BC   , 3, healCards, playerChoice, heal, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }       
-            }
-        else if (botChoice == 4){
-            if (AllCardPlayer[botChoice - 1] == " Fury Strike"){
-                cout << CheckCondition(BC   , 1, attackCards, playerChoice, Atk, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }   
-            if (AllCardPlayer[botChoice - 1] == " Damage Absolver"){
-                cout << CheckCondition(BC   , 2, defenseCards, playerChoice, shield, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }
-            if (AllCardPlayer[botChoice - 1] == " Healing"){
-                cout << CheckCondition(BC   , 3, healCards, playerChoice, heal, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }           
-            }
-        else if (botChoice == 5){
-            if (AllCardPlayer[botChoice - 1] == " Fury Strike"){
-                cout << CheckCondition(BC   , 1, attackCards, playerChoice, Atk, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }
-            if (AllCardPlayer[botChoice - 1] == " Damage Absolver"){
-                cout << CheckCondition(BC   , 2, defenseCards, playerChoice, shield, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }
-            if (AllCardPlayer[botChoice - 1] == " Healing"){
-                cout << CheckCondition(BC   , 3, healCards, playerChoice, heal, CardType)<< endl;
-                usedCard(BC , botChoice - 1);
-                }
-            }
-    
+    if (type == 2){// deffense
+        ActType = Cardrand[rand() % 20];
+            return "     Guard Up!!";
+        }
+    if (type == 3){// Healing
+        ActType = Cardrand[rand() % 10];
+        return "     Healing~~ (^-^)";
+        }
 }
