@@ -253,27 +253,6 @@ void Unit::outputsaveprogress(int money){
 void Unit::level_up(){//เพิ่ม level เมื่อผ่านด่าน
     level += 1;
 }
-//วาด position ที่จะเกิด
-void drawScene(Unit soilder101,Unit boss) {
-   if (soilder101.level == 1 && soilder101.havegun == false) {
-      drawcase1(soilder101,boss);
-   }
-   if (soilder101.level == 2 && soilder101.havegun == false) {
-      drawcase2(soilder101,boss);
-   }
-   if (soilder101.level == 2 && soilder101.havegun == true) {
-      drawcase3(soilder101,boss);
-   }
-   if (soilder101.level == 3 && soilder101.haverifle == false) {
-      drawcase4(soilder101,boss);
-   }
-   if (soilder101.level == 3 && soilder101.haverifle == true) {
-      drawcase5(soilder101,boss);
-   }
-   if (soilder101.level == 4 && soilder101.haverifle == true) {
-      drawcase6(soilder101,boss);
-   }
-}
 void button(char player_action){
     char click = getch();
     printf("%c\n",click);
@@ -296,14 +275,15 @@ int Unit::HeroHP(){
     int herohp = hp;
    return  herohp;
 }
-void drawcase1(Unit soilder101,Unit boss){
-    int heroatk = soilder101.HeroATK();
-    int herodef = soilder101.HeroDEF();
-    int herohp = soilder101.HeroHP();
-    int bossatk = boss.HeroATK();
-    int bossdef = boss.HeroDEF();
-    int bosshp = boss.HeroHP();
-
+//วาด position ที่จะเกิด
+void drawScene(Unit soilder101,Unit boss) {
+   if (soilder101.level == 1 && soilder101.havegun == false) {
+          int heroatk = soilder101.HeroATK();
+          int herodef = soilder101.HeroDEF();
+          int herohp = soilder101.HeroHP();
+          int bossatk = boss.HeroATK();
+          int bossdef = boss.HeroDEF();
+          int bosshp = boss.HeroHP();
 //battle sence1
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
@@ -338,59 +318,15 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
-};
-void drawcase2(Unit soilder101,Unit boss){
-    int heroatk = soilder101.HeroATK();
-    int herodef = soilder101.HeroDEF();
-    int herohp = soilder101.HeroHP();
-    int bossatk = boss.HeroATK();
-    int bossdef = boss.HeroDEF();
-    int bosshp = boss.HeroHP();
 
-//battle sence1
-printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                           STAGE 1     |\n");
-printf("|                         NAME                                                                         The Stick Man LV1                                                |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                        ------                                                                                                                                         |\n");
-printf("|                       /      '               ATK: %d                                                       ------        ATK: %d                                      |\n",heroatk,bossatk);
-printf("|                      /--------|      /|      HP:  %d                                                #     / -  - |       HP:  %d                                      |\n",herohp,bosshp);
-printf("|                      |/   I I |      ||      DEF: %d                                                #     | o  o |       DEF: %d                                      |\n",herodef,bossdef);
-printf("|                      ||    -  /      ||                                                             #     |  -   |                                                    |\n");
-printf("|                        '------'      +++                                                            #     '-----'                                                     |\n");
-printf("|                       /  ------------[]                                                             []----        |                                                   |\n");
-printf("|                      /  |      |----/                                                               []------      |                                                   |\n");
-printf("|                      |  |      |                                                                    #     |       |                                                   |\n");
-printf("|                      |==|      |                                                                          |       |                                                   |\n");
-printf("|                      |==|      |                                                                          |       |                                                   |\n");
-printf("|                      '=====[]=='                                                                   ----------------                                                    |\n");
-printf("|                      |         |                                                                          |       |                                                   |\n");
-printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|    CHOOSE YOUR ACTION :        [A] Attack        [G] USE_Grenade       [Q] USE_MedKit     [S] Save_game      [L] Load_game     [E] Exit                               |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
-};
-
-void drawcase3(Unit soilder101,Unit boss){
-    int heroatk = soilder101.HeroATK();
-    int herodef = soilder101.HeroDEF();
-    int herohp = soilder101.HeroHP();
-    int bossatk = boss.HeroATK();
-    int bossdef = boss.HeroDEF();
-    int bosshp = boss.HeroHP();
-
+   }
+   if (soilder101.level == 2 && soilder101.havegun == false) {
+      int heroatk = soilder101.HeroATK();
+          int herodef = soilder101.HeroDEF();
+          int herohp = soilder101.HeroHP();
+          int bossatk = boss.HeroATK();
+          int bossdef = boss.HeroDEF();
+          int bosshp = boss.HeroHP();
 //battle sence1
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
@@ -425,15 +361,14 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
-};
-void drawcase4(Unit soilder101,Unit boss){
-    int heroatk = soilder101.HeroATK();
-    int herodef = soilder101.HeroDEF();
-    int herohp = soilder101.HeroHP();
-    int bossatk = boss.HeroATK();
-    int bossdef = boss.HeroDEF();
-    int bosshp = boss.HeroHP();
-
+   }
+   if (soilder101.level == 2 && soilder101.havegun == true) {
+      int heroatk = soilder101.HeroATK();
+          int herodef = soilder101.HeroDEF();
+          int herohp = soilder101.HeroHP();
+          int bossatk = boss.HeroATK();
+          int bossdef = boss.HeroDEF();
+          int bosshp = boss.HeroHP();
 //battle sence1
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
@@ -468,15 +403,14 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
-};
-void drawcase5(Unit soilder101,Unit boss){
-    int heroatk = soilder101.HeroATK();
-    int herodef = soilder101.HeroDEF();
-    int herohp = soilder101.HeroHP();
-    int bossatk = boss.HeroATK();
-    int bossdef = boss.HeroDEF();
-    int bosshp = boss.HeroHP();
-
+   }
+   if (soilder101.level == 3 && soilder101.haverifle == false) {
+      int heroatk = soilder101.HeroATK();
+          int herodef = soilder101.HeroDEF();
+          int herohp = soilder101.HeroHP();
+          int bossatk = boss.HeroATK();
+          int bossdef = boss.HeroDEF();
+          int bosshp = boss.HeroHP();
 //battle sence1
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
@@ -511,15 +445,14 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
-};
-void drawcase6(Unit soilder101,Unit boss){
-    int heroatk = soilder101.HeroATK();
-    int herodef = soilder101.HeroDEF();
-    int herohp = soilder101.HeroHP();
-    int bossatk = boss.HeroATK();
-    int bossdef = boss.HeroDEF();
-    int bosshp = boss.HeroHP();
-
+   }
+   if (soilder101.level == 3 && soilder101.haverifle == true) {
+      int heroatk = soilder101.HeroATK();
+          int herodef = soilder101.HeroDEF();
+          int herohp = soilder101.HeroHP();
+          int bossatk = boss.HeroATK();
+          int bossdef = boss.HeroDEF();
+          int bosshp = boss.HeroHP();
 //battle sence1
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
@@ -554,4 +487,47 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+   }
+   if (soilder101.level == 4 && soilder101.haverifle == true) {
+      int heroatk = soilder101.HeroATK();
+          int herodef = soilder101.HeroDEF();
+          int herohp = soilder101.HeroHP();
+          int bossatk = boss.HeroATK();
+          int bossdef = boss.HeroDEF();
+          int bosshp = boss.HeroHP();
+//battle sence1
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                           STAGE 1     |\n");
+printf("|                         NAME                                                                         The Stick Man LV1                                                |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        DAMAGE                                                                              DAMAGE                                                     |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                        ------                                                                                                                                         |\n");
+printf("|                       /      '               ATK: %d                                                       ------        ATK: %d                                      |\n",heroatk,bossatk);
+printf("|                      /--------|      /|      HP:  %d                                                #     / -  - |       HP:  %d                                      |\n",herohp,bosshp);
+printf("|                      |/   I I |      ||      DEF: %d                                                #     | o  o |       DEF: %d                                      |\n",herodef,bossdef);
+printf("|                      ||    -  /      ||                                                             #     |  -   |                                                    |\n");
+printf("|                        '------'      +++                                                            #     '-----'                                                     |\n");
+printf("|                       /  ------------[]                                                             []----        |                                                   |\n");
+printf("|                      /  |      |----/                                                               []------      |                                                   |\n");
+printf("|                      |  |      |                                                                    #     |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      |==|      |                                                                          |       |                                                   |\n");
+printf("|                      '=====[]=='                                                                          --------                                                    |\n");
+printf("|                      |         |                                                                          |       |                                                   |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|    CHOOSE YOUR ACTION :        [A] Attack        [G] USE_Grenade       [Q] USE_MedKit     [S] Save_game      [L] Load_game     [E] Exit                               |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+   }
 };
