@@ -230,6 +230,5 @@ void TerminalSeclection(int Pact, int Bact){
 }
 
 
-
 int main2(){
 }
