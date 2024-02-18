@@ -182,8 +182,10 @@ int main(){
             soilder101.level_up();
 			playerWin();
             getmoney(boss_id,money);
-            showshop();
-             soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
+            if(player_action == 't'){
+                showshop();
+                soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
+            }
         }
     }
     i = 2;
@@ -238,8 +240,10 @@ int main(){
             soilder101.level_up();
 			playerWin();
             getmoney(boss_id,money);
-            showshop();
-             soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
+            if(player_action == 't'){
+                showshop();
+                soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
+            }
         }
     }
     i = 3;
@@ -294,8 +298,10 @@ int main(){
             soilder101.level_up();
 			playerWin();
             getmoney(boss_id,money);
-            showshop();
-             soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
+            if(player_action == 't'){
+                showshop();
+                soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
+            }
         }
     }
         i = 4;
