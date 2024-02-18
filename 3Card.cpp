@@ -12,35 +12,66 @@ void Terminal(){
     for(int i = 0; i < tall; i++) Frame(" ");
 }
 
-int main2(){
+void ClearTerminal(int j){
+    for(int i = 0; i < j; i++) cout << endl;
+}
 
-    
+void CoutATK(){
+    printf ("   ______________\n");
+    printf ("  |              |\n");
+    printf ("  |      /\\      |      Card name: Fury Strike\n");
+    printf ("  |     |  |     |      Random damage from 20 - 50 point\n");
+    printf ("  |   __|__|__   |      then strike to an enemy.\n");
+    printf ("  |  |__|__|__|  |\n");
+    printf ("  |     |__|     |\n");
+    printf ("  |______________|\n");
+    printf ("---Enter to continue---");
+    cin.get();
+}
 
-    printf (" ______________\n");
-    printf ("|              |\n");
-    printf ("|      __      |\n");
-    printf ("|   __|  |__   |\n");
-    printf ("|  |__    __|  |\n");
-    printf ("|     |__|     |\n");
-    printf ("|              |\n");
-    printf ("|______________|\n");
-    printf (" ______________\n");
-    printf ("|              |\n");
-    printf ("|      /\\      |\n");
-    printf ("|     |  |     |\n");
-    printf ("|   __|__|__   |\n");
-    printf ("|  |__|__|__|  |\n");
-    printf ("|     |__|     |\n");
-    printf ("|______________|\n");
-    printf (" ______________\n");
-    printf ("|  __________  |\n");
-    printf ("| |  ______  | |\n");
-    printf ("| | |      | | |\n");
-    printf ("| | |      | | |\n");
-    printf ("|  \\ \\ __ / /  |\n");
-    printf ("|   \\______/   |\n");
-    printf ("|______________|\n");
+void CoutShield(){
+    printf ("   ______________\n");
+    printf ("  |  __________  |\n");
+    printf ("  | |  ______  | |      Card name: Damage Absolver\n");
+    printf ("  | | |      | | |      can reduce damage from enemy\n");
+    printf ("  | | |      | | |      in range 10 - 30 point.\n");
+    printf ("  |  \\ \\ __ / /  |\n");
+    printf ("  |   \\______/   |\n");
+    printf ("  |______________|\n");
+    printf ("---Enter to continue---");
+    cin.get();
+}
 
+void CoutHeal(){
+    printf ("   ______________\n");
+    printf ("  |              |\n");
+    printf ("  |      __      |      Card name: Healing\n");
+    printf ("  |   __|  |__   |      can restore some Hp\n");
+    printf ("  |  |__    __|  |      from 5 - 30 point\n");
+    printf ("  |     |__|     |\n");
+    printf ("  |              |\n");
+    printf ("  |______________|\n");
+    printf ("---Enter to continue---");
+    cin.get();
+}
+
+void TerminalDefault(){
+    printf ("                   __     ______________                                                                                    ___      ________             \n");
+    printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
+    printf ("                  |  |     |  __  __  |                                                                                     | |    |  /\\  /\\  |         \n");
+    printf ("                  |  |\\__  |  \\/__\\/  |                                                                                    _|_|_   |   ____   |        \n");
+    printf ("                  |______|  \\________/                                                                                    |_____|   \\________/      _   \n");
+    printf ("                     |______/  _\\/_  \\________                                                                              |_|_____/        \\_____|_| \n");
+    printf ("                           |  /    \\  |    _|_|_                                                                                   |          |          \n");
+    printf ("                           |  \\____/  |   |_ _ _|                                                                                  |          |          \n");
+    printf ("                            \\________/      | |                                                                                     \\________/          \n");
+    printf ("                             ||    ||       | |                                                                                      ||    ||             \n");
+    printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
+    printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
+    cout << endl;
+}
+
+void TerminalHH(){
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
@@ -53,7 +84,10 @@ int main2(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
+    cout << endl;
+}
 
+void TerminalHA(){
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
@@ -66,7 +100,10 @@ int main2(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
+    cout << endl;
+}
 
+void TerminalHS(){
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
@@ -79,7 +116,10 @@ int main2(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
+    cout << endl;
+}
 
+void TerminalAH(){
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
@@ -92,7 +132,10 @@ int main2(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
+    cout << endl;
+}
 
+void TerminalAA(){
     printf ("                   __     ______________                                                                                   ___      ________              \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\          \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |          \n");
@@ -105,7 +148,10 @@ int main2(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||              \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__           \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|         \n");
+    cout << endl;
+}
 
+void TerminalAS(){
     printf ("                   __     ______________                                                                                   ___      ________              \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\          \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |          \n");
@@ -118,7 +164,10 @@ int main2(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||              \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__           \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|         \n");
-   
+    cout << endl;
+}
+
+void TerminalSH(){
     printf ("                   __     ______________                                                                                   ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |         \n");
@@ -131,7 +180,10 @@ int main2(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|        \n");
+    cout << endl;
+}
 
+void TerminalSA(){
     printf ("                   __     ______________                                                                                   ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |         \n");
@@ -144,7 +196,10 @@ int main2(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|        \n");
+    cout << endl;
+}
 
+void TerminalSS(){
     printf ("                   __     ______________                                                                                   ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |         \n");
@@ -157,4 +212,24 @@ int main2(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|        \n");
+    cout << endl;
+}
+
+void TerminalSeclection(int Pact, int Bact){
+    if(Pact == 1 && Bact == 1) TerminalAA();
+    if(Pact == 1 && Bact == 2) TerminalAS();
+    if(Pact == 1 && Bact == 3) TerminalAH();
+
+    if(Pact == 2 && Bact == 1) TerminalSA();
+    if(Pact == 2 && Bact == 2) TerminalSS();
+    if(Pact == 2 && Bact == 3) TerminalSH();
+
+    if(Pact == 3 && Bact == 1) TerminalHA();
+    if(Pact == 3 && Bact == 2) TerminalHS();
+    if(Pact == 3 && Bact == 3) TerminalHH();
+}
+
+
+
+int main2(){
 }
