@@ -289,7 +289,7 @@ void Unit::outputsaveprogress(int money){
 void Unit::level_up(){//เพิ่ม level เมื่อผ่านด่าน
     level += 1;
 }
-void button(char player_action,char BOSS_action){
+void button(char &player_action,char &BOSS_action){
     char click = getch();
     printf("%c\n",click);
     if(click == 'a'){ 
