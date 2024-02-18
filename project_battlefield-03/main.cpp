@@ -169,9 +169,9 @@ int main(){
 		drawScene(soilder101,boss);		
         //player
         button(player_action);
-        if(player_action == 'a') p = soilder101.attack(boss); 
+        if(player_action == 'a') p = soilder101.attack(boss,"Soilder"); 
         if(player_action == 'q') p = soilder101.heal(); 
-        if(player_action == 'g') p = soilder101.usegrenade();
+        if(player_action == 'g') p = soilder101.usegrenade("Soilder");
         if(player_action == 's') soilder101.inputsaveprogress(money);
         if(player_action == 'l') soilder101.outputsaveprogress(money);
         if(player_action == 'e') break;
@@ -184,9 +184,8 @@ int main(){
               BOSS_action = 'a';
         }
         }
-        if(BOSS_action == 'a') m = boss.attack(soilder101); 
-        if(BOSS_action == 'b') m = boss.superattack(soilder101);
-        
+        if(BOSS_action == 'a') m = boss.attack(soilder101,boss_id); 
+        if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
 		
 		if(soilder101.isDead()){
 			drawScene(soilder101,boss);
