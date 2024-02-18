@@ -134,7 +134,13 @@ printf("\n");
 printf(" \n");
 
 }
-
+void starterbotton(int money,char player_action){
+     char click = getch();
+     printf("%c\n",click);
+     if(click == '1') money = 0;
+     else if(click == '2') condition();
+     else if(click == 'e') player_action = 'e';
+}
 int main(){
     Unit soilder101,boss;
     int turn_count = 1;
