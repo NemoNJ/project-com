@@ -333,6 +333,9 @@ void button(char &player_action,char &BOSS_action){
         player_action = 'g';
         BOSS_action = 'a';
     }
+    else if(click == 't'){
+        player_action = 't';
+            }
     else if(click == 's') player_action = 's';
     else if(click == 'l') player_action = 'l';
     else if(click == 'e') player_action = 'e';
@@ -837,4 +840,39 @@ printf("|       PRESS [T] To continue                                           
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
     }
+};
+void showshop(int money){
+//storade
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                         [  SHOP  ]                                                                                    |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                 _______________==                                      ___     ___                                      _______________                               |\n");
+printf("|                q|[[[[ [__]   ___|                                      [ ]_____[ ]]                                    /______________/|                              |\n");
+printf("|                /_____________/_ |                                     |    VEST   ||                                   |      _      | |                              |\n");
+printf("|                |    [|_]'                                             |           ||                                   |   __| |__   | |                              |\n");
+printf("|                | ## |                                                 |___ ___ ___||                                   |  |__   __|  | |                              |\n");
+printf("|                | ## |                                                 |[__][__][__]|                                   |     |_|     | |                              |\n");
+printf("|                |_##_|                                                 |   |   |   ||                                   |  first aid  | |                              |\n");
+printf("|                                                                       |___|___|___|/                                   |_____________|/                               |\n");
+printf("|             Pistol Press[1]                                           Armor1 Press[2]                                  Medkit  Press[3]                               |\n");
+printf("|             PRICE : 150  $                                            PRICE : 300  $                                   PRICE : 100  $                                 |\n");
+printf("|             ATK   : 15 - 35 damage                                    DEF   : +10 def                                  HEAL  :  25 - 40 hp                            |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                            __                                                                                         |\n");
+printf("|                                  __:                                     /=||=-o                                                                                      |\n");
+printf("|                         /**********|======.._____    ==                 / [  ]                                                                                        |\n");
+printf("|                --------/  '/-----/ |=[][] !!-----|___/|                / [    ]                                                                                       |\n");
+printf("|               |        __  |_]--|--|=======-----------|               | [______]                                                                                      |\n");
+printf("|               |      _/  |_|     |  |                                    [    ]                                                                                       |\n");
+printf("|               |_____/    ==       |__|                                    [__]                                                                                        |\n");
+printf("|             Rifile  Press[4]                                         Grenade  Press[5]                                                                                |\n");
+printf("|             PRICE : 1000  $                                          PRICE : 200  $ ( 1 used )                                                                        |\n");
+printf("|             ATK   : 50 - 100 damage                                  ATK   : 120 damage                                                                               |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|     YOUR MONEY : %d              PRESS [T] To continue                                                                                                                |\n",money);
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 };
