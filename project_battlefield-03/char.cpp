@@ -197,18 +197,18 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                                                                                       |\n");
+printf("|                                                                           ....                                                                                        |\n");
+printf("|                                                                         .'    '.                                                                                      |\n");
+printf("|                                                                        .   ......  ___       _                                                                        |\n");
+printf("|                                                                        . .' I_I_;./___|_____/-|____                                                                   |\n");
+printf("|                                                                      .'     |     ____.--;;;;;;;'                                                                     |\n");
+printf("|                                                                     .  ...  |____/||  [ ]'''                                                                          |\n");
+printf("|                                                                     :     ...   ...'   [_]                                                                            |\n");
+printf("|                                                                    .    .     :                                                                                       |\n");
+printf("|                                                                    . :  . :  : .                                                                                      |\n");
+printf("|                                                                    : : .  :  : :                                                                                      |\n");
+printf("|                                                                    :...........:                                                                                      |\n");
+printf("|                                                                    :           :                                                                                      |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -689,6 +689,7 @@ printf("|-----------------------------------------------------------------------
 
 
 }
+
 
 
 
