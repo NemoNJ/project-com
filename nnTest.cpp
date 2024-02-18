@@ -65,6 +65,7 @@ int main(){
     srand(time(0));
     int PlayerHP = 100;
     int BotHP = 100; 
+    bool GameOver = false;
 
     int attackCards[20];
     int defenseCards[20];

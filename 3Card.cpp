@@ -21,11 +21,7 @@ void CoutATK(){
     printf ("  |              |\n");
     printf ("  |      /\\      |      Card name: Fury Strike\n");
     printf ("  |     |  |     |      Random damage from 20 - 50 point\n");
-<<<<<<< HEAD
-    printf ("  |   __|__|__   |      then strike to an enemy.\n");
-=======
     printf ("  |   _|__|_   |      then strike to an enemy.\n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("  |  |__|__|__|  |\n");
     printf ("  |     |__|     |\n");
     printf ("  |______________|\n");
@@ -35,13 +31,8 @@ void CoutATK(){
 
 void CoutShield(){
     printf ("   ______________\n");
-<<<<<<< HEAD
-    printf ("  |  __________  |\n");
-    printf ("  | |  ______  | |      Card name: Damage Absolver\n");
-=======
     printf ("  |  ________  |\n");
     printf ("  | |  ____  | |      Card name: Damage Absolver\n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("  | | |      | | |      can reduce damage from enemy\n");
     printf ("  | | |      | | |      in range 10 - 30 point.\n");
     printf ("  |  \\ \\ __ / /  |\n");
@@ -55,11 +46,7 @@ void CoutHeal(){
     printf ("   ______________\n");
     printf ("  |              |\n");
     printf ("  |      __      |      Card name: Healing\n");
-<<<<<<< HEAD
-    printf ("  |   __|  |__   |      can restore some Hp\n");
-=======
     printf ("  |   _|  |_   |      can restore some Hp\n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("  |  |__    __|  |      from 5 - 30 point\n");
     printf ("  |     |__|     |\n");
     printf ("  |              |\n");
@@ -69,27 +56,7 @@ void CoutHeal(){
 }
 
 void TerminalDefault(){
-<<<<<<< HEAD
-    printf ("                   __     ______________                                                                                    ___      ________             \n");
-    printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
-    printf ("                  |  |     |  __  __  |                                                                                     | |    |  /\\  /\\  |         \n");
-    printf ("                  |  |\\__  |  \\/__\\/  |                                                                                    _|_|_   |   ____   |        \n");
-    printf ("                  |______|  \\________/                                                                                    |_____|   \\________/      _   \n");
-    printf ("                     |______/  _\\/_  \\________                                                                              |_|_____/        \\_____|_| \n");
-    printf ("                           |  /    \\  |    _|_|_                                                                                   |          |          \n");
-    printf ("                           |  \\____/  |   |_ _ _|                                                                                  |          |          \n");
-    printf ("                            \\________/      | |                                                                                     \\________/          \n");
-    printf ("                             ||    ||       | |                                                                                      ||    ||             \n");
-    printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
-    printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
-    cout << endl;
-}
-
-void TerminalHH(){
-    printf ("                   __     ______________                                                                                    ___      ________             \n");
-=======
     printf ("                   _     _____________                                                                                    _      ______             \n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  _  _  |                                                                                     | |    |  /\\  /\\  |         \n");
     printf ("                  |  |\\__  |  \\/__\\/  |                                                                                    |_|   |   __   |        \n");
@@ -121,11 +88,7 @@ void TerminalHH(){
 }
 
 void TerminalHA(){
-<<<<<<< HEAD
-    printf ("                   __     ______________                                                                                    ___      ________             \n");
-=======
     printf ("                   _     _____________                                                                                    _      ______             \n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  _  _  |                   ____________                          ____________            | |    |  /\\  /\\  |         \n");
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |              |          |_|   |   __   |        \n");
@@ -141,11 +104,7 @@ void TerminalHA(){
 }
 
 void TerminalHS(){
-<<<<<<< HEAD
-    printf ("                   __     ______________                                                                                    ___      ________             \n");
-=======
     printf ("                   _     _____________                                                                                    _      ______             \n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  _  _  |                   ____________                          ____________            | |    |  /\\  /\\  |         \n");
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |  ________  |          |_|   |   __   |        \n");
@@ -161,11 +120,7 @@ void TerminalHS(){
 }
 
 void TerminalAH(){
-<<<<<<< HEAD
-    printf ("                   __     ______________                                                                                    ___      ________             \n");
-=======
     printf ("                   _     _____________                                                                                    _      ______             \n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  _  _  |                   ____________                          ____________            | |    |  /\\  /\\  |         \n");
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |              |          |_|   |   __   |        \n");
@@ -181,11 +136,7 @@ void TerminalAH(){
 }
 
 void TerminalAA(){
-<<<<<<< HEAD
-    printf ("                   __     ______________                                                                                   ___      ________              \n");
-=======
     printf ("                   _     _____________                                                                                   _      ______              \n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\          \n");
     printf ("                  |  |     |  _  _  |                   ____________                          ____________           | |    |  /\\  /\\  |          \n");
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |              |         |_|   |   __   |         \n");
@@ -201,11 +152,7 @@ void TerminalAA(){
 }
 
 void TerminalAS(){
-<<<<<<< HEAD
-    printf ("                   __     ______________                                                                                   ___      ________              \n");
-=======
     printf ("                   _     _____________                                                                                   _      ______              \n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\          \n");
     printf ("                  |  |     |  _  _  |                   ____________                          ____________           | |    |  /\\  /\\  |          \n");
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |  ________  |         |_|   |   __   |         \n");
@@ -221,11 +168,7 @@ void TerminalAS(){
 }
 
 void TerminalSH(){
-<<<<<<< HEAD
-    printf ("                   __     ______________                                                                                   ___      ________             \n");
-=======
     printf ("                   _     _____________                                                                                   _      ______             \n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
     printf ("                  |  |     |  _  _  |                   ____________                          ____________           | |    |  /\\  /\\  |         \n");
     printf ("                  |  |\\__  |  \\/__\\/  |                  |  ________  |                        |              |         |_|   |   __   |        \n");
@@ -241,11 +184,7 @@ void TerminalSH(){
 }
 
 void TerminalSA(){
-<<<<<<< HEAD
-    printf ("                   __     ______________                                                                                   ___      ________             \n");
-=======
     printf ("                   _     _____________                                                                                   _      ______             \n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
     printf ("                  |  |     |  _  _  |                   ____________                          ____________           | |    |  /\\  /\\  |         \n");
     printf ("                  |  |\\__  |  \\/__\\/  |                  |  ________  |                        |              |         |_|   |   __   |        \n");
@@ -261,11 +200,7 @@ void TerminalSA(){
 }
 
 void TerminalSS(){
-<<<<<<< HEAD
-    printf ("                   __     ______________                                                                                   ___      ________             \n");
-=======
     printf ("                   _     _____________                                                                                   _      ______             \n");
->>>>>>> 8bbf0f07821666b4dfef124c8e94b4c3caf5cfd4
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
     printf ("                  |  |     |  _  _  |                   ____________                          ____________           | |    |  /\\  /\\  |         \n");
     printf ("                  |  |\\__  |  \\/__\\/  |                  |  ________  |                        |  ________  |         |_|   |   __   |        \n");
