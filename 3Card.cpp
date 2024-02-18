@@ -2,7 +2,20 @@
 
 using namespace std;
 
+void Frame(string Frame){
+    int width = 170;
+    for (int i = 0; i < width; i++) cout << Frame;
+    cout << endl;
+}
+void Terminal(){
+    int tall = 29;
+    for(int i = 0; i < tall; i++) Frame(" ");
+}
+
 int main2(){
+
+    
+
     printf (" ______________\n");
     printf ("|              |\n");
     printf ("|      __      |\n");
