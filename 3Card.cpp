@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(){
+int main2(){
     printf (" ______________\n");
     printf ("|              |\n");
     printf ("|      __      |\n");
