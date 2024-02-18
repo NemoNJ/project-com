@@ -42,7 +42,7 @@ void terminal(){
     printf( "---------------------------------------------------------------------------------------------------");
 
 }
-string chooose_mon(int count){ //เลือก mons ที่จะบวก
+string choose_mon(int count){ //เลือก mons ที่จะบวก
     string boss;
     if(count == 1) boss = "BOSS01";
     else if(count == 2) boss = "BOSS02";
@@ -141,6 +141,7 @@ void starterbotton(int money,char player_action){
      else if(click == '2') condition();
      else if(click == 'e') player_action = 'e';
 }
+
 int main(){
     Unit soilder101,boss;
     int turn_count = 1;
@@ -158,15 +159,14 @@ int main(){
        soilder101.buy_item(money);
        showshop();
    }
-    string boss_id = chooose_mon(turn_count);
+    string boss_id = choose_mon(turn_count);
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
 	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
 	while(true){
 		boss.newturn();	
 		soilder101.newturn();			
-		soilder101.drawScene();		
-		printf("[A] Attack [G] USE_Grenade [Q] USE_MedKit [S] Save_game [L] Load_game [E] Exit");
+		drawScene(soilder101,boss);		
         //player
         button(player_action);
         if(player_action == 'a') p = soilder101.attack(boss); 
@@ -189,13 +189,13 @@ int main(){
         
 		
 		if(soilder101.isDead()){
-			soilder101.drawScene();
+			drawScene(soilder101,boss);
 			playerLose();
 			break; 
 		}
 		
 		if(boss.isDead()){
-			soilder101.drawScene();//อาจแก้เป็นฉากตาย
+			drawScene(soilder101,boss);//อาจแก้เป็นฉากตาย
             soilder101.level_up();
 			playerWin();
             getmoney(boss_id,money);
