@@ -40,6 +40,7 @@ void terminal(){
     printf("|                                                                                                   |\n");
     printf("|                                                                                                   |\n");
     printf( "---------------------------------------------------------------------------------------------------");
+
 }
 string chooose_mon(int count){ //เลือก mons ที่จะบวก
     string boss;
@@ -141,18 +142,7 @@ int main(){
     char player_action = '\0',BOSS_action = '\0'; //กำหนดค่าเริ่มต้น monster action
     
     terminal();
-    //เลือกว่าจะเข้าเกมไหม
-    char click = getch();
-    printf("%c\n",click);
-    if(click == '1') money = 0;
-    else if(click == '2') condition();
-    else if(click == 'a') player_action == 'a';
-    else if(click == 'q') player_action == 'q';
-    else if(click == 'g') player_action == 'g';
-    else if(click == 's') player_action == 's';
-    else if(click == 'l') player_action == 'l';
-    else if(click == 'e') player_action == 'e';
-
+    starterbotton(money,player_action);
     srand(time(0));
 
    //ซื้อของเมื่อเข้ารอบ 2
@@ -172,6 +162,7 @@ int main(){
 		soilder101.drawScene();		
 		printf("[A] Attack [G] USE_Grenade [Q] USE_MedKit [S] Save_game [L] Load_game [E] Exit");
         //player
+        button(player_action);
         if(player_action == 'a') p = soilder101.attack(boss); 
         if(player_action == 'q') p = soilder101.heal(); 
         if(player_action == 'g') p = soilder101.usegrenade();
