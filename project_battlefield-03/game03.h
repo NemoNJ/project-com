@@ -94,7 +94,7 @@ if(medkit > 0){
     }
 }
 int Unit::beAttacked(int oppatk){
-   hp = hp - oppatk - def;
+   hp = hp - (oppatk - def);
    return oppatk - def;
 }
 int Unit::attack(Unit &type){
@@ -102,7 +102,7 @@ int Unit::attack(Unit &type){
 }
 int Unit::beSuperAttacked(int oppatk){
    int super_oppatk =  3*oppatk;
-   hp = hp - super_oppatk - def;
+   hp = hp - (super_oppatk - def);
    return super_oppatk - def;
 }
 int Unit::superattack(Unit &type){
