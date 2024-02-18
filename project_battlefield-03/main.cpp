@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <fstream>
 using namespace std;
-int hero_name;
+string hero_name;
 void condition(){
 
      printf("Press button A to ATTACK\n");
@@ -106,14 +106,15 @@ int main(){
     int turn_count = 1;
     int money;
     char player_action = '\0',BOSS_action = '\0'; //กำหนดค่าเริ่มต้น monster action
-    
     terminal();
     starterbotton(money,player_action);
+    getname(hero_name);//รับชื่อ
     srand(time(0));
 
    //ซื้อของเมื่อเข้ารอบ 2
    int i = 1;
    while(i < 4){ //ต้องเจอ monster ตัวถัดไป
+    showmap(soilder101);//show stage
     if(i > 1){//รอบ 2 ให้ซื้อของ
        soilder101.buy_item(money);
        showshop();
