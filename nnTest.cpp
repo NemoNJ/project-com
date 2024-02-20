@@ -1,10 +1,3 @@
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <iomanip>
 #include "3Card.cpp"
 using namespace std;
 
@@ -226,7 +219,8 @@ int main(){
         if (BotHP <= 0) {
             cout << endl;
             Coutframe(15, 10, 30);
-            cout << endl << setw(86) << "You won!" << endl;
+            cout << endl << setw(86) << "You won!!" << endl;
+            cout << setw(85) << "at round " << i << endl;
             cout << endl;
             Coutframe(15, 10, 30);
             GameOver = true;
@@ -234,7 +228,8 @@ int main(){
         else if (PlayerHP <= 0) {
             cout << endl;
             Coutframe(15, 10, 30);
-            cout << endl << setw(86) << "You lost!" << endl;
+            cout << endl << setw(86) << "You lost!!" << endl;
+            cout << setw(85) << "at round " << i << endl;
             cout << endl;
             Coutframe(15, 10, 30);
             GameOver = true;    
