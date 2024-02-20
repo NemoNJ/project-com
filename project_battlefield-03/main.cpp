@@ -20,7 +20,8 @@ void condition(){
      printf("Press button L to BLOAD GAME\n");
      printf("Press button E to EXIT GAME\n");
 }
-void terminal(){
+void terminal(string &hero_name){
+     string name;
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -34,6 +35,7 @@ printf("|                            *                                          
 printf("|                            *                                          [2] HOW TO PLAY                                                   *                             |\n");
 printf("|                            *                                                                                                            *                             |\n");
 printf("|                            *                                          [E] EXIT                                                          *                             |\n");
+printf("|                            *                                                                                                            *                             |\n");
 printf("|                            *                                                                                                            *                             |\n");
 printf("|                            *                                                                                                            *                             |\n");
 printf("|                            *                                                                                                            *                             |\n");
@@ -54,7 +56,9 @@ printf("|                                                                       
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
-
+cout << "                                           Enter Your Name : ";
+getline(cin,name);
+ hero_name = name;
 }
 string choose_mon(int count){ //เลือก mons ที่จะบวก
     string boss;
@@ -80,12 +84,14 @@ void starterbotton(int money,char player_action){
 }
 
 int main(){
+    // unit 1 =new UNIT("Player") ;
+    // Unit Boss1 = new Unit("boos1",15,150,2) ;
+    // Unit Boss2 =
     Unit soilder101,boss;
-    int money;
+    int money = 100;
     char player_action = '\0',BOSS_action = '\0'; //กำหนดค่าเริ่มต้น monster action
-    terminal();
+    terminal(hero_name);
     starterbotton(money,player_action);
-    getname(hero_name);//รับชื่อ
     srand(time(0));
    int i = 1;
    string boss_id;
@@ -96,10 +102,11 @@ int main(){
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
 	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
-if(player_action == 't'){
-    showshop(money);
-    soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
-}
+     button(player_action,BOSS_action);
+    if(player_action == 't'){
+        showshop(money);
+        soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
+    }
 	while(true){
 		boss.newturn();	
 		soilder101.newturn();			
@@ -109,12 +116,11 @@ if(player_action == 't'){
         if(player_action == 'a') p = soilder101.attack(boss,"Soilder"); 
         
         if(player_action == 'q'){
-            if(i > 1 && soilder101.medkit > 0) p = soilder101.heal();
-            else if(i > 1 && soilder101.medkit < 0) cout << "Emtry\n";
-            else cout << "Your level is too low\n";
+            if(soilder101.medkit > 0) p = soilder101.heal();
+            else cout << "Emtry\n";
         } 
         if(player_action == 'g'){
-            if(i > 1 && soilder101.grenade > 0) p = soilder101.usegrenade(boss_id);
+            if(i > 1 && soilder101.grenade > 0) p = soilder101.usegrenade(boss,boss_id);
             else if(i > 1 && soilder101.grenade < 0) cout << "Emtry\n";
             else cout << "Your level is too low\n";
         }
@@ -145,8 +151,8 @@ if(player_action == 't'){
             soilder101.level_up();
 			playerWin();
             getmoney(boss_id,money);
-            break;
             i++;
+            break;
         }
     }
 }
