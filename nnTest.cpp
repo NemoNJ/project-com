@@ -234,10 +234,8 @@ int main(){
             Coutframe(15, 10, 30);
             GameOver = true;    
             }
-        
     }
     while(!GameOver); 
-    cin.get();
 }
 
 string CheckCondition(string C[], int Type, int card[], int N, int &action, string CType[], int &act){

@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <iomanip>
+#include <cctype>
 
 using namespace std;
 
@@ -232,6 +233,7 @@ void TerminalSeclection(int Pact, int Bact){
     if(Pact == 3 && Bact == 1) TerminalHA();
     if(Pact == 3 && Bact == 2) TerminalHS();
     if(Pact == 3 && Bact == 3) TerminalHH();
+
 }
 
 
