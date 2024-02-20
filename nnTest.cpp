@@ -242,6 +242,7 @@ int main(){
         
     }
     while(!GameOver); 
+    cin.get();
 }
 
 string CheckCondition(string C[], int Type, int card[], int N, int &action, string CType[], int &act){
