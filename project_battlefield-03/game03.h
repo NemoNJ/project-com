@@ -169,8 +169,8 @@ void Unit::showstatus(){
 
 void playerWin(){
 	//เมื่อplayer สู้ชนะจะเเสดงภาพนี้ออกมา
-HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
-SetConsoleTextAttribute(color , 2);	
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
+SetConsoleTextAttribute(color , 2);	//เป็นการใส่สีที่กำหนดไว้
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
