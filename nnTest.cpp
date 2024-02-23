@@ -1,6 +1,19 @@
 #include "3Card.cpp"
 using namespace std;
 
+
+class Stat{
+    int Hpoint = 100;
+    int Defpoint = 0;
+    public:
+        Stat(int, int);
+};
+
+Stat::Stat(int HP, int DEF){
+    Hpoint = HP;
+    Defpoint = DEF;
+}
+
 int randomCardValue(int min, int max) {
     return min + rand() % (max - min + 1);
 }
@@ -107,6 +120,8 @@ int main(){
     Frame("-");
     CoutHpDef(PlayerHP, BotHP, d, d, 0, 0, 0, 0);    
     do{
+
+        Stat Player = {100, 0};
         int Atk = 0, heal = 0, shield = 0;
         int BAtk = 0, Bheal = 0, Bshield = 0;
         int Paction = 0, Baction = 0;
