@@ -81,6 +81,54 @@ void starterbotton(int money,char player_action){
      if(click == '1') money = 0;
      else if(click == '2') condition();
      else if(click == 'e') player_action = 'e';
+     else cout << "Invalid input\n";
+}
+void showshop(int money,Unit &type,char player_action,char BOSS_action,Unit soilder101){
+        button(player_action,BOSS_action);
+    int grenadeshop = soilder101.grenade;
+    int armorshop =  soilder101.weararmor;
+    int medkitshop = soilder101.medkit;
+    int gunshop;
+    int rifleshop;
+    if(soilder101.havegun == true) gunshop = 1;
+    else gunshop = 0;
+    if(soilder101.haverifle == true) rifleshop = 1;
+    else rifleshop = 0;
+while(true){
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                         [  SHOP  ]                                                                                    |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                 _______________==                                      ___     ___                                      _______________                               |\n");
+printf("|                q|[[[[ [__]   ___|                                      [ ]_____[ ]]                                    /______________/|                              |\n");
+printf("|                /_____________/_ |                                     |    VEST   ||                                   |      _      | |                              |\n");
+printf("|                |    [|_]'                                             |           ||                                   |   __| |__   | |                              |\n");
+printf("|                | ## |                                                 |___ ___ ___||                                   |  |__   __|  | |                              |\n");
+printf("|                | ## |                                                 |[__][__][__]|                                   |     |_|     | |                              |\n");
+printf("|                |_##_|                                                 |   |   |   ||                                   |  first aid  | |                              |\n");
+printf("|                                                                       |___|___|___|/                                   |_____________|/                               |\n");
+printf("|             Pistol Press[1]                                           Armor1 Press[2]                                  Medkit  Press[3]                               |\n");
+printf("|             PRICE : 150  $                                            PRICE : 300  $                                   PRICE : 100  $                                 |\n");
+printf("|             ATK   : 15 - 35 damage                                    DEF   : +10 def                                  HEAL  :  25 - 40 hp                            |\n");
+printf("|            Amount : %d                                               Amount : %d                                      Amount : %d                                     |\n",gunshop,armorshop,medkitshop);
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                            __                                                                                         |\n");
+printf("|                                  __:                                     /=||=-o                                                                                      |\n");
+printf("|                         /**********|======.._____    ==                 / [  ]                                                                                        |\n");
+printf("|                --------/  '/-----/ |=[][] !!-----|___/|                / [    ]                                                                                       |\n");
+printf("|               |        __  |_]--|--|=======-----------|               | [______]                                                                                      |\n");
+printf("|               |      _/  |_|     |  |                                    [    ]                                                                                       |\n");
+printf("|               |_____/    ==       |__|                                    [__]                                                                                        |\n");
+printf("|             Rifile  Press[4]                                         Grenade  Press[5]                                                                                |\n");
+printf("|             PRICE : 1000  $                                          PRICE : 200  $ ( 1 used )                                                                        |\n");
+printf("|             ATK   : 50 - 100 damage                                  ATK   : 120 damage                                                                               |\n");
+printf("|            Amount : %d                                               Amount : %d / 2                                                                                  |\n",rifleshop,grenadeshop);
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|     YOUR MONEY : %d              PRESS [T] To continue                                                                                                                |\n",money);
+printf("|                                                                                                                                                                       |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+ if(player_action == 't') break;
+}
 }
 
 int main(){
@@ -102,11 +150,8 @@ int main(){
 	soilder101.createchar("Soilder");
 	boss.createchar(boss_id);
 	int p = 0, m = 0;//กำหนดค่าเริ่มต้น
-     button(player_action,BOSS_action);
-    if(player_action == 't'){
-        showshop(money);
+        showshop(money,soilder101,player_action,BOSS_action,soilder101);
         soilder101.buy_item(money);//ซื้อของก่อนเข้ารอบถัดไป
-    }
 	while(true){
 		boss.newturn();	
 		soilder101.newturn();			
@@ -124,9 +169,6 @@ int main(){
             else if(i > 1 && soilder101.grenade < 0) cout << "Emtry\n";
             else cout << "Your level is too low\n";
         }
-        
-        if(player_action == 's') soilder101.inputsaveprogress(money);
-        if(player_action == 'l') soilder101.outputsaveprogress(money);
         if(player_action == 'e') break;
         //mons
 		if(i > 0){
@@ -142,6 +184,7 @@ int main(){
         
 		if(soilder101.isDead()){
 			drawScene(soilder101,boss,hero_name);
+            money += 10000;
 			playerLose();
 			break; 
 		}
