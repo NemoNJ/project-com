@@ -78,6 +78,7 @@ void TerminalDefault(){
     cout << endl;
 }
 
+
 void TerminalHH(){
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
@@ -93,6 +94,7 @@ void TerminalHH(){
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
     cout << endl;
 }
+
 
 void TerminalHA(){
         printf ("                   __     ______________                                                                                    ___      ________             \n");
@@ -125,6 +127,9 @@ void TerminalHS(){
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
     cout << endl;
 }
+
+
+
 void TerminalAH(){
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
@@ -221,21 +226,79 @@ void TerminalSS(){
     cout << endl;
 }
 
+// add used card action: 
+//  Nothing , Atk
+void TerminalNA(){
+        printf ("                   __     ______________                                                                                    ___      ________             \n");
+    printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
+    printf ("                  |  |     |  __  __  |                                                           ______________            | |    |  /\\  /\\  |         \n");
+    printf ("                  |  |\\__  |    O__O  |                                                          |              |          _|_|_   |   ____   |          \n");
+    printf ("                  |______|  \\________/                                                           |      /\\      |         |_____|   \\________/      _  \n");
+    printf ("                     |______/  _\\/_  \\________                                                   |     |  |     |           |_|_____/        \\_____|_| \n");
+    printf ("                           |  /    \\  |    _|_|_                                                 |   __|__|__   |                  |          |          \n");
+    printf ("                           |  \\____/  |   |_ _ _|                                                |  |__|__|__|  |                  |          |          \n");
+    printf ("                            \\________/      | |                                                  |     |__|     |                   \\________/          \n");
+    printf ("                             ||    ||       | |                                                  |______________|                    ||    ||             \n");
+    printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
+    printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
+    cout << endl;
+}
+
+// Nothing , Shield
+void TerminalNS(){
+    printf ("                   __     ______________                                                                                    ___      ________             \n");
+    printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
+    printf ("                  |  |     |  __  __  |                                                           ______________            | |    |  /\\  /\\  |         \n");
+    printf ("                  |  |\\__  |    O__O  |                                                          |  __________  |          _|_|_   |   ____   |          \n");
+    printf ("                  |______|  \\________/                                                           | |  ______  | |         |_____|   \\________/      _   \n");
+    printf ("                     |______/  _\\/_  \\________                                                   | | |      | | |           |_|_____/        \\_____|_| \n");
+    printf ("                           |  /    \\  |    _|_|_                                                 | | |      | | |                  |          |          \n");
+    printf ("                           |  \\____/  |   |_ _ _|                                                |  \\ \\ __ / /  |                  |          |        \n");
+    printf ("                            \\________/      | |                                                  |   \\______/   |                   \\________/         \n");
+    printf ("                             ||    ||       | |                                                  |______________|                    ||    ||             \n");
+    printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
+    printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
+    cout << endl;
+}
+
+// Nothing , Heal
+void TerminalNH(){
+    printf ("                   __     ______________                                                                                    ___      ________             \n");
+    printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
+    printf ("                  |  |     |  __  __  |                                                           ______________            | |    |  /\\  /\\  |         \n");
+    printf ("                  |  |\\__  |    O__O  |                                                          |              |          _|_|_   |   ____   |          \n");
+    printf ("                  |______|  \\________/                                                           |      __      |         |_____|   \\________/      _   \n");
+    printf ("                     |______/  _\\/_  \\________                                                   |   __|  |__   |           |_|_____/        \\_____|_| \n");
+    printf ("                           |  /    \\  |    _|_|_                                                 |  |__    __|  |                  |          |          \n");
+    printf ("                           |  \\____/  |   |_ _ _|                                                |     |__|     |                  |          |          \n");
+    printf ("                            \\________/      | |                                                  |              |                   \\________/          \n");
+    printf ("                             ||    ||       | |                                                  |______________|                    ||    ||             \n");
+    printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
+    printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
+    cout << endl;
+}
+
 void TerminalSeclection(int Pact, int Bact){
+    // atk
     if(Pact == 1 && Bact == 1) TerminalAA();
     if(Pact == 1 && Bact == 2) TerminalAS();
     if(Pact == 1 && Bact == 3) TerminalAH();
 
+    //def
     if(Pact == 2 && Bact == 1) TerminalSA();
     if(Pact == 2 && Bact == 2) TerminalSS();
     if(Pact == 2 && Bact == 3) TerminalSH();
 
+    //heal
     if(Pact == 3 && Bact == 1) TerminalHA();
     if(Pact == 3 && Bact == 2) TerminalHS();
     if(Pact == 3 && Bact == 3) TerminalHH();
 
+    //used
+    if(Pact == 0 && Bact == 1) TerminalNA();
+    if(Pact == 0 && Bact == 2) TerminalNS();
+    if(Pact == 0 && Bact == 3) TerminalNH();
+
 }
-
-
 int main2(){
 }
