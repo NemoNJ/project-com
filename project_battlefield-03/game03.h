@@ -678,7 +678,7 @@ HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
 SetConsoleTextAttribute(color , 15);	
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                                             [ MAP ]                                                                                   |\n");
+printf("|                                                                             ");SetConsoleTextAttribute(color , 9);printf("[ MAP ]");SetConsoleTextAttribute(color , 15);printf("                                                                                   |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -706,15 +706,17 @@ printf("|                                   /                                   
 printf("|                                  /                                                                                                                                    |\n");
 printf("|                                 ");SetConsoleTextAttribute(color , 12);printf("O");SetConsoleTextAttribute(color , 14);printf(" ( Stage 1 ) ");SetConsoleTextAttribute(color , 15);printf("                                                                                                                        |\n");
 printf("|                         ");SetConsoleTextAttribute(color , 14);printf(" [ You Are Here ]  ");SetConsoleTextAttribute(color , 15);printf("                                                                                                                           |\n");
-printf("|       PRESS [T] To continue                                                                                                                                           |\n");
+printf("|       ");SetConsoleTextAttribute(color , 14);printf("PRESS [T] To continue");SetConsoleTextAttribute(color , 15);printf("                                                                                                                                           |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
     }
     if (soilder101.level == 2){
 //map in game stage 2
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
+SetConsoleTextAttribute(color , 15);	
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                                             [ MAP ]                                                                                   |\n");
+printf("|                                                                             ");SetConsoleTextAttribute(color , 9);printf("[ MAP ]");SetConsoleTextAttribute(color , 15);printf("                                                                                   |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -735,23 +737,24 @@ printf("|                                                      /                
 printf("|                                                     /                                                                                                                 |\n");
 printf("|                                                    /                                                                                                                  |\n");
 printf("|                                                   /                                                                                                                   |\n");
-printf("|                                      ____________O ( Stage 2 )                                                                                                        |\n");
-printf("|                                     /            [ You Are Here ]                                                                                                     |\n");
+printf("|                                      ____________");SetConsoleTextAttribute(color , 12);printf("O ");SetConsoleTextAttribute(color , 14);printf("( Stage 2 )  ");SetConsoleTextAttribute(color , 15);printf("                                                                                                      |\n");
+printf("|                                     /            ");SetConsoleTextAttribute(color , 14);printf("[ You Are Here ] ");SetConsoleTextAttribute(color , 15);printf("                                                                                                    |\n");
 printf("|                                    /                                                                                                                                  |\n");
 printf("|                                   /                                                                                                                                   |\n");
 printf("|                                  /                                                                                                                                    |\n");
-printf("|                                 O ( Stage 1 complete)                                                                                                                 |\n");
+printf("|                                 O ");SetConsoleTextAttribute(color , 14);printf("( Stage 1 complete) ");SetConsoleTextAttribute(color , 15);printf("                                                                                                                |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|       PRESS [T] To continue                                                                                                                                           |\n");
+printf("|       ");SetConsoleTextAttribute(color , 14);printf("PRESS [T] To continue ");SetConsoleTextAttribute(color , 15);printf("                                                                                                                                          |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
     }
     if (soilder101.level == 3){
 //map in game stage 3
-
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
+SetConsoleTextAttribute(color , 15);	
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                                             [ MAP ]                                                                                   |\n");
+printf("|                                                                             ");SetConsoleTextAttribute(color , 9);printf("[ MAP ]");SetConsoleTextAttribute(color , 15);printf("                                                                                   |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -766,56 +769,58 @@ printf("|                                                                       
 printf("|                                                                         /                                                                                             |\n");
 printf("|                                                                        /                                                                                              |\n");
 printf("|                                                                       /                                                                                               |\n");
-printf("|                                                        ______________O ( Stage 3 )                                                                                    |\n");
-printf("|                                                       /               [ You Are Here ]                                                                                |\n");
+printf("|                                                        ______________");SetConsoleTextAttribute(color , 12);printf("O");SetConsoleTextAttribute(color , 14);printf(" ( Stage 3 )");SetConsoleTextAttribute(color , 15);printf("                                                                                    |\n");
+printf("|                                                       /               ");SetConsoleTextAttribute(color , 14);printf("[ You Are Here ]");SetConsoleTextAttribute(color , 15);printf("                                                                                |\n");
 printf("|                                                      /                                                                                                                |\n");
 printf("|                                                     /                                                                                                                 |\n");
 printf("|                                                    /                                                                                                                  |\n");
 printf("|                                                   /                                                                                                                   |\n");
-printf("|                                      ____________O ( Stage 2 complete )                                                                                               |\n");
+printf("|                                      ____________O ");SetConsoleTextAttribute(color , 14);printf("( Stage 2 complete )");SetConsoleTextAttribute(color , 15);printf("                                                                                               |\n");
 printf("|                                     /                                                                                                                                 |\n");
 printf("|                                    /                                                                                                                                  |\n");
 printf("|                                   /                                                                                                                                   |\n");
 printf("|                                  /                                                                                                                                    |\n");
-printf("|                                 O ( Stage 1 complete)                                                                                                                 |\n");
+printf("|                                 O ");SetConsoleTextAttribute(color , 14);printf("( Stage 1 complete)");SetConsoleTextAttribute(color , 15);printf("                                                                                                                 |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|       PRESS [T] To continue                                                                                                                                           |\n");
+printf("|       ");SetConsoleTextAttribute(color , 14);printf("PRESS [T] To continue");SetConsoleTextAttribute(color , 15);printf("                                                                                                                                           |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
     }
     if (soilder101.level == 4){
     //map in game stage 4
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
+SetConsoleTextAttribute(color , 15);
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                                             [ MAP ]                                                                                   |\n");
+printf("|                                                                             ");SetConsoleTextAttribute(color , 9);printf("[ MAP ]");SetConsoleTextAttribute(color , 15);printf("                                                                                   |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|                                                                                                 _____                                                                 |\n");
-printf("|                                                                               _____________O   (     )  ( Stage 4 Final Boss)                                         |\n");
-printf("|                                                                              /                ( () () )    [ You Are Here ]                                           |\n");
-printf("|                                                                             /                  (  ^  )                                                                |\n");
-printf("|                                                                            /                    |||||                                                                 |\n");
+printf("|                                                                                                ");SetConsoleTextAttribute(color , 12);printf(" _____ ");SetConsoleTextAttribute(color , 15);printf("                                                                |\n");
+printf("|                                                                               _____________");SetConsoleTextAttribute(color , 12);printf("O   (     )  ");SetConsoleTextAttribute(color , 14);printf("( Stage 4 Final Boss)");SetConsoleTextAttribute(color , 15);printf("                                         |\n");
+printf("|                                                                              /              ");SetConsoleTextAttribute(color , 12);printf("  ( () () )    ");SetConsoleTextAttribute(color , 14);printf("[ You Are Here ]");SetConsoleTextAttribute(color , 15);printf("                                           |\n");
+printf("|                                                                             /              ");SetConsoleTextAttribute(color , 12);printf("    (  ^  )     ");SetConsoleTextAttribute(color , 15);printf("                                                           |\n");
+printf("|                                                                            /               ");SetConsoleTextAttribute(color , 12);printf("     |||||      ");SetConsoleTextAttribute(color , 15);printf("                                                           |\n");
 printf("|                                                                           /                                                                                           |\n");
 printf("|                                                                          /                                                                                            |\n");
 printf("|                                                                         /                                                                                             |\n");
 printf("|                                                                        /                                                                                              |\n");
 printf("|                                                                       /                                                                                               |\n");
-printf("|                                                        ______________O ( Stage 3 complete )                                                                           |\n");
+printf("|                                                        ______________O ");SetConsoleTextAttribute(color , 14);printf("( Stage 3 complete )");SetConsoleTextAttribute(color , 15);printf("                                                                           |\n");
 printf("|                                                       /                                                                                                               |\n");
 printf("|                                                      /                                                                                                                |\n");
 printf("|                                                     /                                                                                                                 |\n");
 printf("|                                                    /                                                                                                                  |\n");
 printf("|                                                   /                                                                                                                   |\n");
-printf("|                                      ____________O ( Stage 2 complete )                                                                                               |\n");
+printf("|                                      ____________O ");SetConsoleTextAttribute(color , 14);printf("( Stage 2 complete )");SetConsoleTextAttribute(color , 15);printf("                                                                                               |\n");
 printf("|                                     /                                                                                                                                 |\n");
 printf("|                                    /                                                                                                                                  |\n");
 printf("|                                   /                                                                                                                                   |\n");
 printf("|                                  /                                                                                                                                    |\n");
-printf("|                                 O ( Stage 1 complete)                                                                                                                 |\n");
+printf("|                                 O ");SetConsoleTextAttribute(color , 14);printf("( Stage 1 complete)");SetConsoleTextAttribute(color , 15);printf("                                                                                                                 |\n");
 printf("|                                                                                                                                                                       |\n");
-printf("|       PRESS [T] To continue                                                                                                                                           |\n");
+printf("|       ");SetConsoleTextAttribute(color , 14);printf("PRESS [T] To continue");SetConsoleTextAttribute(color , 15);printf("                                                                                                                                           |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
     }
