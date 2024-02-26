@@ -32,7 +32,7 @@ bool ReturnUsedcard(string arry[]){
 }
 string UsedDetect(int &, Stat &);
 
-string CheckCondition(string [], int [], int , Stat &, string [], int &);
+string CheckCondition(string [],int [], int , Stat &, string [], int &);
 int DMGConfig(Stat &, Stat &, int &);
 int HpConfig(Stat &, int &);
 
@@ -98,6 +98,7 @@ int main(){
     for (int i = 0; i < 10; ++i) {
         healCards[i] = randomCardValue(5, 30);
     }
+    int AllADHcards[] = {attackCards[20], defenseCards[20], healCards[10]};
 
     string AllCardPlayer[5];
     string AllCardBot[5];
@@ -112,13 +113,13 @@ int main(){
     }
     Coutframe(8, 6, 0);
     int playerChoice;    
-    int i = 0, d = 0;
+    int i = 0;
     Frame("-");
     Stat PreP = {100, 0, 0,0,0};
     Stat PreB = {100, 0, 0,0,0};
     CoutHpDef(PreP, PreB, PlayerHP, BotHP);
-    int TotalDMG_P = 0, TotalDMG_B = 0;
-    int TotalHEAL_P = 0, TotalHEAL_B = 0;
+    int TotalDMG_P = 0, TotalDMG_B = 0, Blocked_P = 0;
+    int TotalHEAL_P = 0, TotalHEAL_B = 0, Blocked_B = 0;
 //======================================================================------ Start Game ------===================================================================//
     do{
 
@@ -140,35 +141,36 @@ int main(){
         {
         case 0:// 1
             cout << "   your action:";
-            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            cout << CheckCondition(AllCardPlayer, AllADHcards, playerChoice, Py, CardType, Paction);
             usedCard(AllCardPlayer, PyC);
             break;
         
         case 1:// 2
             cout << "   your action:";
-            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            cout << CheckCondition(AllCardPlayer, AllADHcards, playerChoice, Py, CardType, Paction);
             usedCard(AllCardPlayer, PyC);
             break;
 
         case 2:// 3
             cout << "   your action:";
-            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            cout << CheckCondition(AllCardPlayer, AllADHcards, playerChoice, Py, CardType, Paction);
             usedCard(AllCardPlayer, PyC);
             break;
         
         case 3:// 4
             cout << "   your action:";
-            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            cout << CheckCondition(AllCardPlayer, AllADHcards, playerChoice, Py, CardType, Paction);
             usedCard(AllCardPlayer, PyC);
             break;
 
         case 4: // 5 
             cout << "   your action:";
-            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            cout << CheckCondition(AllCardPlayer, AllADHcards, playerChoice, Py, CardType, Paction);
             usedCard(AllCardPlayer, PyC);
             break;
         }
         TotalDMG_P += Py.ATK;
+        
         TotalHEAL_P += Py.HEAL;
 
         //random bot choice of action;
@@ -177,6 +179,10 @@ int main(){
         cout << BotDoing(AllCardBot, Bt, attackCards, defenseCards, healCards, BotChoice, Baction) << endl;
         TotalDMG_B += Bt.ATK;
         TotalHEAL_B += Bt.HEAL;
+
+        if(Py.ATK > 0 && Bt.DEF > 0) Blocked_B += abs(Bt.DEF - Py.ATK);
+        if(Bt.ATK > 0 && Py.DEF > 0) Blocked_P += abs(Py.DEF - Bt.ATK);
+
         TerminalSeclection(Paction, Baction);
 
         Coutframe(8, 6, 0);
@@ -225,9 +231,11 @@ int main(){
     }
     while(!GameOver);
     cout << "                             your total damage: " << TotalDMG_P;
-    cout << setw(86) << "Bot total damage:" << TotalDMG_B << endl;
+    cout << setw(86) << "Bot total damage: " << TotalDMG_B << endl;
     cout << "                             your total heal: " << TotalHEAL_P;
-    cout << setw(86) << "Bot total heak:" << TotalHEAL_B << endl;
+    cout << setw(86) << "Bot total heal: " << TotalHEAL_B << endl;
+    cout << "                             damage Blocked: " << Blocked_P;
+    cout << setw(87) << "damage blocked: " << Blocked_B << endl;
 }
 //=============================================================------ End program ------============================================================================//
 
@@ -239,25 +247,26 @@ string UsedDetect(int &act, Stat &Pyaction){
     return " Absolutely nothing...";
 }
 
-string CheckCondition(string C[], int card[], int PyC, Stat &action, string CType[], int &act){
+string CheckCondition(string C[],int ADHcard[], int PyC, Stat &action, string CType[], int &act){
     // 1 = strike card , 2 = deffense card , 3 = heal card;
     if(C[PyC - 1] == " used           ") return UsedDetect(act, action);
     if(C[PyC - 1] == CType[0]){
         //strike
-            action.ATK = card[rand() % 20];
+            rand()%ADHcard[0];
+            action.ATK = rand()%ADHcard[0];
             act = 1;
             return "  Fury Strike!!";
         }
     if(C[PyC - 1] == CType[1]){
         // deffense
-            action.DEF = card[rand() % 20];
+            action.DEF = rand()%ADHcard[1];
             act = 2;
             return "  Shield up";
             
         }
         if(C[PyC - 1] == CType[2]){
         // Healing
-            action.HEAL = card[rand() % 10];
+            action.HEAL = rand()%ADHcard[2];
             act = 3;
             return "  heal~~";
             
