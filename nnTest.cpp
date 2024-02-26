@@ -32,7 +32,7 @@ bool ReturnUsedcard(string arry[]){
 }
 string UsedDetect(int &, Stat &);
 
-string CheckCondition(string [], int , int [], int , Stat &, string [], int &);
+string CheckCondition(string [], int [], int , Stat &, string [], int &);
 int DMGConfig(Stat &, Stat &, int &);
 int HpConfig(Stat &, int &);
 
@@ -140,97 +140,33 @@ int main(){
         {
         case 0:// 1
             cout << "   your action:";
-            // detect used card;
-            if(AllCardPlayer[PyC] == " used           ") cout << UsedDetect(Paction, Py);
-
-            if (AllCardPlayer[PyC] == "| Fury Strike     |"){
-                cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
-            if (AllCardPlayer[PyC] == "| Damage Absolver |"){
-                cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
-            if (AllCardPlayer[PyC] == "| Healing         |"){
-                cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
+            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            usedCard(AllCardPlayer, PyC);
             break;
         
         case 1:// 2
             cout << "   your action:";
-            // detect used card;
-            if(AllCardPlayer[PyC] == " used           ") cout << UsedDetect(Paction, Py);
-
-            if (AllCardPlayer[PyC] == "| Fury Strike     |"){
-                cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
-            if (AllCardPlayer[PyC] == "| Damage Absolver |"){
-                cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
-            if (AllCardPlayer[PyC] == "| Healing         |"){
-                cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
+            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            usedCard(AllCardPlayer, PyC);
             break;
 
         case 2:// 3
             cout << "   your action:";
-            // detect used card;
-            if(AllCardPlayer[PyC] == " used           ") cout << UsedDetect(Paction, Py);
-
-            if (AllCardPlayer[PyC] == "| Fury Strike     |"){
-                cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
-            if (AllCardPlayer[PyC] == "| Damage Absolver |"){
-                cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
-            if (AllCardPlayer[PyC] == "| Healing         |"){
-                cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
+            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            usedCard(AllCardPlayer, PyC);
             break;
-
+        
         case 3:// 4
             cout << "   your action:";
-            // detect used card;
-            if(AllCardPlayer[PyC] == " used           ") cout << UsedDetect(Paction, Py);
-
-            if (AllCardPlayer[PyC] == "| Fury Strike     |"){
-                cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }   
-            if (AllCardPlayer[PyC] == "| Damage Absolver |"){
-                cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
-            if (AllCardPlayer[PyC] == "| Healing         |"){
-                cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
+            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            usedCard(AllCardPlayer, PyC);
             break;
 
         case 4: // 5 
             cout << "   your action:";
-            // detect used card;
-            if(AllCardPlayer[PyC] == " used           ") cout << UsedDetect(Paction, Py);
-
-            if (AllCardPlayer[PyC] == "| Fury Strike     |"){
-                cout << CheckCondition(AllCardPlayer, 1, attackCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
-            if (AllCardPlayer[PyC] == "| Damage Absolver |"){
-                cout << CheckCondition(AllCardPlayer, 2, defenseCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
-            if (AllCardPlayer[PyC] == "| Healing         |"){
-                cout << CheckCondition(AllCardPlayer, 3, healCards, playerChoice, Py, CardType, Paction);
-                usedCard(AllCardPlayer, PyC);
-            }
+            cout << CheckCondition(AllCardPlayer, attackCards, playerChoice, Py, CardType, Paction);
+            usedCard(AllCardPlayer, PyC);
+            break;
         }
         TotalDMG_P += Py.ATK;
         TotalHEAL_P += Py.HEAL;
@@ -303,26 +239,28 @@ string UsedDetect(int &act, Stat &Pyaction){
     return " Absolutely nothing...";
 }
 
-string CheckCondition(string C[], int Type, int card[], int N, Stat &action, string CType[], int &act){
+string CheckCondition(string C[], int card[], int PyC, Stat &action, string CType[], int &act){
     // 1 = strike card , 2 = deffense card , 3 = heal card;
-    for(int i = 0; i < 5; i++){
-        if (C[i] == CType[Type - 1]){
-            if(Type == 1){ //strike
-                action.ATK = card[rand() % 20];
-                act = 1;
-                return "  Fury Strike!!";
-            }
-            if(Type == 2){// deffense
-                action.DEF = card[rand() % 20];
-                act = 2;
-                return "  Shield up";
-            }
-            if(Type == 3){// Healing
-                action.HEAL = card[rand() % 10];
-                act = 3;
-                return "  heal~~";
-            }
+    if(C[PyC - 1] == " used           ") return UsedDetect(act, action);
+    if(C[PyC - 1] == CType[0]){
+        //strike
+            action.ATK = card[rand() % 20];
+            act = 1;
+            return "  Fury Strike!!";
         }
+    if(C[PyC - 1] == CType[1]){
+        // deffense
+            action.DEF = card[rand() % 20];
+            act = 2;
+            return "  Shield up";
+            
+        }
+        if(C[PyC - 1] == CType[2]){
+        // Healing
+            action.HEAL = card[rand() % 10];
+            act = 3;
+            return "  heal~~";
+            
     }
 }
 int HpConfig(Stat &Hl, int &Hp){
