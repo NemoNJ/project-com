@@ -250,6 +250,48 @@ printf("|-----------------------------------------------------------------------
 	
 };
 
+void playerEndGame(){
+	//เมื่อplayer  สู้ชนะบอสตัวสุดท้ายจะเเสดงภาพนี้ออกมา
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
+SetConsoleTextAttribute(color , 2);	//เป็นการใส่สีที่กำหนดไว้
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                       |       |       ____                       |             |    _    ___      _                                                   |\n");
+printf("|                                        |     |      |      |    |         |      |             |    |    |  |     |                                                   |\n");
+printf("|                                         |   |      |        |   |         |       |     |     |     |    |   |    |                                                   |\n");
+printf("|                                           |       |          |  |         |        |   | |   |      |    |    |   |                                                   |\n");
+printf("|                                           |        |        |   |         |         | |   | |       |    |     |  |                                                   |\n");
+printf("|                                           |         | ____ |     |_______|           |     |        |    |      |_|                                                   |\n");
+printf("|                                                                                                                                                                       |\n");
+
+printf("|                                  ***************************************************************************************                                              |\n");
+printf("|                                  *");SetConsoleTextAttribute(color , 11);printf("                      Congratulations You defeat All Boss   ");SetConsoleTextAttribute(color , 2);printf("               *                                              |\n");
+printf("|                                  ***************************************************************************************                                              |\n");
+printf("|                                                                                                                                                                       |\n");
+
+printf("|                                                                       ---------                                                                                       |\n");
+printf("|                                                                        -.....-                                                                                        |\n");
+printf("|                                                                         ");SetConsoleTextAttribute(color , 12);printf(".....");SetConsoleTextAttribute(color , 2);printf("                                                                                         |\n");
+printf("|                                                                      ...      ...                                                                                     |\n");
+printf("|                                                                     ...          ..                                                                                   |\n");
+printf("|                                                                    ... ");SetConsoleTextAttribute(color , 14);printf("   |   ");SetConsoleTextAttribute(color , 2);printf("     ..                                                                                 |\n");
+printf("|                                                                  ...  ");SetConsoleTextAttribute(color , 14);printf("  :|:   ");SetConsoleTextAttribute(color , 2);printf("      ..                                                                                |\n");
+printf("|                                                                 ...  ");SetConsoleTextAttribute(color , 14);printf("   : |  :   ");SetConsoleTextAttribute(color , 2);printf("    ..                                                                               |\n");
+printf("|                                                                ...   ");SetConsoleTextAttribute(color , 14);printf("  :  |   :   ");SetConsoleTextAttribute(color , 2);printf("    ...                                                                             |\n");
+printf("|                                                              ...    ");SetConsoleTextAttribute(color , 14);printf("    : |   ");SetConsoleTextAttribute(color , 2);printf("          ..                                                                            |\n");
+printf("|                                                              ..     ");SetConsoleTextAttribute(color , 14);printf("     :|     ");SetConsoleTextAttribute(color , 2);printf("        ..                                                                            |\n");
+printf("|                                                              ..    ");SetConsoleTextAttribute(color , 14);printf("       |:      ");SetConsoleTextAttribute(color ,2);printf("      ..                                                                            |\n");
+printf("|                                                              ...     ");SetConsoleTextAttribute(color , 14);printf("     |  :     ");SetConsoleTextAttribute(color , 2);printf("    ..                                                                             |\n");
+printf("|                                                               ...  ");SetConsoleTextAttribute(color , 14);printf("   :   |   :   ");SetConsoleTextAttribute(color , 2);printf("    ...                                                                             |\n");
+printf("|                                                                ...  ");SetConsoleTextAttribute(color , 14);printf("   :  |  :     ");SetConsoleTextAttribute(color , 2);printf("  ...                                                                              |\n");
+printf("|                                                                  ..... ");SetConsoleTextAttribute(color , 14);printf("  :|:   ");SetConsoleTextAttribute(color , 2);printf("    ....                                                                               |\n");
+printf("|                                                                     ...  ");SetConsoleTextAttribute(color , 14);printf(" |   ");SetConsoleTextAttribute(color , 2);printf("   ....                                                                                 |\n");
+printf("|                                                                       ............                                                                                    |\n");
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n") ; 
+SetConsoleTextAttribute(color , 15);
+};
+
 
 void getmoney(string type,int &money){//ชนิดของ boss และ update money
     if(type == "BOSS01"){
