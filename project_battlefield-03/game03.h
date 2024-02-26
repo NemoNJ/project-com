@@ -670,9 +670,12 @@ printf("|-----------------------------------------------------------------------
 };
 
 
+
 void showmap(Unit soilder101){
     if (soilder101.level == 1){
        //map in game stage 1
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
+SetConsoleTextAttribute(color , 15);	
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                             [ MAP ]                                                                                   |\n");
@@ -701,8 +704,8 @@ printf("|                                     /                                 
 printf("|                                    /                                                                                                                                  |\n");
 printf("|                                   /                                                                                                                                   |\n");
 printf("|                                  /                                                                                                                                    |\n");
-printf("|                                 O ( Stage 1 )                                                                                                                         |\n");
-printf("|                          [ You Are Here ]                                                                                                                             |\n");
+printf("|                                 ");SetConsoleTextAttribute(color , 12);printf("O");SetConsoleTextAttribute(color , 14);printf(" ( Stage 1 ) ");SetConsoleTextAttribute(color , 15);printf("                                                                                                                        |\n");
+printf("|                         ");SetConsoleTextAttribute(color , 14);printf(" [ You Are Here ]  ");SetConsoleTextAttribute(color , 15);printf("                                                                                                                           |\n");
 printf("|       PRESS [T] To continue                                                                                                                                           |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
