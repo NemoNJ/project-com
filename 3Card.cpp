@@ -324,7 +324,7 @@ void TerminalNH(){
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
     cout << endl;
-    SetConsoleTextAttribute(color , 15);
+    SetConsoleTextAttribute(color , 15); 
 }
 
 void TerminalSeclection(int Pact, int Bact){
