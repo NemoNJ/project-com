@@ -66,7 +66,9 @@ void Coutframe(int a, int b, int sw){
 
 //======================================================================------ Start Program ------===================================================================//
 int main(){
-    cout << endl;  
+    HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
+    SetConsoleTextAttribute(color , 15);
+    cout << endl; 
     cout << "                ------------------------------------============== * * * * |   Welcome to the game   | * * * * ==============------------------------------------" << endl;
     cout << endl;
     cout << "                This game is played by using cards from all 50 cards that were shuffled to your hand for 5 cards." << endl;
