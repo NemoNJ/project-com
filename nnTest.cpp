@@ -32,6 +32,7 @@ bool ReturnUsedcard(string arry[]){
 }
 string UsedDetect(int &, Stat &);
 
+// PlayerCards[] , attackCards[] , deffenseCards[] , healCards[] , PlayerChoice, Stat Py, string CardType[], Paction;
 string CheckCondition(string [], int [], int [], int [], int , Stat &, string [], int &);
 
 int DMGConfig(Stat &, Stat &, int &);
@@ -40,7 +41,10 @@ int HpConfig(Stat &, int &);
 string usedCard(string card[], int arr){
     return card[arr] = " used           ";
 }
+
+//BotCards[] , Stat Bt , attackCards[] , deffenseCards[] , healCards[] , BotChoice , CardType[] , Baction;
 string BotDoing(string [], Stat &,int [], int [], int [], int, string [], int &);
+// Type of CardType(0,1,2) , Stat Bt , (atk,def,heal) Cards , Baction;
 string BotAction(int , Stat &, int[], int &);
 
 void CoutHpDef(Stat &P, Stat &B, int &Php, int &Bhp){
@@ -308,17 +312,17 @@ string BotDoing(string BC[], Stat &Bot, int Atk_B[], int Def_B[], int Heal_B[], 
 //type = 1,2,3 , actype == atk/def/heal , Cardrand == atk/def/heal card 1-20
 string BotAction( int type, Stat &botActType, int Cardrand[], int &Bact){
     if (type == 1){//Attack
-        botActType.ATK = Cardrand[rand() % 20];
+        botActType.ATK = Cardrand[rand() % 21];
         Bact = 1;
         return "  Fierce Attack!!! (O.O)";
         }
     if (type == 2){// deffense
-        botActType.DEF = Cardrand[rand() % 20];
+        botActType.DEF = Cardrand[rand() % 21];
         Bact = 2;
         return "  Guard Up!!";
         }
     if (type == 3){// Healing
-        botActType.HEAL = Cardrand[rand() % 10];
+        botActType.HEAL = Cardrand[rand() % 11];
         Bact = 3;
         return "  Healing~~ (^-^)";
         }
