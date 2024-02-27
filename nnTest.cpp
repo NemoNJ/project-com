@@ -40,7 +40,7 @@ int HpConfig(Stat &, int &);
 string usedCard(string card[], int arr){
     return card[arr] = " used           ";
 }
-string BotDoing(string [], Stat &,int [], int [], int [], int, int &);
+string BotDoing(string [], Stat &,int [], int [], int [], int, string [], int &);
 string BotAction(int , Stat &, int[], int &);
 
 void CoutHpDef(Stat &P, Stat &B, int &Php, int &Bhp){
@@ -116,11 +116,13 @@ int main(){
     int playerChoice;    
     int i = 0;
     Frame("-");
+    // pre stat (hp, def, atk, heal)
     Stat PreP = {100, 0, 0,0,0};
     Stat PreB = {100, 0, 0,0,0};
+    //cout standard hp, def
     CoutHpDef(PreP, PreB, PlayerHP, BotHP);
-    int TotalDMG_P = 0, TotalDMG_B = 0, Blocked_P = 0;
-    int TotalHEAL_P = 0, TotalHEAL_B = 0, Blocked_B = 0;
+    int TotalDMG_P = 0, TotalHEAL_P = 0, Blocked_P = 0;
+    int TotalDMG_B = 0, TotalHEAL_B = 0, Blocked_B = 0;
 //======================================================================------ Start Game ------===================================================================//
     do{
 
@@ -177,7 +179,7 @@ int main(){
         //random bot choice of action;
         int BotChoice = rand()%7 + 1;
         cout << setw(110) << "Bot's action:";
-        cout << BotDoing(AllCardBot, Bt, attackCards, defenseCards, healCards, BotChoice, Baction) << endl;
+        cout << BotDoing(AllCardBot, Bt, attackCards, defenseCards, healCards, BotChoice, CardType, Baction) << endl;
         TotalDMG_B += Bt.ATK;
         TotalHEAL_B += Bt.HEAL;
 
@@ -251,7 +253,7 @@ string UsedDetect(int &act, Stat &Pyaction){
 
 string CheckCondition(string C[],int Atk[], int Def[], int Heal[], int PyC, Stat &action, string CType[], int &act){
     // 1 = strike card , 2 = deffense card , 3 = heal card;
-
+    //PyC == PlayerChoice;
     if(C[PyC - 1] == " used           ") return UsedDetect(act, action);
     if(C[PyC - 1] == CType[0]){
         //strike
@@ -285,65 +287,20 @@ int DMGConfig(Stat &Act1, Stat &Act2, int &Hp2){
     return Hp2;
 }
 // BC == AllCardBot , BCType == CardType for bot;
-string BotDoing(string BC[], Stat &Bot, int Atk_B[], int Def_B[], int Heal_B[], int BotDoing, int &Bact){
-    
-    if (BotDoing == 1){
-            if (BC[BotDoing - 1] == "| Fury Strike     |"){
-                return BotAction(1, Bot, Atk_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Damage Absolver |"){
-                return BotAction(2, Bot, Def_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Healing         |"){
-                return BotAction(3, Bot, Heal_B, Bact);
-                }
-            }
-        else if (BotDoing == 2){
-            if (BC[BotDoing - 1] == "| Fury Strike     |"){
-                return BotAction(1, Bot, Atk_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Damage Absolver |"){
-                return BotAction(2, Bot, Def_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Healing         |"){
-                return BotAction(3, Bot, Heal_B, Bact);
-                }
-            }
-        else if (BotDoing == 3){
-            if (BC[BotDoing - 1] == "| Fury Strike     |"){
-                return BotAction(1, Bot, Atk_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Damage Absolver |"){
-                return BotAction(2, Bot, Def_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Healing         |"){
-                return BotAction(3, Bot, Heal_B, Bact);
-                }
-            }
-        else if (BotDoing == 4){
-            if (BC[BotDoing - 1] == "| Fury Strike     |"){
-                return BotAction(1, Bot, Atk_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Damage Absolver |"){
-                return BotAction(2, Bot, Def_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Healing         |"){
-                return BotAction(3, Bot, Heal_B, Bact);
-                }            
-            }
-        else if (BotDoing == 5){
-            if (BC[BotDoing - 1] == "| Fury Strike     |"){
-                return BotAction(1, Bot, Atk_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Damage Absolver |"){
-                return BotAction(2, Bot, Def_B, Bact);
-                }
-            if (BC[BotDoing - 1] == "| Healing         |"){
-                return BotAction(3, Bot, Heal_B, Bact);
-                }     
-            }
-        else if (BotDoing == 6) return BotAction(1, Bot, Atk_B, Bact);
-        else if (BotDoing == 7) return BotAction(1, Bot, Atk_B, Bact);
+//Botdoing == BotChoice, CType[] == CardType[];
+string BotDoing(string BC[], Stat &Bot, int Atk_B[], int Def_B[], int Heal_B[], int BotDoing, string CType[] , int &Bact){
+
+    if (BC[BotDoing - 1] == CType[0]){
+        return BotAction(1, Bot, Atk_B, Bact);
+        }
+    if (BC[BotDoing - 1] == CType[1]){
+        return BotAction(2, Bot, Def_B, Bact);
+        }
+    if (BC[BotDoing - 1] == CType[2]){
+    return BotAction(3, Bot, Heal_B, Bact);
+    }
+    if (BotDoing == 6) return BotAction(1, Bot, Atk_B, Bact);
+    if (BotDoing == 7) return BotAction(1, Bot, Atk_B, Bact);
            
 }
 //type = 1,2,3 , actype == atk/def/heal , Cardrand == atk/def/heal card 1-20
