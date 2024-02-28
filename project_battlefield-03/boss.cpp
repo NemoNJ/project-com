@@ -18,9 +18,9 @@ public:
     bool bossisDead();
     bool bossnewturn();
     int bossbeAttacked(int);
-    int bossattack(Player);
+    int bossattack();
     int bossbeSuperAttacked(int ,string);
-    int bossSuperattack(Player,string);
+    int bossSuperattack(string);
 };
 
 Boss::Boss(string Name, int Hpmax, int Attack, int Def)
@@ -48,8 +48,8 @@ int Boss::bossbeAttacked(int oppatk){//ต้องสุ่ม damage ทุก
         return 0;
         }
 }
-int Boss::bossattack(Player player1){
-	return player1.bossbeAttacked(atk);
+int Boss::bossattack(){
+	return bossbeAttacked(atk);
 }
 int Boss::bossbeSuperAttacked(int oppatk,string type) {//ต้องสุ่ม damage ทุกครั้งที่ attack ดาเมจที่น้อยกว่าเกราะจะถูกเพิ่มเป็นเลือดให้บอส
     int super_oppatk = 3 * oppatk;
@@ -92,6 +92,6 @@ int Boss::bossbeSuperAttacked(int oppatk,string type) {//ต้องสุ่�
     }
     return 0; // Default case
 }
-int Boss::bossSuperattack(Player player1,string name){
-	return player1.beSuperAttacked(atk,name);
+int Boss::bossSuperattack(string name){
+	return bossbeSuperAttacked(atk,name);
 }
