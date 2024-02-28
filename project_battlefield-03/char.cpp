@@ -802,9 +802,9 @@ printf("|-----------------------------------------------------------------------
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                  ____________________________________________________________________                                                 |\n");
 printf("|                                                 |                                                                    |                                                |\n");
-printf("|                                                 |       I        IIII       III I       I       I I I     I I I I    |                                                |\n");
-printf("|                                                |       I I      I    I     I           I I      I    I    I           |                                               |\n");
-printf("|                                               |       I   I     I   I     I           I   I     I     I   I            |                                              |\n");
+printf("|                                                |        I        IIII       III I       I       I I I     I I I I     |                                               |\n");
+printf("|                                               |        I I      I    I     I           I I      I    I    I            |                                              |\n");
+printf("|                                              |        I   I     I   I     I           I   I     I     I   I             |                                             |\n");
 printf("|                                              |       I ___ I    I    I    I          I ____I    I     I   I I I I       |                                             |\n");
 printf("|                                               |     I       I   I     I    I        I       I   I    I    I            |                                              |\n");
 printf("|                                                |   I         I  I      I    III I  I         I  I I I     I I I I     |                                               |\n");
