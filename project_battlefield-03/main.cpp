@@ -24,10 +24,6 @@ void ShowHowToplay();
 void ShowMap();
 string toUpperStr(string);
 void ShowShop(Player);
-void FightBoss1();
-void FightBoss2();
-void FightBoss3();
-void FightBoss4();
 void ShowFightPhase();
 string name;
 
@@ -101,10 +97,10 @@ while(level > 4){ //วนรับค่า boss
     while(true){
 		boss.bossnewturn();	//เปลี่ยน turn
 		Player1.playernewturn();			
-		drawScene(Player1,boss,hero_name);		
+		ShowFightPhase();	
         //player
         button(player_action,BOSS_action);
-        if(player_action == 'a') p = Player1.attack(boss,"Soilder"); 
+        if(player_action == 'a') p = Player1.attack(); 
         
         if(player_action == 'q'){
             if(Player1.medkit > 0) p = Player1.heal();
@@ -117,8 +113,8 @@ while(level > 4){ //วนรับค่า boss
         }
         if(player_action == 'e') break;
         //mons
-		if(i > 0){
-        if(i == 4){
+		if(level > 0){
+        if(level == 4){
               BOSS_action = atkboss(BOSS_action);
         }
         else{
@@ -129,18 +125,19 @@ while(level > 4){ //วนรับค่า boss
         if(BOSS_action == 'b') m = boss.superattack(soilder101,boss_id);
         
 		if(soilder101.playerisDead()){
-			drawScene(soilder101,boss,hero_name);
-            money += 10000;
+			ShowFightPhase();
 			playerLose();
 			break; 
 		}
 		
 		if(boss.bossisDead())){
-			drawScene(soilder101,boss,hero_name);//อาจแก้เป็นฉากตาย
-            soilder101.level_up();
+			ShowFightPhase();//อาจแก้เป็นฉากตาย
 			playerWin();
-            getmoney(boss_id,money);
-            i++;
+            if(level == 1) money += (500 + rand()%501);//โอกาสเงิน 2 เท่า
+            if(level == 2) money += (1000 + rand()%1001);//โอกาสเงิน 2 เท่า
+            if(level == 3) money += (1500 + rand()%9501);//โอกาสเกิด jackpot
+            playerWin();
+            level++;
             break;
         }
     }
@@ -373,9 +370,7 @@ void ShowMap()
 // }
 
 
-void drawScene(Unit soilder101,Unit boss,string heroname){
-    char heroes[50];
-    sscanf (heroname.c_str(),"%s",heroes);
+void  ShowFightPhase(){
    if (level == 1 && !Player1.isAK && !Player1.isPistol && Dummy1) {
            if(Player1.hp < 0)  Player1.hp = 0;
            if(Dummy1.hp < 0) Dummy1.hp = 0;
