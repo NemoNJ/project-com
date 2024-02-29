@@ -833,6 +833,47 @@ printf("|                                                                       
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 
 
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
+SetConsoleTextAttribute(color , 12);	//เป็นการใส่สีที่กำหนดไว้
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+SetConsoleTextAttribute(color , 14);
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                  ____________________________________________________________________                                                 |\n");
+printf("|                                                 |                                                                    |                                                |\n");
+printf("|                                                |        I        IIII       III I       I       I I I     I I I I     |                                               |\n");
+printf("|                                               |        I I      I    I     I           I I      I    I    I            |                                              |\n");
+printf("|                                              |        I   I     I   I     I           I   I     I     I   I             |                                             |\n");
+printf("|                                            * |       I ___ I    I    I    I          I ____I    I     I   I I I I       | *                                           |\n");
+printf("|                                           *   |     I       I   I     I    I        I       I   I    I    I            |   *                                          |\n");
+printf("|                                           *    |   I         I  I      I    III I  I         I  I I I     I I I I     |    *                                          |\n");
+printf("|                                           *     |____________________________________________________________________|     *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                       ");SetConsoleTextAttribute(color , 9);printf("Press[1] to enter Game BattleField 03");SetConsoleTextAttribute(color , 14);printf("                    *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                          ");SetConsoleTextAttribute(color , 9);printf("Press[2] to enter  3Card Game");SetConsoleTextAttribute(color , 14);printf("                         *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                          ");SetConsoleTextAttribute(color , 9);printf("Press[3] to enter Quiz Game");SetConsoleTextAttribute(color , 14);printf("                           *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           *                                                                                *                                          |\n");
+printf("|                                           **********************************************************************************                                          |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+printf("|                                                                                                                                                                       |\n");
+SetConsoleTextAttribute(color , 12);
+printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+SetConsoleTextAttribute(color , 15);
+
+
+
 
 
 
