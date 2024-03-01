@@ -10,10 +10,10 @@
 #include <conio.h>
 #include <stdio.h>
 #include <fstream>
-#include "Unit.cpp"
-// #include "Weapon.cpp"
+#include "UnitPlayer.cpp"
+
 using namespace std;
-char Heroname[99];
+char *Heroname;
 string Hero;
 void GameStart();
 
@@ -86,7 +86,8 @@ void AskPlayerName()
 {
     cout << setw(62) << "Enter Your Name : ";
     getline(cin,Hero);
-    string Hero(Heroname);
+    const char* Heroname = Hero.c_str();
+    ::Heroname = Heroname;
     name = Hero;
     system("cls");//clear terminal
 }
@@ -313,6 +314,7 @@ void FightBoss(Player &Player1, Boss &Boss)
 {
     string action;
     bool FightPhase = true;
+    Player1.hp = Player1.hpmax;
     while (FightPhase)
     {
         ShowFightPhase();
@@ -334,7 +336,7 @@ void FightBoss(Player &Player1, Boss &Boss)
         {
             Player1.useMedkit();
             if (Player1.medkit == 0)
-                continue;
+                continue;//ไม่ให้ถูกโจมตี
         }
         else if (action == "E")
         {
@@ -353,7 +355,7 @@ void FightBoss(Player &Player1, Boss &Boss)
         if (Boss.CheckDead())
         {
             FightPhase = false;
-            Player1.playerWin(Boss);
+            Player1.playerWin(levelStage);
             levelStage++;
             Player1.addmoney(Boss.money);
 
@@ -372,6 +374,7 @@ void FightBoss(Player &Player1, Boss &Boss)
     }
 }
 
+
 void ShowFightPhase(){
 
     if (levelStage == 1 && !Player1.isAK && !Player1.isPistol)
@@ -381,7 +384,7 @@ void ShowFightPhase(){
         printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
         printf("|                                                                                                                                                                       |\n");
         printf("|                                                                                                                                                           STAGE 1     |\n");
-        printf("|                         %s                                                                            The Stick Man LV 1                                              |\n", Heroname);
+        cout  << "|                         "<<Hero <<"                                                                           The Stick Man LV 1                                              |\n";
         printf("|                                                                                                                                                                       |\n");
         printf("|                                                                                                                                                                       |\n");
         printf("|                                                                                                                                                                       |\n");
@@ -457,7 +460,7 @@ void ShowFightPhase(){
         printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
         printf("|                                                                                                                                                                       |\n");
         printf("|                                                                                                                                                           STAGE 3     |\n");
-        printf("|                         %s                                                                           The Stick Man LV 1                                               |\n", Heroname);
+        printf("|                         %s           CCC                                                                 The Stick Man LV 1                                               |\n", Heroname);
         printf("|                                                                                                                                                                       |\n");
         printf("|                                                                                                                                                                       |\n");
         printf("|                                                                                                                                                                       |\n");
@@ -495,7 +498,7 @@ void ShowFightPhase(){
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                           STAGE 2     |\n");
-printf("|                         %s                                                                           The 9mm  LV 10                                                   |\n",Heroname);
+printf("|                         %s                       DDD                                                      The 9mm  LV 10                                                   |\n",Heroname);
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
@@ -533,7 +536,7 @@ printf("|-----------------------------------------------------------------------
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                           STAGE 2     |\n");
-printf("|                         %s                                                                              The 9mm  LV 10                                                |\n",Heroname);
+printf("|                         %s                              EEE                                                 The 9mm  LV 10                                                |\n",Heroname);
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
 printf("|                                                                                                                                                                       |\n");
