@@ -69,12 +69,15 @@ void Coutframe(int a, int b, int sw){
     cout << endl;
 }
 
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
+
+
 //======================================================================------ Start Program ------===================================================================//
 int main(){
-    HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 15);
     cout << endl; 
+    SetConsoleTextAttribute(color , 14);
     cout << "                ------------------------------------============== * * * * |   Welcome to the game   | * * * * ==============------------------------------------" << endl;
+    SetConsoleTextAttribute(color , 15);
     cout << endl;
     cout << "                This game is played by using cards from all 50 cards that were shuffled to your hand for 5 cards." << endl;
     cout << "                If you have played all of your cards,  don't worry, cards will shuffle to your hand again." << endl; 
@@ -117,7 +120,12 @@ int main(){
     Coutframe(8, 6, 0);
     cout << "                  Player's cards(5 of 50):" << endl;
     for (int i = 0; i < 5; ++i) {
-        cout << "                  Card " << i + 1 << ": " << AllCardPlayer[i] << endl;
+        SetConsoleTextAttribute(color , 15);
+            cout << "                  Card " ;
+            SetConsoleTextAttribute(color , 14);
+            cout << i + 1 ;
+            SetConsoleTextAttribute(color , 15);
+            cout << ": " << AllCardPlayer[i] << endl;
     }
     Coutframe(8, 6, 0);
     int playerChoice;    
@@ -135,7 +143,7 @@ int main(){
 
         Stat Py = {PlayerHP, 0, 0,0,0};
         Stat Bt = {BotHP, 0, 0,0,0};
-        
+        SetConsoleTextAttribute(color , 15);
         int Paction = 0, Baction = 0;
         cout << "\nRound " << round + 1 << endl;
         
@@ -179,6 +187,7 @@ int main(){
             usedCard(AllCardPlayer, PyC);
             break;
         }
+        SetConsoleTextAttribute(color , 15);
         TotalDMG_P += Py.ATK;
         
         TotalHEAL_P += Py.HEAL;
@@ -197,9 +206,15 @@ int main(){
 
         Coutframe(8, 6, 0);
         if(ReturnUsedcard(AllCardPlayer)) ShuffleCards(AllCardPlayer, CardType);
+
         cout << "                  Player's cards(5 of 50):" << endl;
         for (int i = 0; i < 5; ++i) {
-            cout << "                  Card " << i + 1 << ": " << AllCardPlayer[i] << endl;
+            SetConsoleTextAttribute(color , 15);
+            cout << "                  Card " ;
+            SetConsoleTextAttribute(color , 14);
+            cout << i + 1 ;
+            SetConsoleTextAttribute(color , 15);
+            cout << ": " << AllCardPlayer[i] << endl;
             }
         Coutframe(8, 6, 0);
         // Bt atk - Def Py == PlayerHp;
@@ -217,12 +232,33 @@ int main(){
         CoutGameOver(Playerhealth, Bothealth, round, GameOver);
     }
     while(!GameOver);
-    cout << "                             your total damage: " << TotalDMG_P;
-    cout << setw(86) << "Bot total damage: " << TotalDMG_B << endl;
-    cout << "                             your total heal: " << TotalHEAL_P;
-    cout << setw(86) << "Bot total heal: " << TotalHEAL_B << endl;
-    cout << "                             damage Blocked: " << Blocked_P;
-    cout << setw(87) << "damage blocked: " << Blocked_B << endl;
+    // color red
+    SetConsoleTextAttribute(color , 15);
+    cout << "                             your total damage: " ;
+    SetConsoleTextAttribute(color , 12);
+    cout << TotalDMG_P;
+    SetConsoleTextAttribute(color , 15);
+    cout << setw(86) << "Bot total damage: " ;
+    SetConsoleTextAttribute(color , 12);
+    cout  << TotalDMG_B << endl;
+    SetConsoleTextAttribute(color , 15);
+    cout << "                             your total heal: ";
+    SetConsoleTextAttribute(color , 10);
+    cout << TotalHEAL_P;
+    SetConsoleTextAttribute(color , 15);
+    cout << setw(86) << "Bot total heal: ";
+    SetConsoleTextAttribute(color , 10);
+    cout << TotalHEAL_B << endl;
+    SetConsoleTextAttribute(color , 15);
+    // color blue
+    cout << "                             damage Blocked: ";
+    SetConsoleTextAttribute(color , 9);	
+    cout << Blocked_P;
+    SetConsoleTextAttribute(color , 15);
+    cout << setw(87) << "damage blocked: ";
+    SetConsoleTextAttribute(color , 9);	
+    cout << Blocked_B << endl;
+    SetConsoleTextAttribute(color , 15);
     cout << endl;
 }
 //=============================================================------ End program ------============================================================================//
@@ -232,11 +268,13 @@ string UsedDetect(int &act, Stat &Pyaction){
     Pyaction.ATK = 0;
     Pyaction.HEAL = 0;
     Pyaction.DEF = 0;
+    SetConsoleTextAttribute(color , 13);
     return " Absolutely nothing...";
 }
 
 
 string CheckCondition(string C[],int Atk[], int Def[], int Heal[], int PyC, Stat &action, string CType[], int &act){
+    
     // 1 = strike card , 2 = deffense card , 3 = heal card;
     //PyC == PlayerChoice;
     if(C[PyC - 1] == " used           ") return UsedDetect(act, action);
@@ -244,12 +282,14 @@ string CheckCondition(string C[],int Atk[], int Def[], int Heal[], int PyC, Stat
         //strike
             action.ATK = Atk[rand()%21];
             act = 1;
+            SetConsoleTextAttribute(color , 12);
             return "  Fury Strike!!";
         }
     if(C[PyC - 1] == CType[1]){
         // deffense
             action.DEF = Def[rand()%21];
             act = 2;
+            SetConsoleTextAttribute(color , 9);	
             return "  Shield up";
             
         }
@@ -257,6 +297,7 @@ string CheckCondition(string C[],int Atk[], int Def[], int Heal[], int PyC, Stat
         // Healing
             action.HEAL = Heal[rand()%11];
             act = 3;
+            SetConsoleTextAttribute(color , 10);
             return "  heal~~";
             
     }
@@ -293,27 +334,33 @@ string BotAction( int type, Stat &botActType, int Cardrand[], int &Bact){
     if (type == 1){//Attack
         botActType.ATK = Cardrand[rand() % 21];
         Bact = 1;
+        SetConsoleTextAttribute(color , 12);
         return "  Fierce Attack!!! (O.O)";
         }
     if (type == 2){// deffense
         botActType.DEF = Cardrand[rand() % 21];
         Bact = 2;
+        SetConsoleTextAttribute(color , 9);	
         return "  Guard Up!!";
         }
     if (type == 3){// Healing
         botActType.HEAL = Cardrand[rand() % 11];
         Bact = 3;
+        SetConsoleTextAttribute(color , 10);
         return "  Healing~~ (^-^)";
         }
 }
 
 void CoutGameOver(int PHP, int BHP, int r, bool &GameCheck){
+    HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
     if(PHP <= 0 && BHP > 0){
         ClearTerminal(32);
         Coutframe(15, 10, 30);
+        SetConsoleTextAttribute(color , 12);
         cout << endl << setw(86) << "You lost!!" << endl;
         cout << setw(85) << "at round " << r + 1 << endl;
         cout << endl;
+        SetConsoleTextAttribute(color , 15);
         Coutframe(15, 10, 30);
         ClearTerminal(10);
         GameCheck = 1;
@@ -321,9 +368,11 @@ void CoutGameOver(int PHP, int BHP, int r, bool &GameCheck){
     if(PHP > 0 && BHP <= 0){
         ClearTerminal(32);
         Coutframe(15, 10, 30);
+        SetConsoleTextAttribute(color , 10);
         cout << endl << setw(86) << "You won!!" << endl;
         cout << setw(85) << "at round " << r + 1 << endl;
         cout << endl;
+        SetConsoleTextAttribute(color , 15);
         Coutframe(15, 10, 30);
         ClearTerminal(10);
         GameCheck = 1;
@@ -331,9 +380,11 @@ void CoutGameOver(int PHP, int BHP, int r, bool &GameCheck){
     else if(PHP == 0 && BHP == 0){
         ClearTerminal(32);
         Coutframe(15, 10, 30);
+        SetConsoleTextAttribute(color , 9);
         cout << endl << setw(86) << " Draw!!!" << endl;
         cout << setw(85) << "at round " << r + 1 << endl;
         cout << endl;
+        SetConsoleTextAttribute(color , 15);
         Coutframe(15, 10, 30);
         ClearTerminal(10);
         GameCheck = 1;
