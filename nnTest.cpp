@@ -36,7 +36,7 @@ string UsedDetect(int &, Stat &);
 string CheckCondition(string [], int [], int [], int [], int , Stat &, string [], int &);
 
 int DMGConfig(Stat &, Stat &, int &);
-int HpConfig(Stat &, int &);
+int HealConfig(Stat &, int &);
 
 string usedCard(string card[], int arr){
     return card[arr] = " used           ";
@@ -59,6 +59,7 @@ void CoutHpDef(Stat &P, Stat &B, int &Php, int &Bhp){
             cout << setw(107) << "Bot's deffense point: " << B.DEF << endl;
         
 }
+void CoutGameOver(int, int, int , bool &);
 
 void Coutframe(int a, int b, int sw){
     for(int i = 0; i < sw; i++) cout << " ";
@@ -120,7 +121,7 @@ int main(){
     }
     Coutframe(8, 6, 0);
     int playerChoice;    
-    int i = 0;
+    int round = 0;
     Frame("-");
     // pre stat (hp, def, atk, heal)
     Stat PreP = {100, 0, 0,0,0};
@@ -136,14 +137,14 @@ int main(){
         Stat Bt = {BotHP, 0, 0,0,0};
         
         int Paction = 0, Baction = 0;
-        cout << "\nRound " << i + 1 << endl;
+        cout << "\nRound " << round + 1 << endl;
         
         cout << "Your turn - Choose a card to play (1-5): ";
         cin >> playerChoice;
         int PyC = playerChoice - 1;
         cout << endl;
         ClearTerminal(33);
-        i++;
+        round++;
         //CardType = " Fury Strike ", " Damage Absolver", " Healing"};
          // 1 = strike card , 2 = deffense card , 3 = heal card;
         switch (PyC)
@@ -206,37 +207,12 @@ int main(){
         DMGConfig(Py, Bt, BotHP);
         if (BotHP < 0) BotHP = 0;
         if (PlayerHP < 0) PlayerHP = 0;
-        HpConfig(Bt, BotHP);
-        HpConfig(Py, PlayerHP);
+        HealConfig(Bt, BotHP);
+        HealConfig(Py, PlayerHP);
         Frame("-");
         CoutHpDef(Py, Bt, PlayerHP, BotHP);
-        if (BotHP <= 0 && PlayerHP > 0) {
-            cout << endl;
-            Coutframe(15, 10, 30);
-            cout << endl << setw(86) << "You won!!" << endl;
-            cout << setw(85) << "at round " << i << endl;
-            cout << endl;
-            Coutframe(15, 10, 30);
-            GameOver = true;
-            }
-        else if (PlayerHP <= 0 && BotHP > 0) {
-            cout << endl;
-            Coutframe(15, 10, 30);
-            cout << endl << setw(86) << "You lost!!" << endl;
-            cout << setw(85) << "at round " << i << endl;
-            cout << endl;
-            Coutframe(15, 10, 30);
-            GameOver = true;    
-            }
-        else if(PlayerHP == 0 && BotHP == 0){
-            cout << endl;
-            Coutframe(15, 10, 30);
-            cout << endl << setw(86) << " Draw!!!" << endl;
-            cout << setw(85) << "at round " << i << endl;
-            cout << endl;
-            Coutframe(15, 10, 30);
-            GameOver = true; 
-        }
+        
+        CoutGameOver(PlayerHP, BotHP, round, GameOver);
     }
     while(!GameOver);
     cout << "                             your total damage: " << TotalDMG_P;
@@ -245,6 +221,7 @@ int main(){
     cout << setw(86) << "Bot total heal: " << TotalHEAL_B << endl;
     cout << "                             damage Blocked: " << Blocked_P;
     cout << setw(87) << "damage blocked: " << Blocked_B << endl;
+    cout << endl;
 }
 //=============================================================------ End program ------============================================================================//
 
@@ -282,7 +259,7 @@ string CheckCondition(string C[],int Atk[], int Def[], int Heal[], int PyC, Stat
             
     }
 }
-int HpConfig(Stat &Hl, int &Hp){
+int HealConfig(Stat &Hl, int &Hp){
     Hp += Hl.HEAL;
     if(Hp > 100) Hp = 100;
     return Hp;
@@ -325,5 +302,38 @@ string BotAction( int type, Stat &botActType, int Cardrand[], int &Bact){
         botActType.HEAL = Cardrand[rand() % 11];
         Bact = 3;
         return "  Healing~~ (^-^)";
+        }
+}
+
+void CoutGameOver(int PHP, int BHP, int r, bool &GameCheck){
+    if(PHP <= 0 && BHP > 0){
+        ClearTerminal(32);
+        Coutframe(15, 10, 30);
+        cout << endl << setw(86) << "You lost!!" << endl;
+        cout << setw(85) << "at round " << r + 1 << endl;
+        cout << endl;
+        Coutframe(15, 10, 30);
+        ClearTerminal(10);
+        GameCheck = 1;
+    }
+    if(PHP > 0 && BHP <= 0){
+        ClearTerminal(32);
+        Coutframe(15, 10, 30);
+        cout << endl << setw(86) << "You won!!" << endl;
+        cout << setw(85) << "at round " << r + 1 << endl;
+        cout << endl;
+        Coutframe(15, 10, 30);
+        ClearTerminal(10);
+        GameCheck = 1;
+        }
+    else if(PHP == 0 && BHP == 0){
+        ClearTerminal(32);
+        Coutframe(15, 10, 30);
+        cout << endl << setw(86) << " Draw!!!" << endl;
+        cout << setw(85) << "at round " << r + 1 << endl;
+        cout << endl;
+        Coutframe(15, 10, 30);
+        ClearTerminal(10);
+        GameCheck = 1;
         }
 }
