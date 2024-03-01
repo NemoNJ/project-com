@@ -212,7 +212,9 @@ int main(){
         Frame("-");
         CoutHpDef(Py, Bt, PlayerHP, BotHP);
         
-        CoutGameOver(PlayerHP, BotHP, round, GameOver);
+        int Playerhealth = PlayerHP;
+        int Bothealth = BotHP;
+        CoutGameOver(Playerhealth, Bothealth, round, GameOver);
     }
     while(!GameOver);
     cout << "                             your total damage: " << TotalDMG_P;
