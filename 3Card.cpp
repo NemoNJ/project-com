@@ -26,7 +26,7 @@ void ClearTerminal(int j){
 }
 void CoutATK(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 14);	
+    SetConsoleTextAttribute(color , 12);	
     printf ("   ______________\n");
     printf ("  |              |\n");
     printf ("  |      /\\      |      Card name: Fury Strike\n");
@@ -35,9 +35,10 @@ void CoutATK(){
     printf ("  |  |__|__|__|  |\n");
     printf ("  |     |__|     |\n");
     printf ("  |______________|\n");
+    SetConsoleTextAttribute(color , 15);
     printf ("---Enter to continue---");
     cin.get();
-    SetConsoleTextAttribute(color , 15);
+
 }
 
 void CoutShield(){
@@ -51,14 +52,14 @@ void CoutShield(){
     printf ("  |  \\ \\ __ / /  |\n");
     printf ("  |   \\______/   |\n");
     printf ("  |______________|\n");
+    SetConsoleTextAttribute(color , 15);
     printf ("---Enter to continue---");
     cin.get();
-    SetConsoleTextAttribute(color , 15);
 }
 
 void CoutHeal(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 12);	
+    SetConsoleTextAttribute(color , 10);	
     printf ("   ______________\n");
     printf ("  |              |\n");
     printf ("  |      __      |      Card name: Healing\n");
@@ -67,9 +68,9 @@ void CoutHeal(){
     printf ("  |     |__|     |\n");
     printf ("  |              |\n");
     printf ("  |______________|\n");
+    SetConsoleTextAttribute(color , 15);
     printf ("---Enter to continue---");
     cin.get();
-    SetConsoleTextAttribute(color , 15);
 }
 
 void TerminalDefault(){
@@ -94,7 +95,7 @@ void TerminalDefault(){
 
 void TerminalHH(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 12);
+    SetConsoleTextAttribute(color , 13);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
@@ -114,7 +115,7 @@ void TerminalHH(){
 
 void TerminalHA(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 12);
+    SetConsoleTextAttribute(color , 13);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
@@ -133,7 +134,7 @@ void TerminalHA(){
 
 void TerminalHS(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 12);
+    SetConsoleTextAttribute(color , 13);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
@@ -154,7 +155,7 @@ void TerminalHS(){
 
 void TerminalAH(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 14);
+    SetConsoleTextAttribute(color , 13);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
@@ -173,7 +174,7 @@ void TerminalAH(){
 
 void TerminalAA(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 14);
+    SetConsoleTextAttribute(color , 13);
     printf ("                   __     ______________                                                                                   ___      ________              \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\          \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |          \n");
@@ -192,7 +193,7 @@ void TerminalAA(){
 
 void TerminalAS(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 14);
+    SetConsoleTextAttribute(color , 13);
     printf ("                   __     ______________                                                                                   ___      ________              \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\          \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |          \n");
@@ -211,7 +212,7 @@ void TerminalAS(){
 
 void TerminalSH(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 9);
+    SetConsoleTextAttribute(color , 13);
     printf ("                   __     ______________                                                                                   ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |         \n");
@@ -230,7 +231,7 @@ void TerminalSH(){
 
 void TerminalSA(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 9);
+    SetConsoleTextAttribute(color , 13);
     printf ("                   __     ______________                                                                                   ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |         \n");
@@ -249,7 +250,7 @@ void TerminalSA(){
 
 void TerminalSS(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 9);
+    SetConsoleTextAttribute(color , 13);
     printf ("                   __     ______________                                                                                   ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |         \n");
@@ -270,7 +271,7 @@ void TerminalSS(){
 //  Nothing , Atk
 void TerminalNA(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 14);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                                                           ______________            | |    |  /\\  /\\  |         \n");
@@ -290,7 +291,7 @@ void TerminalNA(){
 // Nothing , Shield
 void TerminalNS(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 14);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                                                           ______________            | |    |  /\\  /\\  |         \n");
@@ -310,7 +311,7 @@ void TerminalNS(){
 // Nothing , Heal
 void TerminalNH(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 14);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                                                           ______________            | |    |  /\\  /\\  |         \n");
