@@ -1,4 +1,5 @@
 #include "3Card_game_02.cpp"
+#include <limits>
 using namespace std;
 
 
@@ -48,6 +49,7 @@ string BotDoing(string [], Stat &,int [], int [], int [], int, string [], int &)
 string BotAction(int , Stat &, int[], int &);
 
 void CoutHpDef(Stat &P, Stat &B, int &Php, int &Bhp){
+    //P == Py(ATK, DEF, HEAL) , B == Bt(ATK, DEF, HEAL) , Php == PlayerHp(100) , Bhp == BotHp(100)  
             cout << "                 Player's Health point: " << Php;
             if(B.ATK > 0) cout << " - (" << abs(abs(B.ATK - P.DEF) - P.HEAL) << ") ";
             else if(P.HEAL > 0) cout << " + (" << abs(abs(B.ATK - P.DEF) - P.HEAL) << ") ";
@@ -146,9 +148,13 @@ int main(){
         SetConsoleTextAttribute(color , 15);
         int Paction = 0, Baction = 0;
         cout << "\nRound " << round + 1 << endl;
-        
         cout << "Your turn - Choose a card to play (1-5): ";
-        cin >> playerChoice;
+        while (!(cin >> playerChoice)) {
+            cout << "Invalid input --- Choose again:  ";
+            cin.clear();
+            // ignore all 256 letters of string;
+            cin.ignore(256, '\n');
+        }
         int PyC = playerChoice - 1;
         cout << endl;
         ClearTerminal(33);
@@ -186,6 +192,9 @@ int main(){
             cout << CheckCondition(AllCardPlayer, attackCards, defenseCards, healCards, playerChoice, Py, CardType, Paction);
             usedCard(AllCardPlayer, PyC);
             break;
+        case 5:// cin error detect
+            cout << "   your action:" << UsedDetect(Paction, Py);
+            break;
         }
         SetConsoleTextAttribute(color , 15);
         TotalDMG_P += Py.ATK;
@@ -217,6 +226,8 @@ int main(){
             cout << ": " << AllCardPlayer[i] << endl;
             }
         Coutframe(8, 6, 0);
+        cout << Py.ATK << "  " << Bt.ATK << endl;
+
         // Bt atk - Def Py == PlayerHp;
         DMGConfig(Bt, Py, PlayerHP);
         DMGConfig(Py, Bt, BotHP);
@@ -293,14 +304,13 @@ string CheckCondition(string C[],int Atk[], int Def[], int Heal[], int PyC, Stat
             return "  Shield up";
             
         }
-        if(C[PyC - 1] == CType[2]){
+    if(C[PyC - 1] == CType[2]){
         // Healing
             action.HEAL = Heal[rand()%11];
             act = 3;
             SetConsoleTextAttribute(color , 10);
             return "  heal~~";
-            
-    }
+        }
 }
 int HealConfig(Stat &Hl, int &Hp){
     Hp += Hl.HEAL;
@@ -309,7 +319,7 @@ int HealConfig(Stat &Hl, int &Hp){
 }
 
 int DMGConfig(Stat &Act1, Stat &Act2, int &Hp2){
-    if( Act1.ATK > 0) Hp2 -= abs(Act1.ATK - Act2.DEF);
+    if( Act1.ATK > 0) Hp2 = Hp2 - abs(Act1.ATK - Act2.DEF);
     return Hp2;
 }
 // BC == AllCardBot , BCType == CardType for bot;
