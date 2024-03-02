@@ -25,7 +25,7 @@ void ShuffleCards(string Deck[] , string Type[]){
         }
 }
 bool ReturnUsedcard(string arry[]){
-    string usedCheck = " used           ";
+    string usedCheck = " used            ";
     int boolsum = 0;
         for(int i = 0; i < 5; i++){
             if (arry[i] == usedCheck) boolsum += 1;
@@ -42,7 +42,7 @@ int DMGConfig(Stat &, Stat &, int &);
 int HealConfig(Stat &, int &);
 
 string usedCard(string card[], int arr){
-    return card[arr] = " used           ";
+    return card[arr] = " used            ";
 }
 
 //BotCards[] , Stat Bt , attackCards[] , deffenseCards[] , healCards[] , BotChoice , CardType[] , Baction;
@@ -73,7 +73,40 @@ void Coutframe(int a, int b, int sw){
     cout << endl;
 }
 
-
+void ShowCardType(int TypeSelect){
+            if(TypeSelect == 1){
+                SetConsoleTextAttribute(color , 15);
+                cout << "|";
+                SetConsoleTextAttribute(color , 12);
+                cout << ">>";
+                SetConsoleTextAttribute(color , 15);
+                cout << "|";
+            }
+            if(TypeSelect == 2){
+                SetConsoleTextAttribute(color , 15);
+                cout << "|";
+                SetConsoleTextAttribute(color , 9);
+                cout << "\\/";
+                SetConsoleTextAttribute(color , 15);
+                cout << "|";
+            }
+            if(TypeSelect == 3){
+                SetConsoleTextAttribute(color, 15);
+                cout << "|";
+                SetConsoleTextAttribute(color , 10);
+                cout << "=+";
+                SetConsoleTextAttribute(color , 15);
+                cout << "|";
+            }
+            if(TypeSelect == 0){
+                SetConsoleTextAttribute(color , 15);
+                cout << "|";
+                SetConsoleTextAttribute(color , 13);
+                cout << "[]";
+                SetConsoleTextAttribute(color , 15);
+                cout << "|";
+            }
+        }
 
 //======================================================================------ Start Program ------===================================================================//
 int main(){
@@ -116,7 +149,7 @@ int main(){
 
     string AllCardPlayer[5];
     string AllCardBot[5];
-    string CardType[] = {"| Fury Strike     |", "| Damage Absolver |", "| Healing         |"};
+    string CardType[] = {" Fury Strike     ", " Damage Absolver ", " Healing         "};
     ShuffleCards(AllCardPlayer, CardType);
     ShuffleCards(AllCardBot, CardType);
 
@@ -128,7 +161,36 @@ int main(){
             SetConsoleTextAttribute(color , 14);
             cout << i + 1 ;
             SetConsoleTextAttribute(color , 15);
-            cout << ": " << AllCardPlayer[i] << endl;
+            cout << ": " ;
+            if(AllCardPlayer[i] == CardType[0]){
+                //fury strike(1)
+                cout << "|";
+                SetConsoleTextAttribute(color , 12);
+                cout << AllCardPlayer[i];
+                ShowCardType(1);
+            }
+            else if(AllCardPlayer[i] == CardType[1]){
+                // damage absolver(2)
+                cout << "|";
+                SetConsoleTextAttribute(color , 9);
+                cout << AllCardPlayer[i];
+                ShowCardType(2);
+            }
+            else if(AllCardPlayer[i] == CardType[2]){
+                //healing(3)
+                cout << "|";
+                SetConsoleTextAttribute(color , 10);
+                cout << AllCardPlayer[i];
+                ShowCardType(3);
+            }
+            else if(AllCardPlayer[i] == " used            "){
+                SetConsoleTextAttribute(color , 13);
+                cout << "|";
+                cout << AllCardPlayer[i];
+                ShowCardType(0);
+            }
+            SetConsoleTextAttribute(color , 15);
+            cout << endl;
     }
     Coutframe(8, 6, 0);
     int playerChoice;    
@@ -213,14 +275,46 @@ int main(){
         if(ReturnUsedcard(AllCardPlayer)) ShuffleCards(AllCardPlayer, CardType);
 
         cout << "                  Player's cards(5 of 50):" << endl;
+
+        
         for (int i = 0; i < 5; ++i) {
             SetConsoleTextAttribute(color , 15);
             cout << "                  Card " ;
             SetConsoleTextAttribute(color , 14);
             cout << i + 1 ;
             SetConsoleTextAttribute(color , 15);
-            cout << ": " << AllCardPlayer[i] << endl;
+            cout << ": " ;
+            if(AllCardPlayer[i] == CardType[0]){
+                //fury strike(1)
+                cout << "|";
+                SetConsoleTextAttribute(color , 12);
+                cout << AllCardPlayer[i];
+                ShowCardType(1);
             }
+            else if(AllCardPlayer[i] == CardType[1]){
+                // damage absolver(2)
+                cout << "|";
+                SetConsoleTextAttribute(color , 9);
+                cout << AllCardPlayer[i];
+                ShowCardType(2);
+            }
+            else if(AllCardPlayer[i] == CardType[2]){
+                //healing(3)
+                cout << "|";
+                SetConsoleTextAttribute(color , 10);
+                cout << AllCardPlayer[i];
+                ShowCardType(3);
+            }
+            else if(AllCardPlayer[i] == " used            "){
+                // Used (0)
+                SetConsoleTextAttribute(color , 13);
+                cout << "|";
+                cout << AllCardPlayer[i];
+                ShowCardType(0);
+            }
+            SetConsoleTextAttribute(color , 15);
+            cout << endl;
+        }
         Coutframe(8, 6, 0);
         //cout << Py.ATK << "  " << Bt.ATK << endl;
 
@@ -290,7 +384,7 @@ string CheckCondition(string C[],int Atk[], int Def[], int Heal[], int PyC, Stat
     
     // 1 = strike card , 2 = deffense card , 3 = heal card;
     //PyC == PlayerChoice;
-    if(C[PyC - 1] == " used           ") return UsedDetect(act, action);
+    if(C[PyC - 1] == " used            ") return UsedDetect(act, action);
     if(C[PyC - 1] == CType[0]){
         //strike
             action.ATK = Atk[rand()%21];
@@ -315,16 +409,15 @@ string CheckCondition(string C[],int Atk[], int Def[], int Heal[], int PyC, Stat
         }
 }
 int HealConfig(Stat &Hl, int &Hp){
+    if(Hl.HEAL > 30) Hl.HEAL = 30;
     Hp += Hl.HEAL;
     if(Hp > 100) Hp = 100;
     return Hp;
 }
 
 int DMGConfig(Stat &Act1, Stat &Act2, int &Hp2){
-   // SetConsoleTextAttribute(color , 15);
     if( Act1.ATK > 0) {
         if(Act1.ATK > 50) Act1.ATK = 50;
-
         Hp2 = Hp2 - abs(Act1.ATK - Act2.DEF);
     }
     return Hp2;
