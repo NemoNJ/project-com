@@ -75,18 +75,29 @@ void CoutHeal(){
 
 void TerminalDefault(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 16);
+    SetConsoleTextAttribute(color , 1);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |     |  __  __  |                                                                                     | |    |  /\\  /\\  |         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |\\__  |  \\/__\\/  |                                                                                    _|_|_   |   ____   |        \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |______|  \\________/                                                                                    |_____|   \\________/      _   \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                     |______/  _\\/_  \\________                                                                              |_|_____/        \\_____|_| \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  /    \\  |    _|_|_                                                                                   |          |          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  \\____/  |   |_ _ _|                                                                                  |          |          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                            \\________/      | |                                                                                     \\________/          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                             ||    ||       | |                                                                                      ||    ||             \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -95,18 +106,29 @@ void TerminalDefault(){
 
 void TerminalHH(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 11);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |              |          _|_|_   |   ____   |        \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |______|  \\________/                   |      __      |                        |      __      |         |_____|   \\________/      _   \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                     |______/  _\\/_  \\________           |   __|  |__   |                        |   __|  |__   |           |_|_____/        \\_____|_| \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  /    \\  |    _|_|_         |  |__    __|  |                        |  |__    __|  |                  |          |          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  \\____/  |   |_ _ _|        |     |__|     |                        |     |__|     |                  |          |          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                            \\________/      | |          |              |                        |              |                   \\________/          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -115,18 +137,29 @@ void TerminalHH(){
 
 void TerminalHA(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 1);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |              |          _|_|_   |   ____   |        \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |______|  \\________/                   |      __      |                        |      /\\      |         |_____|   \\________/      _  \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                     |______/  _\\/_  \\________           |   __|  |__   |                        |     |  |     |           |_|_____/        \\_____|_| \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  /    \\  |    _|_|_         |  |__    __|  |                        |   __|__|__   |                  |          |          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  \\____/  |   |_ _ _|        |     |__|     |                        |  |__|__|__|  |                  |          |          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                            \\________/      | |          |              |                        |     |__|     |                   \\________/          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -134,18 +167,29 @@ void TerminalHA(){
 
 void TerminalHS(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 11);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |  __________  |          _|_|_   |   ____   |        \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |______|  \\________/                   |      __      |                        | |  ______  | |         |_____|   \\________/      _   \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                     |______/  _\\/_  \\________           |   __|  |__   |                        | | |      | | |           |_|_____/        \\_____|_| \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  /    \\  |    _|_|_         |  |__    __|  |                        | | |      | | |                  |          |          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  \\____/  |   |_ _ _|        |     |__|     |                        |  \\ \\ __ / /  |                  |          |        \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                            \\________/      | |          |              |                        |   \\______/   |                   \\________/         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -155,18 +199,29 @@ void TerminalHS(){
 
 void TerminalAH(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 1);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |     |  __  __  |                   ______________                          ______________            | |    |  /\\  /\\  |         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |              |          _|_|_   |   ____   |        \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |______|  \\________/                   |      /\\      |                        |      __      |         |_____|   \\________/      _  \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                     |______/  _\\/_  \\________           |     |  |     |                        |   __|  |__   |           |_|_____/        \\_____|_| \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  /    \\  |    _|_|_         |   __|__|__   |                        |  |__    __|  |                  |          |          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  \\____/  |   |_ _ _|        |  |__|__|__|  |                        |     |__|     |                  |          |          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                            \\________/      | |          |     |__|     |                        |              |                   \\________/          \n");
+    SetConsoleTextAttribute(color , 11);      
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -174,18 +229,29 @@ void TerminalAH(){
 
 void TerminalAA(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 11);
     printf ("                   __     ______________                                                                                   ___      ________              \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |              |         _|_|_   |   ____   |         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |______|  \\________/                   |      /\\      |                        |      /\\      |        |_____|   \\________/      _  \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                     |______/  _\\/_  \\________           |     |  |     |                        |     |  |     |          |_|_____/        \\_____|_|  \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  /    \\  |    _|_|_         |   __|__|__   |                        |   __|__|__   |                 |          |           \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  \\____/  |   |_ _ _|        |  |__|__|__|  |                        |  |__|__|__|  |                 |          |           \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                            \\________/      | |          |     |__|     |                        |     |__|     |                  \\________/           \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||              \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__           \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|         \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -193,18 +259,29 @@ void TerminalAA(){
 
 void TerminalAS(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 1);
     printf ("                   __     ______________                                                                                   ___      ________              \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |\\__  |  \\/__\\/  |                  |              |                        |  __________  |         _|_|_   |   ____   |         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |______|  \\________/                   |      /\\      |                        | |  ______  | |        |_____|   \\________/      _   \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                     |______/  _\\/_  \\________           |     |  |     |                        | | |      | | |          |_|_____/        \\_____|_|  \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  /    \\  |    _|_|_         |   __|__|__   |                        | | |      | | |                 |          |           \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  \\____/  |   |_ _ _|        |  |__|__|__|  |                        |  \\ \\ __ / /  |                 |          |         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                            \\________/      | |          |     |__|     |                        |   \\______/   |                  \\________/          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||              \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__           \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|         \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -212,18 +289,29 @@ void TerminalAS(){
 
 void TerminalSH(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 11);
     printf ("                   __     ______________                                                                                   ___      ________             \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |\\__  |  \\/__\\/  |                  |  __________  |                        |              |         _|_|_   |   ____   |        \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |______|  \\________/                   | |  ______  | |                        |      __      |        |_____|   \\________/      _   \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                     |______/  _\\/_  \\________           | | |      | | |                        |   __|  |__   |          |_|_____/        \\_____|_| \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  /    \\  |    _|_|_         | | |      | | |                        |  |__    __|  |                 |          |          \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  \\____/  |   |_ _ _|        |  \\ \\ __ / /  |                        |     |__|     |                 |          |        \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                            \\________/      | |          |   \\______/   |                        |              |                  \\________/         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||             \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|        \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -231,18 +319,29 @@ void TerminalSH(){
 
 void TerminalSA(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 1);
     printf ("                   __     ______________                                                                                   ___      ________             \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |\\__  |  \\/__\\/  |                  |  __________  |                        |              |         _|_|_   |   ____   |        \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |______|  \\________/                   | |  ______  | |                        |      /\\      |        |_____|   \\________/      _  \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                     |______/  _\\/_  \\________           | | |      | | |                        |     |  |     |          |_|_____/        \\_____|_| \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  /    \\  |    _|_|_         | | |      | | |                        |   __|__|__   |                 |          |          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  \\____/  |   |_ _ _|        |  \\ \\ __ / /  |                        |  |__|__|__|  |                 |          |        \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                            \\________/      | |          |   \\______/   |                        |     |__|     |                  \\________/         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||             \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|        \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -250,18 +349,29 @@ void TerminalSA(){
 
 void TerminalSS(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 13);
+    SetConsoleTextAttribute(color , 11);
     printf ("                   __     ______________                                                                                   ___      ________             \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |\\/|   /______________\\                                                                                  |||     /        \\         \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |  |     |  __  __  |                   ______________                          ______________           | |    |  /\\  /\\  |         \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                  |  |\\__  |  \\/__\\/  |                  |  __________  |                        |  __________  |         _|_|_   |   ____   |        \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                  |______|  \\________/                   | |  ______  | |                        | |  ______  | |        |_____|   \\________/      _   \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                     |______/  _\\/_  \\________           | | |      | | |                        | | |      | | |          |_|_____/        \\_____|_| \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                           |  /    \\  |    _|_|_         | | |      | | |                        | | |      | | |                 |          |          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           |  \\____/  |   |_ _ _|        |  \\ \\ __ / /  |                        |  \\ \\ __ / /  |                 |          |      \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                            \\________/      | |          |   \\______/   |                        |   \\______/   |                  \\________/        \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||             \n");
+    SetConsoleTextAttribute(color , 1);
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__          \n");
+    SetConsoleTextAttribute(color , 11);
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|        \n");
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -271,7 +381,7 @@ void TerminalSS(){
 //  Nothing , Atk
 void TerminalNA(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 14);
+    SetConsoleTextAttribute(color , 12);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                                                           ______________            | |    |  /\\  /\\  |         \n");
@@ -291,7 +401,7 @@ void TerminalNA(){
 // Nothing , Shield
 void TerminalNS(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 14);
+    SetConsoleTextAttribute(color , 12);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                                                           ______________            | |    |  /\\  /\\  |         \n");
@@ -311,7 +421,7 @@ void TerminalNS(){
 // Nothing , Heal
 void TerminalNH(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 14);
+    SetConsoleTextAttribute(color , 12);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                                                           ______________            | |    |  /\\  /\\  |         \n");
