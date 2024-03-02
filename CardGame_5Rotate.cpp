@@ -2,6 +2,8 @@
 #include <limits>
 using namespace std;
 
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
+
 
 struct Stat{
     int Hpoint;
@@ -48,7 +50,7 @@ string BotDoing(string [], Stat &,int [], int [], int [], int, string [], int &)
 // Type of CardType(0,1,2) , Stat Bt , (atk,def,heal) Cards , Baction;
 string BotAction(int , Stat &, int[], int &);
 
-void CoutHpDef(Stat &P, Stat &B, int &Php, int &Bhp){
+void CoutHpDef(Stat P, Stat B, int Php, int Bhp){
     //P == Py(ATK, DEF, HEAL) , B == Bt(ATK, DEF, HEAL) , Php == PlayerHp(100) , Bhp == BotHp(100)  
             cout << "                 Player's Health point: " << Php;
             if(B.ATK > 0) cout << " - (" << abs(abs(B.ATK - P.DEF) - P.HEAL) << ") ";
@@ -71,13 +73,12 @@ void Coutframe(int a, int b, int sw){
     cout << endl;
 }
 
-HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
 
 
 //======================================================================------ Start Program ------===================================================================//
 int main(){
-    cout << endl; 
     SetConsoleTextAttribute(color , 14);
+    cout << endl; 
     cout << "                ------------------------------------============== * * * * |   Welcome to the game   | * * * * ==============------------------------------------" << endl;
     SetConsoleTextAttribute(color , 15);
     cout << endl;
@@ -192,21 +193,16 @@ int main(){
             cout << CheckCondition(AllCardPlayer, attackCards, defenseCards, healCards, playerChoice, Py, CardType, Paction);
             usedCard(AllCardPlayer, PyC);
             break;
-        case 5:// cin error detect
-            cout << "   your action:" << UsedDetect(Paction, Py);
-            break;
         }
         SetConsoleTextAttribute(color , 15);
-        TotalDMG_P += Py.ATK;
         
-        TotalHEAL_P += Py.HEAL;
 
         //random bot choice of action;
         int BotChoice = rand()%7 + 1;
         cout << setw(110) << "Bot's action:";
         cout << BotDoing(AllCardBot, Bt, attackCards, defenseCards, healCards, BotChoice, CardType, Baction) << endl;
-        TotalDMG_B += Bt.ATK;
-        TotalHEAL_B += Bt.HEAL;
+        
+        
 
         if(Py.ATK > 0 && Bt.DEF > 0) Blocked_B += abs(Bt.DEF - Py.ATK);
         if(Bt.ATK > 0 && Py.DEF > 0) Blocked_P += abs(Py.DEF - Bt.ATK);
@@ -226,7 +222,7 @@ int main(){
             cout << ": " << AllCardPlayer[i] << endl;
             }
         Coutframe(8, 6, 0);
-        cout << Py.ATK << "  " << Bt.ATK << endl;
+        //cout << Py.ATK << "  " << Bt.ATK << endl;
 
         // Bt atk - Def Py == PlayerHp;
         DMGConfig(Bt, Py, PlayerHP);
@@ -235,6 +231,12 @@ int main(){
         if (PlayerHP < 0) PlayerHP = 0;
         HealConfig(Bt, BotHP);
         HealConfig(Py, PlayerHP);
+
+        TotalDMG_P += Py.ATK;
+        TotalHEAL_P += Py.HEAL;
+        TotalDMG_B += Bt.ATK;
+        TotalHEAL_B += Bt.HEAL;
+
         Frame("-");
         CoutHpDef(Py, Bt, PlayerHP, BotHP);
         
@@ -319,7 +321,12 @@ int HealConfig(Stat &Hl, int &Hp){
 }
 
 int DMGConfig(Stat &Act1, Stat &Act2, int &Hp2){
-    if( Act1.ATK > 0) Hp2 = Hp2 - abs(Act1.ATK - Act2.DEF);
+   // SetConsoleTextAttribute(color , 15);
+    if( Act1.ATK > 0) {
+        if(Act1.ATK > 50) Act1.ATK = 50;
+
+        Hp2 = Hp2 - abs(Act1.ATK - Act2.DEF);
+    }
     return Hp2;
 }
 // BC == AllCardBot , BCType == CardType for bot;
