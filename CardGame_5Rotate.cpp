@@ -218,6 +218,7 @@ int main(){
             // ignore all 256 letters of string;
             cin.ignore(256, '\n');
         }
+        if(playerChoice > 5 || playerChoice < 1) playerChoice = 6;
         int PyC = playerChoice - 1;
         cout << endl;
         ClearTerminal(33);
@@ -254,6 +255,11 @@ int main(){
             cout << "   your action:";
             cout << CheckCondition(AllCardPlayer, attackCards, defenseCards, healCards, playerChoice, Py, CardType, Paction);
             usedCard(AllCardPlayer, PyC);
+            break;
+        case 5: // out of range 1 -5
+            SetConsoleTextAttribute(color , 15);
+            cout << "   your action:";
+            cout << UsedDetect(Paction, Py);
             break;
         }
         SetConsoleTextAttribute(color , 15);
