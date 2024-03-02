@@ -326,7 +326,7 @@ void Player::showshop()
     printf("|                                                                       |___|___|___|/                                   |_____________|/                               |\n");
     printf("|             Pistol Press[1]                                           Armor1 Press[2]                                  Medkit  Press[3]                               |\n");
     printf("|             PRICE : 150  $                                            PRICE : 300  $                                   PRICE : 100  $                                 |\n");
-    printf("|             ATK   : 15 - 35 damage                                    DEF   : +10 def                                  HEAL  :  25 - 40 hp                            |\n");
+    printf("|             ATK   : 15 - 25 damage                                    DEF   : +10 def                                  HEAL  :  25 - 40 hp                            |\n");
     printf("|            Amount : %d                                                Amount : %d                                       Amount : %d                                      |\n", isPistol, isarmour, medkit);
     printf("|                                                                                                                                                                       |\n");
     printf("|                                                                            __                                                                                         |\n");
@@ -338,7 +338,7 @@ void Player::showshop()
     printf("|               |_____/    ==       |__|                                    [__]                                                                                        |\n");
     printf("|             Rifile  Press[4]                                         Grenade  Press[5]                                                                                |\n");
     printf("|             PRICE : 1000  $                                          PRICE : 200  $ ( 1 used )                                                                        |\n");
-    printf("|             ATK   : 50 - 100 damage                                  ATK   : 120 damage                                                                               |\n");
+    printf("|             ATK   : 55 - 75 damage                                  ATK   : 120 damage                                                                               |\n");
     printf("|             Amount : %d                                               Amount : %d / 2                                                                                   |\n", isAK, grenade);
     printf("|                                                                                                                                                                       |\n");
     printf("|                                                                                                                                                                       |\n");
@@ -363,7 +363,7 @@ void Player::buyPistol()
     {
         money -= PistolPrice;
         isPistol = true;
-        atk = 15 + rand()%21;
+        atk = 15 + rand()%11;
         cout << setw(62) << "Success Buy Pistol" << endl;
     }
 }
@@ -414,7 +414,7 @@ void Player::buyAK()
     {
         money -= AKPrice;
         isAK = true;
-        atk = 50 + rand()%51;
+        atk = 55 + rand()%21;
         cout << setw(62) << "Success Buy AK" << endl;
     }
 }
