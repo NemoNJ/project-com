@@ -75,7 +75,7 @@ void CoutHeal(){
 
 void TerminalDefault(){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
-    SetConsoleTextAttribute(color , 10);
+    SetConsoleTextAttribute(color , 16);
     printf ("                   __     ______________                                                                                    ___      ________             \n");
     printf ("                  |\\/|   /______________\\                                                                                   |||     /        \\         \n");
     printf ("                  |  |     |  __  __  |                                                                                     | |    |  /\\  /\\  |         \n");
@@ -88,8 +88,8 @@ void TerminalDefault(){
     printf ("                             ||    ||       | |                                                                                      ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 
@@ -108,8 +108,8 @@ void TerminalHH(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 
@@ -128,8 +128,8 @@ void TerminalHA(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 void TerminalHS(){
@@ -147,8 +147,8 @@ void TerminalHS(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 
@@ -168,8 +168,8 @@ void TerminalAH(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 void TerminalAA(){
@@ -187,8 +187,8 @@ void TerminalAA(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||              \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__           \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|         \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 void TerminalAS(){
@@ -206,8 +206,8 @@ void TerminalAS(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||              \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__           \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|         \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 void TerminalSH(){
@@ -225,8 +225,8 @@ void TerminalSH(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 void TerminalSA(){
@@ -244,8 +244,8 @@ void TerminalSA(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 void TerminalSS(){
@@ -263,8 +263,8 @@ void TerminalSS(){
     printf ("                             ||    ||       | |          |______________|                        |______________|                   ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                   __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                          |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 // add used card action: 
@@ -284,8 +284,8 @@ void TerminalNA(){
     printf ("                             ||    ||       | |                                                  |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 // Nothing , Shield
@@ -304,8 +304,8 @@ void TerminalNS(){
     printf ("                             ||    ||       | |                                                  |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
-    cout << endl;
     SetConsoleTextAttribute(color , 15);
+    cout << endl;
 }
 
 // Nothing , Heal
@@ -324,8 +324,8 @@ void TerminalNH(){
     printf ("                             ||    ||       | |                                                  |______________|                    ||    ||             \n");
     printf ("                             ||    ||       \\ /                                                                                    __||    ||__          \n");
     printf ("                           /_\\|    |/_\\                                                                                           |___|    |___|        \n");
+    SetConsoleTextAttribute(color , 15);
     cout << endl;
-    SetConsoleTextAttribute(color , 15); 
 }
 
 void TerminalSeclection(int Pact, int Bact){
