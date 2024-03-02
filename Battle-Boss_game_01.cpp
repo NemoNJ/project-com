@@ -184,6 +184,7 @@ void GetEnter()
 
 void ShowHowToplay()
 {
+    tutorial();
    //อธิบายการเล่น
     GetEnter();
 }
