@@ -1,13 +1,10 @@
 #include <iostream>
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <cstdlib> // rand , srand
+#include <ctime> // time(0)
 #include <string>
-#include <vector>
-#include <algorithm>
-#include <iomanip>
+#include <iomanip> // setw
 #include <cctype>
-#include <windows.h>
+#include <windows.h> // color
 
 using namespace std;
 
