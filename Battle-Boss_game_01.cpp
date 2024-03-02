@@ -26,10 +26,10 @@ void ShowMap();
 string toUpperStr(string);
 void FightBoss(Player &, Boss &);
 void ShowFightPhase();
-Boss Dummy1("Dummy1", rand() % 5 + 30, rand() % 4 + 10, rand() % 2 + 1, 200);
-Boss Dummy2("Dummy2", rand() % 5 + 100, rand() % 8 + 12, rand() % 2 + 3, 400);
-Boss Dummy3("Dummy3", rand() % 6 + 130, rand() % 10 + 17, rand() % 3 + 10, 1200);
-Boss Dummy4("Dummy4", rand() % 10 + 450, rand() % 12 + 22, rand() % 10 + 32,2000);
+Boss Dummy1("Dummy1", rand() % 5 + 35, rand() % 4 + 8, rand() % 2 + 1, 200);
+Boss Dummy2("Dummy2", rand() % 5 + 100, rand() % 5 + 14, rand() % 2 + 2, 400);
+Boss Dummy3("Dummy3", rand() % 6 + 130, rand() % 5 + 18, rand() % 3 + 10, 1250);
+Boss Dummy4("Dummy4", rand() % 10 + 450, rand() % 6 + 23, rand() % 5 + 25,2000);
 string name;
 
 int levelStage = 1;
