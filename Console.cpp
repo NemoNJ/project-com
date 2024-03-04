@@ -54,7 +54,7 @@ SetConsoleTextAttribute(color , 15);
   } 
   else if(click == '2'){
     system("cls");
-    system("3Card_game_02");
+    system("CardGame_5Rotate");
   }
   else if(click == '3'){
    system("cls");
