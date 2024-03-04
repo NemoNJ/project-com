@@ -134,7 +134,7 @@ printf("|");SetConsoleTextAttribute(color , 12);printf("------------------------
 //อธิบายการเล่นคร่าวๆ
 void tutorial(){
 
-HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
+ HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
 SetConsoleTextAttribute(color , 9);	
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 printf("|                                                                                                                                                                       \n");
@@ -154,19 +154,19 @@ printf("|                                    - Boss fights in each level can be 
 printf("|                                                                                                                                                                       \n");
 printf("|                                    - Every time you start a boss fight Will heal our character to full health.                                                        \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
-printf("|                                                                                                                                                                       \n");
+printf("|                                    ------                                                                                                                             \n");
+printf("|                                   /      '                                                                            /------                                        \n");
+printf("|                                  /--------|                                                                        __|-------|__                                     \n");
+printf("|                                  |/   I I |                                                                           | U  U |                                       \n");
+printf("|                                  ||    -  /                                                                   |_:     |   ^  |                                       \n");
+printf("|                                   '------'-----_==============='                                       '==-'======'    '-----'                                       \n");
+printf("|                                   /  --------___/ |[]'-||---/                                              [|   '[]==-/  |_| ||                                      \n");
+printf("|                                  /  |      ||____/     |_|                                                  [|    ------     ||                                      \n");
+printf("|                                  |  |      |                                                                 [|       |      ||                                      \n");
+printf("|                                  |==|      |                                                                          |[][][]||                                      \n");
+printf("|                                  |==|      |                                                                          | | | |||                                      \n");
+printf("|                                  '=====[]=='                                                                          ===[]====                                      \n");
+printf("|                                  |         |                                                                          |       |                                      \n");
 printf("|                                                                                                                                                                       \n");
 printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 SetConsoleTextAttribute(color , 15);
