@@ -337,7 +337,7 @@ printf("|-----------------------------------------------------------------------
     printf("|               |_____/    ==       |__|                                    [__]                                                                                        |\n");
     printf("|             Rifile  Press[4]                                         Grenade  Press[5]                                                                                |\n");
     printf("|             PRICE : 1000  $                                          PRICE : 200  $ ( 1 used )                                                                        |\n");
-    printf("|             ATK   : 55 - 75 damage                                  ATK   : 120 damage                                                                               |\n");
+    printf("|             ATK   : 55 - 75 damage                                  ATK   : 120 damage                                                                                |\n");
     printf("|             Amount : %d                                               Amount : %d / 2                                                                                   |\n", isAK, grenade);
     printf("|                                                                                                                                                                       |\n");
     printf("|                                                                                                                                                                       |\n");
