@@ -127,8 +127,12 @@ int main(){
     CoutShield();
     CoutHeal();
     ClearTerminal(33);
+    Frame("=");
+    cout << endl;
     TerminalDefault();
-
+    Frame("=");
+    Frame("-");
+    cout << endl;
     srand(time(0));
     int PlayerHP = 100;
     int BotHP = 100; 
@@ -219,8 +223,10 @@ int main(){
         }
         if(playerChoice > 5 || playerChoice < 1) playerChoice = 6;
         int PyC = playerChoice - 1;
+        
+        ClearTerminal(34);
+        Frame("=");
         cout << endl;
-        ClearTerminal(33);
         round++;
         //CardType = " Fury Strike ", " Damage Absolver", " Healing"};
          // 1 = strike card , 2 = deffense card , 3 = heal card;
@@ -272,9 +278,12 @@ int main(){
         
 
         
-
+        
+        cout << endl;
         TerminalSeclection(Paction, Baction);
-
+        Frame("=");
+        Frame("-");
+        cout << endl;
         Coutframe(8, 6, 0);
         if(ReturnUsedcard(AllCardPlayer)) ShuffleCards(AllCardPlayer, CardType);
 
@@ -338,13 +347,16 @@ int main(){
         if(Bt.ATK > 0 && Py.DEF > 0) Blocked_P += abs(Py.DEF - Bt.ATK);
 
         Frame("-");
+        
         CoutHpDef(Py, Bt, PlayerHP, BotHP);
         
         int Playerhealth = PlayerHP;
         int Bothealth = BotHP;
         CoutGameOver(Playerhealth, Bothealth, round, GameOver);
+        
     }
     while(!GameOver);
+
     // color red
     SetConsoleTextAttribute(color , 15);
     cout << "                             your total damage: " ;
@@ -372,7 +384,7 @@ int main(){
     SetConsoleTextAttribute(color , 9);	
     cout << Blocked_B << endl;
     SetConsoleTextAttribute(color , 15);
-    cout << endl;
+    ClearTerminal(3);
 }
 //=============================================================------ End program ------============================================================================//
 
@@ -470,7 +482,9 @@ string BotAction( int type, Stat &botActType, int Cardrand[], int &Bact){
 void CoutGameOver(int PHP, int BHP, int r, bool &GameCheck){
     HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
     if(PHP <= 0 && BHP > 0){
-        ClearTerminal(32);
+        ClearTerminal(26);
+        Frame("-");
+        ClearTerminal(3);
         Coutframe(15, 10, 30);
         SetConsoleTextAttribute(color , 12);
         cout << endl << setw(86) << "You lost!!" << endl;
@@ -479,11 +493,15 @@ void CoutGameOver(int PHP, int BHP, int r, bool &GameCheck){
         cout << r + 1 << endl;
         cout << endl;
         Coutframe(15, 10, 30);
+        ClearTerminal(3);
+        Frame("-");
         ClearTerminal(10);
         GameCheck = 1;
     }
     if(PHP > 0 && BHP <= 0){
-        ClearTerminal(32);
+        ClearTerminal(26);
+        Frame("-");
+        ClearTerminal(3);
         Coutframe(15, 10, 30);
         SetConsoleTextAttribute(color , 10);
         cout << endl << setw(86) << "You won!!" << endl;
@@ -492,11 +510,15 @@ void CoutGameOver(int PHP, int BHP, int r, bool &GameCheck){
         cout << r + 1 << endl;
         cout << endl;
         Coutframe(15, 10, 30);
+        ClearTerminal(3);
+        Frame("-");
         ClearTerminal(10);
         GameCheck = 1;
         }
     else if(PHP == 0 && BHP == 0){
-        ClearTerminal(32);
+        ClearTerminal(26);
+        Frame("-");
+        ClearTerminal(3);
         Coutframe(15, 10, 30);
         SetConsoleTextAttribute(color , 9);
         cout << endl << setw(86) << " Draw!!!" ;
@@ -504,6 +526,8 @@ void CoutGameOver(int PHP, int BHP, int r, bool &GameCheck){
         cout << r + 1 << endl;
         cout << endl;
         Coutframe(15, 10, 30);
+        ClearTerminal(3);
+        Frame("-");
         ClearTerminal(10);
         GameCheck = 1;
         }
