@@ -271,7 +271,7 @@ int main(){
         
 
         //random bot choice of action;
-        int BotChoice = rand()%7 + 1;
+        int BotChoice = rand()%6 + 1;
         cout << setw(110) << "Bot's action:";
         cout << BotDoing(AllCardBot, Bt, attackCards, defenseCards, healCards, BotChoice, CardType, Baction) << endl;
         
@@ -454,7 +454,7 @@ string BotDoing(string BC[], Stat &Bot, int Atk_B[], int Def_B[], int Heal_B[], 
     return BotAction(3, Bot, Heal_B, Bact);
     }
     if (BotDoing == 6) return BotAction(1, Bot, Atk_B, Bact);
-    if (BotDoing == 7) return BotAction(1, Bot, Atk_B, Bact);
+    
            
 }
 //type = 1,2,3 , actype == atk/def/heal , Cardrand == atk/def/heal card 1-20
