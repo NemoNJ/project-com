@@ -428,18 +428,19 @@ void FightBoss(Player &Player1, Boss &Boss)
 
 void ShowFightPhase(){
 
-     if (levelStage == 1 && !Player1.isAK && !Player1.isPistol)
+     
+    if (levelStage == 1 && !Player1.isAK && !Player1.isPistol)
     {
         if(Player1.hp < 0) Player1.hp = 0;
         if(Dummy1.hp < 0) Dummy1.hp = 0;
         printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
         printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                           STAGE 1     \n");
-        cout  << "|                         "<< Hero <<"                                                                           The Stick Man LV 1                                              \n";
+        cout  << "|                         "<< Hero <<"                                                                       The Stick Man LV 1                                              \n";
         printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                                       \n");
-        printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+        printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                                       \n");
         printf("|                        ------                                                                       ##                                                                \n");
         printf("|                       /      '               ATK: %d                                                 ##       ------        ATK: %d                                     \n", Player1.atk, Dummy1.atk);
@@ -477,7 +478,7 @@ void ShowFightPhase(){
         printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                                       \n");
-        printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+        printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                                       \n");
         printf("|                        ------                                                                        ##                                                               \n");
         printf("|                       /      '               ATK: %d                                                 ##      ------       ATK: %d                                     \n", Player1.atk, Dummy1.atk);
@@ -515,7 +516,7 @@ void ShowFightPhase(){
         printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                                       \n");
-        printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+        printf("|                                                                                                                                                                       \n");
         printf("|                                                                                                                                                                       \n");
         printf("|                        ------                                                                        ##                                                               \n");
         printf("|                       /      '               ATK: %d                                                 ##       ------       ATK: %d                                    \n", Player1.atk, Dummy3.atk);
@@ -553,7 +554,7 @@ cout  << "|                         "<<Hero <<"                                 
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                        ------                                                                                                                                         \n");
 printf("|                       /      '               ATK: %d                                                       /------       ATK: %d                                      \n",Player1.atk, Dummy2.atk);
@@ -591,7 +592,7 @@ cout  << "|                         "<<Hero <<"                                 
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                        ------                                                                                                                                         \n");
 printf("|                       /      '               ATK: %d                                                       /------       ATK: %d                                      \n",Player1.atk, Dummy2.atk);
@@ -630,7 +631,7 @@ cout  << "|                         "<<Hero <<"                                 
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                        ------                                                                                                                                         \n");
 printf("|                       /      '               ATK: %d                                                       /------       ATK: %d                                      \n",Player1.atk, Dummy2.atk);
@@ -669,7 +670,7 @@ cout  << "|                         "<<Hero <<"                                 
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                        ------                                                                                                                                         \n");
 printf("|                       /      '               ATK: %d                                                       /------       ATK: %d                                      \n",Player1.atk, Dummy3.atk);
@@ -707,7 +708,7 @@ cout  << "|                         "<<Hero <<"                                 
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                        ------                                                                                                                                         \n");
 printf("|                       /      '               ATK: %d                                                       /------       ATK: %d                                      \n",Player1.atk, Dummy3.atk);
@@ -747,7 +748,7 @@ cout  << "|                         "<<Hero <<"                                 
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                        ------                                                                                                                                         \n");
 printf("|                       /      '               ATK: %d                                                       /------       ATK: %d                                      \n",Player1.atk, Dummy3.atk);
@@ -786,7 +787,7 @@ cout  << "|                         "<<Hero <<"                                 
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                        ------                                                                                                                                         \n");
 printf("|                       /      '               ATK: %d                                                       /------      ATK: %d                                       \n",Player1.atk, Dummy4.atk);
@@ -824,7 +825,7 @@ cout  << "|                         "<<Hero <<"                                 
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                        ------                                                                                                                                         \n");
 printf("|                       /      '               ATK: %d                                                       /------      ATK: %d                                       \n",Player1.atk, Dummy4.atk);
@@ -862,7 +863,7 @@ cout  << "|                         "<<Hero <<"                                 
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
-printf("|                        DAMAGE                                                                              DAMAGE                                                     \n");
+printf("|                                                                                                                                                                       \n");
 printf("|                                                                                                                                                                       \n");
 printf("|                        ------                                                                                                                                         \n");
 printf("|                       /      '               ATK: %d                                                       /------      ATK: %d                                       \n",Player1.atk, Dummy4.atk);
