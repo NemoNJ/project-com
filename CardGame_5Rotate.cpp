@@ -1,7 +1,7 @@
-#include "3Card_game_02.cpp"
+#include "GPHCardgame.cpp"
 using namespace std;
 
-HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE); 
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
 
 
 struct Stat{
@@ -271,8 +271,7 @@ int main(){
         
         
 
-        if(Py.ATK > 0 && Bt.DEF > 0) Blocked_B += abs(Bt.DEF - Py.ATK);
-        if(Bt.ATK > 0 && Py.DEF > 0) Blocked_P += abs(Py.DEF - Bt.ATK);
+        
 
         TerminalSeclection(Paction, Baction);
 
@@ -335,6 +334,8 @@ int main(){
         TotalHEAL_P += Py.HEAL;
         TotalDMG_B += Bt.ATK;
         TotalHEAL_B += Bt.HEAL;
+        if(Py.ATK > 0 && Bt.DEF > 0) Blocked_B += abs(Bt.DEF - Py.ATK);
+        if(Bt.ATK > 0 && Py.DEF > 0) Blocked_P += abs(Py.DEF - Bt.ATK);
 
         Frame("-");
         CoutHpDef(Py, Bt, PlayerHP, BotHP);
