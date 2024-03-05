@@ -68,7 +68,7 @@ int main()
         if (levelStage == 2) Dummy2.hp = Dummy2.hpmax;
         if (levelStage == 3) Dummy3.hp = Dummy3.hpmax;
         if (levelStage == 4) Dummy4.hp = Dummy4.hpmax;
-        main();
+        system("Console");
     }
     }
 }
