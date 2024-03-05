@@ -3,7 +3,6 @@
 #include <ctime> // time(0)
 #include <string>
 #include <iomanip> // setw
-#include <cctype>
 #include <windows.h> // color
 
 using namespace std;
