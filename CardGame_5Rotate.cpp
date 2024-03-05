@@ -385,6 +385,20 @@ int main(){
     cout << Blocked_B << endl;
     SetConsoleTextAttribute(color , 15);
     ClearTerminal(3);
+
+    string T;
+    do{
+        {
+        cout << setw(20) << "Press (T) to Continue...";
+        cin >> T;
+        cout << endl;
+        }
+    }
+    while(T != "T" && T != "t");
+        system("cls");
+        system("Console");
+    
+    
 }
 //=============================================================------ End program ------============================================================================//
 
