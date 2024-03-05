@@ -6,10 +6,8 @@
 #include <iomanip>
 #include <vector>
 #include <cmath>
-#include <algorithm>
 #include <conio.h>
 #include <stdio.h>
-#include <fstream>
 #include "Unitbattleboss.cpp"
 #include <windows.h>
 
