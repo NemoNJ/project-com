@@ -24,7 +24,7 @@ void ShowMap();
 string toUpperStr(string);
 void FightBoss(Player &, Boss &);
 void ShowFightPhase();
-Boss Dummy1("Dummy1", rand() % 5 + 30, rand() % 4 + 10, rand() % 2 + 1, 200);
+Boss Dummy1("Dummy1", rand() % 5 + 30, rand() % 4 + 10, rand() % 2 + 1, 200);//HP ATK DEF
 Boss Dummy2("Dummy2", rand() % 5 + 100, rand() % 8 + 12, rand() % 2 + 3, 400);
 Boss Dummy3("Dummy3", rand() % 6 + 130, rand() % 10 + 17, rand() % 3 + 10, 1250);
 Boss Dummy4("Dummy4", rand() % 10 + 450, rand() % 12 + 22, rand() % 10 + 32,2000);
@@ -53,8 +53,6 @@ int main()
     system("cls");
     if (levelStage == 1)
         FightBoss(Player1, Dummy1);
-    else if (levelStage == 2)
-        FightBoss(Player1, Dummy2);
     else if (levelStage == 2)
         FightBoss(Player1, Dummy2);
     else if (levelStage == 3)
