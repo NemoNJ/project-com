@@ -26,7 +26,7 @@ void FightBoss(Player &, Boss &);
 void ShowFightPhase();
 Boss Dummy1("Dummy1", rand() % 5 + 30, rand() % 4 + 10, rand() % 2 + 1, 200);
 Boss Dummy2("Dummy2", rand() % 5 + 100, rand() % 8 + 12, rand() % 2 + 3, 400);
-Boss Dummy3("Dummy3", rand() % 6 + 130, rand() % 10 + 17, rand() % 3 + 10, 1200);
+Boss Dummy3("Dummy3", rand() % 6 + 130, rand() % 10 + 17, rand() % 3 + 10, 1250);
 Boss Dummy4("Dummy4", rand() % 10 + 450, rand() % 12 + 22, rand() % 10 + 32,2000);
 string name;
 
@@ -409,7 +409,13 @@ void FightBoss(Player &Player1, Boss &Boss)
             Player1.addmoney(Boss.money);
 
             cin.ignore();
-            GetEnter();
+            if(levelStage == 5){
+                system("cls");
+                system("Console");
+            }
+            else{
+                 GetEnter();
+            }
         }
         Boss.attack(Player1);
 
