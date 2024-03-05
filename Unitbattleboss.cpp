@@ -5,12 +5,13 @@
 #include <string>
 #include <windows.h>
 using namespace std;
-
+//ราคา
 int PistolPrice = 150;
 int ArmourPrice = 300;
 int MedkitPrice = 100;
 int AKPrice = 1000;
 int grenadePrice = 200;
+//คุณสมบัติ
 int grenadeDamage = 120;
 int medkitHeal = 25+rand()%16;
 class Player;

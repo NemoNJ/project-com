@@ -362,8 +362,8 @@ void FightBoss(Player &Player1, Boss &Boss)
 {
     string action;
     bool FightPhase = true;
-    Player1.hp = Player1.hpmax;
-    while (FightPhase)
+    Player1.hp = Player1.hpmax;//reset เลือดทุกครั้ง
+    while (FightPhase)//ตราบใดที่ยังไม่มีใครตุย ถ้าตายเป็น false
     {
         ShowFightPhase();
         //cin >> action;
@@ -433,6 +433,7 @@ void ShowFightPhase(){
      
     if (levelStage == 1 && !Player1.isAK && !Player1.isPistol)
     {
+        //เพื่อโชว์ค่าเลือดเป็น 0
         if(Player1.hp < 0) Player1.hp = 0;
         if(Dummy1.hp < 0) Dummy1.hp = 0;
         printf("|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n");
