@@ -437,7 +437,7 @@ void Player::buyGrenade()
     }
 }
 
-void Player::GobuyPhase()
+void Player::GobuyPhase()//ซื้อของ
 {
     buyphase = true;
     while (buyphase == true)
