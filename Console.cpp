@@ -1,7 +1,7 @@
 #include<iostream>
 #include<windows.h>
 #include <conio.h>
-
+#pragma once
 using namespace std;
 
 int main(){
