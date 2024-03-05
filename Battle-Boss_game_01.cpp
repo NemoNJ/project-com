@@ -389,7 +389,8 @@ void FightBoss(Player &Player1, Boss &Boss)
         else if (action == "E")
         {
             cout << "exiting....";
-            main();
+            system("cls");
+            system("Console");
         }
         else
         {
