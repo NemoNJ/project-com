@@ -518,7 +518,7 @@ Boss::Boss(string Name, int Hpmax, int Attack, int Def, int Money)
 void Player::attack(Boss &Boss)
 {
     int x = rand() % 100 + 1;
-    if (x <= 10)
+    if (x <= 10) //superattack
         Boss.bossbeAttacked(atk * 2);
     else
         Boss.bossbeAttacked(atk);
