@@ -912,11 +912,11 @@ int out(){
     if(clicks == '1')
   {
     system("cls");
-    system("Console.exe");
   } 
   else if(clicks == '2')
   {
     system("cls");
+    system("Console");
 
   } 
   else if(clicks == '3')
